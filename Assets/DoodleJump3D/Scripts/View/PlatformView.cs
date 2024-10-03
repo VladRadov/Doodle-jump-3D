@@ -13,8 +13,8 @@ public class PlatformView : MonoBehaviour
     public void SetValueDoodleOnPlatform(bool value)
         => _isDoodleOnPlatform = value;
 
-    public void SetPosition(Vector3 position)
-        => transform.position = position;
+    public void SetLocalPosition(Vector3 position)
+        => transform.localPosition = position;
 
     public void SetActiveOutline(bool value)
         => _outline.enabled = value;

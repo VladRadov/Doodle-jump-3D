@@ -4,10 +4,10 @@ public class EffectJumpComponent : BaseComponent
 {
     [SerializeField] private EffectJumpingView _effectJumpingPrefab;
 
-    public void Create(Vector3 positionJump)
+    public void Create(Vector3 positionDoodle)
     {
         var effectJumping = PoolObjects<EffectJumpingView>.GetObject(_effectJumpingPrefab);
-        effectJumping.SetPosition(positionJump);
+        effectJumping.SetPosition(positionDoodle);
         _effectJumpingPrefab?.Play();
     }
 }

@@ -24,7 +24,7 @@ public class DoodleController
         EffectJumpComponent effectJumpComponent = GetDoodleComponent<EffectJumpComponent>();
 
         inputComponent.InputCommand.Subscribe(value => { moveComponent.Move(value); });
-        jumpingComponent.JumpingOnPlaceCommnad.Subscribe(positionJump => { effectJumpComponent.Create(positionJump); });
+        jumpingComponent.JumpingOnPlaceCommnad.Subscribe(positionDoodle => { effectJumpComponent.Create(positionDoodle); });
     }
 
     public T GetDoodleComponent<T>() where T : BaseComponent

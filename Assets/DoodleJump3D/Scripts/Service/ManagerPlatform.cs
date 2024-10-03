@@ -6,6 +6,7 @@ public class ManagerPlatform : BaseManager
 {
     [SerializeField] private List<PlatformView> _platformsPrefab;
     [SerializeField] private PlatformView _startPlatform;
+    [SerializeField] private List<FrameMapView> _framesMapViews;
 
     [SerializeField] private int _countStartPlatform;
     [SerializeField] private float _offsetX;
@@ -22,7 +23,7 @@ public class ManagerPlatform : BaseManager
     public override void Initialize()
     {
         _platformController = new PlatformController(_platformsPrefab, _countStartPlatform);
-        _platformController.Initialize(_offsetX, _offsetY, _offsetZ, _minDistnceSelect, _offsetXFrameMap, _startPlatform);
+        _platformController.Initialize(_offsetX, _offsetY, _offsetZ, _minDistnceSelect, _offsetXFrameMap, _startPlatform, _framesMapViews);
         _platformController.Spawner();
         _platformController.FormationSelectionAllowedPlatform();
     }

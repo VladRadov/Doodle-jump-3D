@@ -28,7 +28,6 @@ public class BoxStretcher : MonoBehaviour
         float interpolant = relativePosition.y * _scaleKoefficient;
         Vector3 scale = Lerp3(_scaleDown, Vector3.one, _scaleUp, interpolant);
         _bodyDoodle.localScale = scale;
-        //_bodyDoodle.localEulerAngles = new Vector3(relativePosition.z, 0, -relativePosition.x) * _rotationKoefficient;
     }
 
     private Vector3 Lerp3(Vector3 a, Vector3 b, Vector3 c, float t)

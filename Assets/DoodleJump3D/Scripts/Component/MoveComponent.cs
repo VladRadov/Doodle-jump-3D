@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveComponent : BaseComponent
@@ -11,7 +9,7 @@ public class MoveComponent : BaseComponent
     public void Move(Vector2 force)
     {
         var newForce = new Vector3(force.x, 0, 0);
-        _rigidbody.AddForce(newForce * _speed, ForceMode.VelocityChange);
+        _rigidbody.AddForce(newForce * _speed * Time.deltaTime, ForceMode.VelocityChange);
     }
 
     private void OnValidate()
