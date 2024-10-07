@@ -29,7 +29,7 @@ public class JumpingComponent : BaseComponent
         _targetPlatform = target;
     }
 
-    public void JumpForward()
+    public void JumpForward(PlatformView platformView)
     {
         Vector3 fromTo = _targetPlatform - transform.position;
         Vector3 fromToXZ = new Vector3(fromTo.x, 0, fromTo.z);
@@ -50,6 +50,8 @@ public class JumpingComponent : BaseComponent
 
         if(lengthVector > _minLenghtToRotationDoodle)
             JumpingOnForwardCommnad.Execute();
+
+        platformView.NoActive();
     }
 
     public override void Start()
@@ -91,7 +93,12 @@ public class JumpingComponent : BaseComponent
             if (_isJumpForward == false)
                 _isJumpOnPlace = true;
             else
-                JumpForward();
+            {
+                var platformView = collision.gameObject.GetComponent<PlatformView>();
+
+                if(platformView != null)
+                    JumpForward(platformView);
+            }
         }
     }
 

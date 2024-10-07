@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 
 public class PlatformView : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class PlatformView : MonoBehaviour
     [SerializeField] private Outline _outline;
 
     public bool IsDoodleOnPlatform => _isDoodleOnPlatform;
+
+    public void SetActive(bool value)
+        => gameObject.SetActive(value);
 
     public void SetValueDoodleOnPlatform(bool value)
         => _isDoodleOnPlatform = value;
@@ -23,6 +27,12 @@ public class PlatformView : MonoBehaviour
     {
         _outline.enabled = true;
         _outline.OutlineColor = colorEntry;
+    }
+
+    public async void NoActive()
+    {
+        await UniTask.Delay(2000);
+        SetActive(false);
     }
 
     private void Start()

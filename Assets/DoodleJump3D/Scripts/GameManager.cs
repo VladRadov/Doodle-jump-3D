@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 
         jumpingComponent.JumpingOnForwardCommnad.Subscribe(_ => { managerDoodle.DoodleAnimator.PlayRotation(); });
         managerDoodle.DoodleController.Doodle.OnChangePositionDoodle.Subscribe(positionDoodle => { managerFramesMap.FramesMapController.CheckAndRespawnFramesMap(positionDoodle); });
+        managerFramesMap.FramesMapController.OnRespawnFrameMap.Subscribe(frameMap => { managerPlatform.PlatformController.Respawn(frameMap); });
     }
 
     private T GetManager<T>() where T : BaseManager

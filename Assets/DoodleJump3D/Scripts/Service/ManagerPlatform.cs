@@ -13,7 +13,6 @@ public class ManagerPlatform : BaseManager
     [SerializeField] private float _offsetY;
     [SerializeField] private float _offsetZ;
     [SerializeField] private float _minDistnceSelect;
-    [SerializeField] private float _offsetXFrameMap;
     [SerializeField] private Color _colorEntryPlatfrom;
 
     private PlatformController _platformController;
@@ -23,7 +22,7 @@ public class ManagerPlatform : BaseManager
     public override void Initialize()
     {
         _platformController = new PlatformController(_platformsPrefab, _countStartPlatform);
-        _platformController.Initialize(_offsetX, _offsetY, _offsetZ, _minDistnceSelect, _offsetXFrameMap, _startPlatform, _framesMapViews);
+        _platformController.Initialize(_offsetX, _offsetY, _offsetZ, _minDistnceSelect, _startPlatform, _framesMapViews);
         _platformController.Spawner();
         _platformController.FormationSelectionAllowedPlatform();
     }

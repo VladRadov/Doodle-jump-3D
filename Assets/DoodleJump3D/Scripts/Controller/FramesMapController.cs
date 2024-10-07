@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 public class FramesMapController
 {
@@ -17,6 +18,8 @@ public class FramesMapController
         _deltaPositionRespawn = deltaPositionRespawn;
     }
 
+    public ReactiveCommand<FrameMapView> OnRespawnFrameMap = new();
+
     public void CheckAndRespawnFramesMap(Vector3 positionDoodle)
     {
         for (int i = 0; i < _framesMapViews.Count; i++)
@@ -25,6 +28,7 @@ public class FramesMapController
             {
                 _framesMapViews[i].SetPosition(_lastFrameMap.transform.position + _offsetFrameMap);
                 _lastFrameMap = _framesMapViews[i];
+                OnRespawnFrameMap.Execute(_framesMapViews[i]);
             }
         }
     }

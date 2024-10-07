@@ -16,5 +16,12 @@ public class ManagerFramesMap : BaseManager
     public override void Initialize()
     {
         _framesMapController = new FramesMapController(_framesMapViews, _lastFrameMap, _offsetFrameMap, _deltaPositionRespawn);
+
+        ManagerUniRx.AddObjectDisposable(_framesMapController.OnRespawnFrameMap);
+    }
+
+    private void OnDestroy()
+    {
+        ManagerUniRx.Dispose(_framesMapController.OnRespawnFrameMap);
     }
 }

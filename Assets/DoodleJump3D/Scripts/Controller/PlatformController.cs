@@ -17,7 +17,6 @@ public class PlatformController
     private float _offsetX;
     private float _offsetY;
     private float _offsetZ;
-    private float _offsetXFrameMap;
     private float _minDistanceSelect;
 
     private const int START_POSITION_Z = 5;
@@ -35,13 +34,12 @@ public class PlatformController
     private Vector3 LastPositionPlatform => _platforms.Count != 0 ? _platforms[_platforms.Count - 1].transform.position : Vector3.zero;
     public PlatformView CurrentSelectPlatfrom => _currentSelectPlatfrom;
 
-    public void Initialize(float offsetX, float offsetY, float offsetZ, float minDistnceSelect, float offsetXFrameMap, PlatformView startPlatform, List<FrameMapView> framesMapViews)
+    public void Initialize(float offsetX, float offsetY, float offsetZ, float minDistnceSelect, PlatformView startPlatform, List<FrameMapView> framesMapViews)
     {
         _offsetX = offsetX;
         _offsetY = offsetY;
         _offsetZ = offsetZ;
         _minDistanceSelect = minDistnceSelect;
-        _offsetXFrameMap = offsetXFrameMap;
         _currentSelectPlatfrom = startPlatform;
         _framesMapViews = framesMapViews;
     }
@@ -66,13 +64,41 @@ public class PlatformController
                     var indexPlatform = Random.Range(0, _platformsPrefab.Count);
                     var platform = PoolObjects<PlatformView>.GetObject(_platformsPrefab[indexPlatform], _framesMapViews[k].transform);
 
-                    var nextPosition = new Vector3(x + _offsetXFrameMap, lastPositionPlatform.y + y, lastPositionPlatform.z + z);
+                    var nextPosition = new Vector3(x, lastPositionPlatform.y + y, lastPositionPlatform.z + z);
                     platform.SetLocalPosition(nextPosition);
                     platform.SetActiveOutline(false);
 
                     lastPositionPlatform = platform.transform.localPosition;
                     _platforms.Add(platform);
                 }
+            }
+        }
+    }
+
+    public void Respawn(FrameMapView frameMapView)
+    {
+        Vector3 lastPositionPlatform = Vector3.zero;
+        for (int i = 0; i < _countStartPlatform; i++)
+        {
+            var countPlatform = Random.Range(1, MAX_COUNT_PLATFORM_OF_FRAME);
+            for (int j = 0; j < countPlatform; j++)
+            {
+                var x = Random.Range(-_offsetX, _offsetX);
+                var y = 0;
+                var z = Random.Range(0, _offsetZ);
+
+                if (Mathf.Abs(z) > Mathf.Abs(frameMapView.Tail.position.z))
+                    continue;
+
+                var indexPlatform = Random.Range(0, _platformsPrefab.Count);
+                var platform = PoolObjects<PlatformView>.GetObject(_platformsPrefab[indexPlatform], frameMapView.transform);
+
+                var nextPosition = new Vector3(x, lastPositionPlatform.y + y, lastPositionPlatform.z + z);
+                platform.SetLocalPosition(nextPosition);
+                platform.SetActiveOutline(false);
+
+                lastPositionPlatform = platform.transform.localPosition;
+                _platforms.Add(platform);
             }
         }
     }
