@@ -22,11 +22,11 @@ public class DoodleView : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Mathf.Round(_zPosition) != Mathf.Round(transform.position.z))
-        {
-            OnChangePositionDoodle.Execute(transform.position);
-            _zPosition = transform.position.z;
-        }
+        //if (Mathf.Round(_zPosition) != Mathf.Round(transform.position.z))
+        //{
+        //    OnChangePositionDoodle.Execute(transform.position);
+        //    _zPosition = transform.position.z;
+        //}
     }
 
     private void OnValidate()

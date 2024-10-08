@@ -22,12 +22,19 @@ public class GameManager : MonoBehaviour
         {          
             jumpingComponent.SetTargetPlatform(managerPlatform.PlatformController.CurrentSelectPlatfrom.transform.position);
             managerPlatform.OutlineCurrentPlatform();
-            managerPlatform.PlatformController.FormationSelectionAllowedPlatform(); 
+            managerPlatform.PlatformController.FormationSelectionAllowedPlatform();
         });
 
-        jumpingComponent.JumpingOnForwardCommnad.Subscribe(_ => { managerDoodle.DoodleAnimator.PlayRotation(); });
-        managerDoodle.DoodleController.Doodle.OnChangePositionDoodle.Subscribe(positionDoodle => { managerFramesMap.FramesMapController.CheckAndRespawnFramesMap(positionDoodle); });
-        managerFramesMap.FramesMapController.OnRespawnFrameMap.Subscribe(frameMap => { managerPlatform.PlatformController.Respawn(frameMap); });
+        jumpingComponent.JumpingOnForwardCommnad.Subscribe(positionDoodle =>
+        {
+            managerDoodle.DoodleAnimator.PlayRotation();
+            managerFramesMap.FramesMapController.CheckAndRespawnFramesMap(positionDoodle);
+        });
+        managerFramesMap.FramesMapController.OnRespawnFrameMap.Subscribe(frameMap =>
+        {
+            managerPlatform.PlatformController.NoActiveOldPlatforms(frameMap);
+            managerPlatform.PlatformController.Respawn(frameMap);
+        });
     }
 
     private T GetManager<T>() where T : BaseManager

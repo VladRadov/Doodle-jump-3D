@@ -14,6 +14,10 @@ public class MovablePlatformComponent : BaseComponent
     public override void Start()
     {
         base.Start();
+    }
+
+    private void OnEnable()
+    {
         _timer = 0;
 
         SetStartMoveRoute();

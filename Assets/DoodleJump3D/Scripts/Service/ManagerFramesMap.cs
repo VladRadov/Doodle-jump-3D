@@ -12,6 +12,7 @@ public class ManagerFramesMap : BaseManager
     [SerializeField] private float _deltaPositionRespawn;
 
     public FramesMapController FramesMapController => _framesMapController;
+    public List<FrameMapView> FramesMapViews => _framesMapViews;
 
     public override void Initialize()
     {

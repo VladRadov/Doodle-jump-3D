@@ -21,7 +21,7 @@ public class JumpingComponent : BaseComponent
     [SerializeField] private float _minLenghtToRotationDoodle;
 
     public ReactiveCommand<Vector3> JumpingOnPlaceCommnad = new();
-    public ReactiveCommand JumpingOnForwardCommnad = new();
+    public ReactiveCommand<Vector3> JumpingOnForwardCommnad = new();
 
     public void SetTargetPlatform(Vector3 target)
     {
@@ -49,7 +49,7 @@ public class JumpingComponent : BaseComponent
         _isJumpForward = false;
 
         if(lengthVector > _minLenghtToRotationDoodle)
-            JumpingOnForwardCommnad.Execute();
+            JumpingOnForwardCommnad.Execute(transform.position);
 
         platformView.NoActive();
     }

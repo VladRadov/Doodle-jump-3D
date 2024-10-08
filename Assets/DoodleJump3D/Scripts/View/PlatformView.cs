@@ -35,7 +35,7 @@ public class PlatformView : MonoBehaviour
         SetActive(false);
     }
 
-    private void Start()
+    private void OnEnable()
     {
         _isDoodleOnPlatform = false;
     }

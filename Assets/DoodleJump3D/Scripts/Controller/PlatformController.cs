@@ -9,9 +9,9 @@ public class PlatformController
     private List<PlatformView> _platformsPrefab;
     private List<PlatformView> _platforms;
     private List<PlatformView> _selectPlatfroms;
-    private List<FrameMapView> _framesMapViews;
+    private ManagerFramesMap _managerFramesMap;
     private PlatformView _currentSelectPlatfrom;
-    private CancellationTokenSource _tonekCancelOutilePlatforms;
+    private CancellationTokenSource _tonekCancelOutlinePlatforms;
 
     private int _countStartPlatform;
     private float _offsetX;
@@ -28,25 +28,24 @@ public class PlatformController
         _selectPlatfroms = new List<PlatformView>();
         _platformsPrefab = platformsPrefab;
         _countStartPlatform = countStartPlatform;
-        _tonekCancelOutilePlatforms = new CancellationTokenSource();
+        _tonekCancelOutlinePlatforms = new CancellationTokenSource();
     }
 
-    private Vector3 LastPositionPlatform => _platforms.Count != 0 ? _platforms[_platforms.Count - 1].transform.position : Vector3.zero;
     public PlatformView CurrentSelectPlatfrom => _currentSelectPlatfrom;
 
-    public void Initialize(float offsetX, float offsetY, float offsetZ, float minDistnceSelect, PlatformView startPlatform, List<FrameMapView> framesMapViews)
+    public void Initialize(float offsetX, float offsetY, float offsetZ, float minDistnceSelect, PlatformView startPlatform, ManagerFramesMap managerFramesMap)
     {
         _offsetX = offsetX;
         _offsetY = offsetY;
         _offsetZ = offsetZ;
         _minDistanceSelect = minDistnceSelect;
         _currentSelectPlatfrom = startPlatform;
-        _framesMapViews = framesMapViews;
+        _managerFramesMap = managerFramesMap;
     }
 
     public void Spawner()
     {
-        for (int k = 0; k < _framesMapViews.Count; k++)
+        for (int k = 0; k < _managerFramesMap.FramesMapViews.Count; k++)
         {
             Vector3 lastPositionPlatform = Vector3.zero;
             for (int i = 0; i < _countStartPlatform; i++)
@@ -55,16 +54,16 @@ public class PlatformController
                 for (int j = 0; j < countPlatform; j++)
                 {
                     var x = Random.Range(-_offsetX, _offsetX);
-                    var y = 0;
-                    var z = Random.Range(k == 0 ? START_POSITION_Z : 0, _offsetZ);
+                    var y = lastPositionPlatform.y;
+                    var z = k != 0 && i == 0 && j == 0 ? 0 : lastPositionPlatform.z + Random.Range(START_POSITION_Z, _offsetZ);
 
-                    if (Mathf.Abs(z) > Mathf.Abs(_framesMapViews[k].Tail.position.z))
+                    if (Mathf.Abs(z) > Mathf.Abs(_managerFramesMap.FramesMapViews[k].Tail.localPosition.z))
                         continue;
 
                     var indexPlatform = Random.Range(0, _platformsPrefab.Count);
-                    var platform = PoolObjects<PlatformView>.GetObject(_platformsPrefab[indexPlatform], _framesMapViews[k].transform);
+                    var platform = PoolObjects<PlatformView>.GetObject(_platformsPrefab[indexPlatform], _managerFramesMap.FramesMapViews[k].transform);
 
-                    var nextPosition = new Vector3(x, lastPositionPlatform.y + y, lastPositionPlatform.z + z);
+                    var nextPosition = new Vector3(x, y, z);
                     platform.SetLocalPosition(nextPosition);
                     platform.SetActiveOutline(false);
 
@@ -83,23 +82,37 @@ public class PlatformController
             var countPlatform = Random.Range(1, MAX_COUNT_PLATFORM_OF_FRAME);
             for (int j = 0; j < countPlatform; j++)
             {
-                var x = Random.Range(-_offsetX, _offsetX);
-                var y = 0;
-                var z = Random.Range(0, _offsetZ);
+                var x = i == 0 && j == 0 ? 0 : Random.Range(-_offsetX, _offsetX);
+                var y = lastPositionPlatform.y;
+                var z = i == 0 && j == 0 ? 0 : lastPositionPlatform.z + Random.Range(START_POSITION_Z, _offsetZ);
 
-                if (Mathf.Abs(z) > Mathf.Abs(frameMapView.Tail.position.z))
+                if (Mathf.Abs(z) > Mathf.Abs(frameMapView.Tail.localPosition.z))
                     continue;
 
                 var indexPlatform = Random.Range(0, _platformsPrefab.Count);
-                var platform = PoolObjects<PlatformView>.GetObject(_platformsPrefab[indexPlatform], frameMapView.transform);
+                var platform = PoolObjects<PlatformView>.GetObject(_platformsPrefab[indexPlatform]);
 
-                var nextPosition = new Vector3(x, lastPositionPlatform.y + y, lastPositionPlatform.z + z);
+                var nextPosition = new Vector3(x, y, z);
+                platform.transform.parent = frameMapView.transform;
                 platform.SetLocalPosition(nextPosition);
                 platform.SetActiveOutline(false);
 
                 lastPositionPlatform = platform.transform.localPosition;
-                _platforms.Add(platform);
+
+                if (_platforms.Contains(platform) == false)
+                    _platforms.Add(platform);
             }
+        }
+    }
+
+    public void NoActiveOldPlatforms(FrameMapView frameMapView)
+    {
+        for (int i = 0; i < _platforms.Count; i++)
+        {
+            var isPlatformOnFramemap = _platforms[i].transform.parent == frameMapView.transform;
+
+            if (isPlatformOnFramemap)
+                _platforms[i].SetActive(false);
         }
     }
 
@@ -110,10 +123,12 @@ public class PlatformController
 
         for (int i = 0; i < _platforms.Count; i++)
         {
+            var isActivePlatform = _platforms[i].gameObject.activeSelf;
             var isPlatformNext = Mathf.Abs(_currentSelectPlatfrom.transform.position.z) < Mathf.Abs(_platforms[i].transform.position.z);
-            var isPositionPlatformNearDoodle = Mathf.Abs(_currentSelectPlatfrom.transform.position.z - _platforms[i].transform.position.z) < _minDistanceSelect;
+            var isPositionPlatformNearDoodle = Mathf.Abs(_currentSelectPlatfrom.transform.position.z - _platforms[i].transform.position.z) <= _minDistanceSelect;
+            var isNoCurrentPlatform = _platforms[i].IsDoodleOnPlatform == false;
 
-            if (isPlatformNext && isPositionPlatformNearDoodle)
+            if (isActivePlatform && isPlatformNext && isPositionPlatformNearDoodle && isNoCurrentPlatform)
                 _selectPlatfroms.Add(_platforms[i]);
         }
 
@@ -128,11 +143,11 @@ public class PlatformController
             {
                 var isPlatformHave = _selectPlatfroms.Count != 0 && i < _selectPlatfroms.Count;
 
-                if (isPlatformHave && _selectPlatfroms[i].IsDoodleOnPlatform == false)
+                if (isPlatformHave)
                 {
                     _currentSelectPlatfrom = _selectPlatfroms[i];
                     _currentSelectPlatfrom.SetActiveOutline(true);
-                    await UniTask.Delay(500, cancellationToken: _tonekCancelOutilePlatforms.Token);
+                    await UniTask.Delay(500, cancellationToken: _tonekCancelOutlinePlatforms.Token);
                     _currentSelectPlatfrom.SetActiveOutline(false);
                 }
             }
@@ -144,8 +159,8 @@ public class PlatformController
 
     private void UseCancelToken()
     {
-        _tonekCancelOutilePlatforms.Cancel(false);
-        _tonekCancelOutilePlatforms.Dispose();
-        _tonekCancelOutilePlatforms = new CancellationTokenSource();
+        _tonekCancelOutlinePlatforms.Cancel(false);
+        _tonekCancelOutlinePlatforms.Dispose();
+        _tonekCancelOutlinePlatforms = new CancellationTokenSource();
     }
 }
