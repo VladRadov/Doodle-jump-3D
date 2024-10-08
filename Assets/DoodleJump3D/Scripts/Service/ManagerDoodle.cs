@@ -15,7 +15,6 @@ public class ManagerDoodle : BaseManager
     public override void Initialize()
     {
         _doodleController = new DoodleController(_doodleView, new Doodle());
-        _doodleController.Initialize();
     }
 
     private void OnValidate()

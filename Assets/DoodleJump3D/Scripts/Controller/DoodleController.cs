@@ -16,17 +16,6 @@ public class DoodleController
         _doodle = doodle;
     }
 
-    public void Initialize()
-    {
-        InputComponent inputComponent = GetDoodleComponent<InputComponent>();
-        MoveComponent moveComponent = GetDoodleComponent<MoveComponent>();
-        JumpingComponent jumpingComponent = GetDoodleComponent<JumpingComponent>();
-        EffectJumpComponent effectJumpComponent = GetDoodleComponent<EffectJumpComponent>();
-
-        inputComponent.InputCommand.Subscribe(value => { moveComponent.Move(value); });
-        jumpingComponent.JumpingOnPlaceCommnad.Subscribe(positionDoodle => { effectJumpComponent.Create(positionDoodle); });
-    }
-
     public T GetDoodleComponent<T>() where T : BaseComponent
     {
         var componentFinded = _doodleView.Components.Find(component => component is T);
