@@ -29,6 +29,6 @@ public class ManagerPlatform : BaseManager
 
     public void OutlineCurrentPlatform()
     {
-        _platformController.CurrentSelectPlatfrom.ActiveOutlineEntry(_colorEntryPlatfrom);
+        _platformController.CurrentSelectPlatfrom.ActiveOutlineColor(_colorEntryPlatfrom);
     }
 }

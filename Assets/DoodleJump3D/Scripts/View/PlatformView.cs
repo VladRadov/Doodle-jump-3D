@@ -8,8 +8,10 @@ public class PlatformView : MonoBehaviour
     private bool _isDoodleOnPlatform;
 
     [SerializeField] private Outline _outline;
+    [SerializeField] private Color _colorDefault;
 
     public bool IsDoodleOnPlatform => _isDoodleOnPlatform;
+    public Color ColorDefault => _colorDefault;
 
     public void SetActive(bool value)
         => gameObject.SetActive(value);
@@ -23,13 +25,13 @@ public class PlatformView : MonoBehaviour
     public void SetActiveOutline(bool value)
         => _outline.enabled = value;
 
-    public void ActiveOutlineEntry(Color colorEntry)
+    public void ActiveOutlineColor(Color colorEntry)
     {
         _outline.enabled = true;
         _outline.OutlineColor = colorEntry;
     }
 
-    public async void NoActive()
+    public async void NoActiveWithDelay()
     {
         await UniTask.Delay(2000);
         SetActive(false);

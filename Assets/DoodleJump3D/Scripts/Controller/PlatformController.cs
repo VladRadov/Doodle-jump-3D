@@ -146,7 +146,7 @@ public class PlatformController
                 if (isPlatformHave)
                 {
                     _currentSelectPlatfrom = _selectPlatfroms[i];
-                    _currentSelectPlatfrom.SetActiveOutline(true);
+                    _currentSelectPlatfrom.ActiveOutlineColor(_currentSelectPlatfrom.ColorDefault);
                     await UniTask.Delay(500, cancellationToken: _tonekCancelOutlinePlatforms.Token);
                     _currentSelectPlatfrom.SetActiveOutline(false);
                 }
