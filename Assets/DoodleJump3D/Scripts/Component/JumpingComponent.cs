@@ -50,8 +50,6 @@ public class JumpingComponent : BaseComponent
 
         if(lengthVector > _minLenghtToRotationDoodle)
             JumpingOnForwardCommnad.Execute(transform.position);
-
-        platformView.NoActiveWithDelay();
     }
 
     public override void Start()

@@ -33,12 +33,6 @@ public class PlatformView : MonoBehaviour
         _outline.OutlineColor = colorEntry;
     }
 
-    public async void NoActiveWithDelay()
-    {
-        await UniTask.Delay(2000);
-        SetActive(false);
-    }
-
     private void Start()
     {
         ManagerUniRx.AddObjectDisposable(OnCollisionMap);

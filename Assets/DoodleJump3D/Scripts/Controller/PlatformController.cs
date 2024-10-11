@@ -62,16 +62,6 @@ public class PlatformController
                         continue;
 
                     lastPositionPlatform = CreatePlatform(new Vector3(x, y, z), _managerFramesMap.FramesMapViews[k].transform);
-
-                    //var indexPlatform = Random.Range(0, _platformsPrefab.Count);
-                    //var platform = PoolObjects<PlatformView>.GetObject(_platformsPrefab[indexPlatform], _managerFramesMap.FramesMapViews[k].transform);
-
-                    //var nextPosition = new Vector3(x, y, z);
-                    //platform.SetLocalPosition(nextPosition);
-                    //platform.SetActiveOutline(false);
-
-                    //lastPositionPlatform = platform.transform.localPosition;
-                    //_platforms.Add(platform);
                 }
             }
         }
@@ -93,19 +83,6 @@ public class PlatformController
                     continue;
 
                 lastPositionPlatform = CreatePlatform(new Vector3(x, y, z), frameMapView.transform);
-
-                //var indexPlatform = Random.Range(0, _platformsPrefab.Count);
-                //var platform = PoolObjects<PlatformView>.GetObject(_platformsPrefab[indexPlatform]);
-
-                //var nextPosition = new Vector3(x, y, z);
-                //platform.transform.parent = frameMapView.transform;
-                //platform.SetLocalPosition(nextPosition);
-                //platform.SetActiveOutline(false);
-
-                //if (_platforms.Contains(platform) == false)
-                //    _platforms.Add(platform);
-
-                //lastPositionPlatform = platform.transform.localPosition;
             }
         }
     }
@@ -126,16 +103,30 @@ public class PlatformController
         UseCancelToken();
         ClearSelectPlatforms();
 
+        float minimalDistanceNextToPlatform = 0;
+        PlatformView platformHope = null;
+
         for (int i = 0; i < _platforms.Count; i++)
         {
+            var distanceNextToPlatform = Mathf.Abs(_currentSelectPlatfrom.transform.position.z - _platforms[i].transform.position.z);
+
             var isActivePlatform = _platforms[i].gameObject.activeSelf;
             var isPlatformNext = Mathf.Abs(_currentSelectPlatfrom.transform.position.z) < Mathf.Abs(_platforms[i].transform.position.z);
-            var isPositionPlatformNearDoodle = Mathf.Abs(_currentSelectPlatfrom.transform.position.z - _platforms[i].transform.position.z) <= _minDistanceSelect;
+            var isPositionPlatformNearDoodle = distanceNextToPlatform <= _minDistanceSelect;
             var isNoCurrentPlatform = _platforms[i].IsDoodleOnPlatform == false;
 
             if (isActivePlatform && isPlatformNext && isPositionPlatformNearDoodle && isNoCurrentPlatform)
                 _selectPlatfroms.Add(_platforms[i]);
+
+            if (minimalDistanceNextToPlatform > distanceNextToPlatform && isPlatformNext && isNoCurrentPlatform)
+            {
+                minimalDistanceNextToPlatform = distanceNextToPlatform;
+                platformHope = _platforms[i];
+            }
         }
+
+        if (_selectPlatfroms.Count == 0)
+            _selectPlatfroms.Add(platformHope);
 
         OutlineSelectionAllowedPlatform();
     }
@@ -164,9 +155,8 @@ public class PlatformController
         var indexPlatform = Random.Range(0, _platformsPrefab.Count);
         var platform = PoolObjects<PlatformView>.GetObject(_platformsPrefab[indexPlatform]);
 
-        var nextPosition = positionPlatform;
         platform.transform.parent = parent;
-        platform.SetLocalPosition(nextPosition);
+        platform.SetLocalPosition(positionPlatform);
         platform.SetActiveOutline(false);
 
         if (_platforms.Contains(platform) == false)
@@ -181,8 +171,8 @@ public class PlatformController
     private void RespawnPlatform(PlatformView platform)
     {
         var x = Random.Range(-_offsetX, _offsetX);
-        var y = platform.transform.position.y;
-        var z = platform.transform.position.z;
+        var y = platform.transform.localPosition.y;
+        var z = platform.transform.localPosition.z;
 
         platform.SetLocalPosition(new Vector3(x, y, z));
         platform.SetActive(true);
