@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 1718076808097830261}
   - component: {fileID: 1772996259994989464}
   - component: {fileID: 4668080690361980534}
+  - component: {fileID: -4078341000157885025}
   m_Layer: 3
   m_Name: PlatformGreen
   m_TagString: Untagged
@@ -185,6 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _outline: {fileID: 1772996259994989464}
+  _colorDefault: {r: 0.93333334, g: 0.047058824, b: 0.047058824, a: 1}
 --- !u!114 &1772996259994989464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,3 +227,30 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4493585093827132993, guid: 62aea74775850c645a1ae7adaa5bf209, type: 3}
+--- !u!54 &-4078341000157885025
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7681562988579929436}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

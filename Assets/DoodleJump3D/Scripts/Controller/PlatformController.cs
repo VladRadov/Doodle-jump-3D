@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
+using UniRx;
 
 public class PlatformController
 {
@@ -43,7 +44,7 @@ public class PlatformController
         _managerFramesMap = managerFramesMap;
     }
 
-    public void Spawner()
+    public void SpawnerPlatforms()
     {
         for (int k = 0; k < _managerFramesMap.FramesMapViews.Count; k++)
         {
@@ -60,21 +61,23 @@ public class PlatformController
                     if (Mathf.Abs(z) > Mathf.Abs(_managerFramesMap.FramesMapViews[k].Tail.localPosition.z))
                         continue;
 
-                    var indexPlatform = Random.Range(0, _platformsPrefab.Count);
-                    var platform = PoolObjects<PlatformView>.GetObject(_platformsPrefab[indexPlatform], _managerFramesMap.FramesMapViews[k].transform);
+                    lastPositionPlatform = CreatePlatform(new Vector3(x, y, z), _managerFramesMap.FramesMapViews[k].transform);
 
-                    var nextPosition = new Vector3(x, y, z);
-                    platform.SetLocalPosition(nextPosition);
-                    platform.SetActiveOutline(false);
+                    //var indexPlatform = Random.Range(0, _platformsPrefab.Count);
+                    //var platform = PoolObjects<PlatformView>.GetObject(_platformsPrefab[indexPlatform], _managerFramesMap.FramesMapViews[k].transform);
 
-                    lastPositionPlatform = platform.transform.localPosition;
-                    _platforms.Add(platform);
+                    //var nextPosition = new Vector3(x, y, z);
+                    //platform.SetLocalPosition(nextPosition);
+                    //platform.SetActiveOutline(false);
+
+                    //lastPositionPlatform = platform.transform.localPosition;
+                    //_platforms.Add(platform);
                 }
             }
         }
     }
 
-    public void Respawn(FrameMapView frameMapView)
+    public void RespawnPlatforms(FrameMapView frameMapView)
     {
         Vector3 lastPositionPlatform = Vector3.zero;
         for (int i = 0; i < _countStartPlatform; i++)
@@ -89,18 +92,20 @@ public class PlatformController
                 if (Mathf.Abs(z) > Mathf.Abs(frameMapView.Tail.localPosition.z))
                     continue;
 
-                var indexPlatform = Random.Range(0, _platformsPrefab.Count);
-                var platform = PoolObjects<PlatformView>.GetObject(_platformsPrefab[indexPlatform]);
+                lastPositionPlatform = CreatePlatform(new Vector3(x, y, z), frameMapView.transform);
 
-                var nextPosition = new Vector3(x, y, z);
-                platform.transform.parent = frameMapView.transform;
-                platform.SetLocalPosition(nextPosition);
-                platform.SetActiveOutline(false);
+                //var indexPlatform = Random.Range(0, _platformsPrefab.Count);
+                //var platform = PoolObjects<PlatformView>.GetObject(_platformsPrefab[indexPlatform]);
 
-                lastPositionPlatform = platform.transform.localPosition;
+                //var nextPosition = new Vector3(x, y, z);
+                //platform.transform.parent = frameMapView.transform;
+                //platform.SetLocalPosition(nextPosition);
+                //platform.SetActiveOutline(false);
 
-                if (_platforms.Contains(platform) == false)
-                    _platforms.Add(platform);
+                //if (_platforms.Contains(platform) == false)
+                //    _platforms.Add(platform);
+
+                //lastPositionPlatform = platform.transform.localPosition;
             }
         }
     }
@@ -152,6 +157,35 @@ public class PlatformController
                 }
             }
         }
+    }
+
+    private Vector3 CreatePlatform(Vector3 positionPlatform, Transform parent)
+    {
+        var indexPlatform = Random.Range(0, _platformsPrefab.Count);
+        var platform = PoolObjects<PlatformView>.GetObject(_platformsPrefab[indexPlatform]);
+
+        var nextPosition = positionPlatform;
+        platform.transform.parent = parent;
+        platform.SetLocalPosition(nextPosition);
+        platform.SetActiveOutline(false);
+
+        if (_platforms.Contains(platform) == false)
+        {
+            _platforms.Add(platform);
+            platform.OnCollisionMap.Subscribe(platformView => { RespawnPlatform(platformView); });
+        }
+
+        return platform.transform.localPosition;
+    }
+
+    private void RespawnPlatform(PlatformView platform)
+    {
+        var x = Random.Range(-_offsetX, _offsetX);
+        var y = platform.transform.position.y;
+        var z = platform.transform.position.z;
+
+        platform.SetLocalPosition(new Vector3(x, y, z));
+        platform.SetActive(true);
     }
 
     private void ClearSelectPlatforms()

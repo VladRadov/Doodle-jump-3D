@@ -23,7 +23,7 @@ public class ManagerPlatform : BaseManager
     {
         _platformController = new PlatformController(_platformsPrefab, _countStartPlatform);
         _platformController.Initialize(_offsetX, _offsetY, _offsetZ, _minDistnceSelect, _startPlatform, _managerFramesMap);
-        _platformController.Spawner();
+        _platformController.SpawnerPlatforms();
         _platformController.FormationSelectionAllowedPlatform();
     }
 

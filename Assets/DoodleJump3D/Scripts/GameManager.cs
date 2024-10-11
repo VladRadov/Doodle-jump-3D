@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
         managerFramesMap.FramesMapController.OnRespawnFrameMap.Subscribe(frameMap =>
         {
             managerPlatform.PlatformController.NoActiveOldPlatforms(frameMap);
-            managerPlatform.PlatformController.Respawn(frameMap);
+            managerPlatform.PlatformController.RespawnPlatforms(frameMap);
         });
     }
 

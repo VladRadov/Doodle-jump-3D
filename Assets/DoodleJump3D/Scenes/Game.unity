@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7553893}
   - component: {fileID: 7553894}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 68274514}
   - component: {fileID: 68274515}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,9 +319,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 832267092}
     m_Modifications:
+    - target: {fileID: 1331580882174818, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_Name
       value: Rocks_01a_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4691504987128242, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_LocalScale.y
@@ -410,9 +418,9 @@ RectTransform:
   - {fileID: 1428265472}
   m_Father: {fileID: 2115899297}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -501, y: 214.81}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 562, y: -273.19}
   m_SizeDelta: {x: 884.64, y: 429.628}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &91197320
@@ -438,7 +446,7 @@ GameObject:
   m_Component:
   - component: {fileID: 91563805}
   - component: {fileID: 91563806}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EA_Terrain_Default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +509,7 @@ GameObject:
   m_Component:
   - component: {fileID: 126521520}
   - component: {fileID: 126521521}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EA_Terrain_Default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,9 +570,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 851426761}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -629,7 +649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 145975534}
   - component: {fileID: 145975535}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -721,9 +741,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 458529440635117156}
     m_Modifications:
+    - target: {fileID: 1411414537714538, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1511573847091138, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01c_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511573847091138, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539331754956752, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4862790751044594, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
       propertyPath: m_LocalScale.x
@@ -876,9 +908,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91563805}
     m_Modifications:
+    - target: {fileID: 1027800583641198, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1455726822243940, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
       propertyPath: m_Name
       value: EA_Clif_01a_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455726822243940, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4042976180323502, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
       propertyPath: m_LocalScale.y
@@ -945,6 +985,14 @@ PrefabInstance:
     - target: {fileID: 1140557636003158, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
       propertyPath: m_Name
       value: EA_Clif_01b_Default (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140557636003158, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1836031162520918, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4969258515551498, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
       propertyPath: m_LocalScale.x
@@ -1156,9 +1204,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 458529440635117156}
     m_Modifications:
+    - target: {fileID: 1331580882174818, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_Name
       value: Rocks_01a_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4691504987128242, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_LocalScale.y
@@ -1222,9 +1278,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1975036942}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalScale.x
@@ -1299,9 +1367,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 851426761}
     m_Modifications:
+    - target: {fileID: 1411414537714538, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1511573847091138, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01c_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511573847091138, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539331754956752, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4862790751044594, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
       propertyPath: m_LocalScale.x
@@ -1376,9 +1456,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91563805}
     m_Modifications:
+    - target: {fileID: 1007958319892234, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_Name
       value: Rocks_01d_Default (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4326356051608534, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_LocalScale.y
@@ -1442,9 +1530,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 832267092}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1509,7 +1609,7 @@ GameObject:
   m_Component:
   - component: {fileID: 258042731}
   - component: {fileID: 258042732}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1601,9 +1701,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 530855614}
     m_Modifications:
+    - target: {fileID: 1027800583641198, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1455726822243940, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
       propertyPath: m_Name
       value: EA_Clif_01a_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455726822243940, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4042976180323502, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
       propertyPath: m_LocalScale.y
@@ -1667,9 +1775,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 530855614}
     m_Modifications:
+    - target: {fileID: 1197553132516570, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1506777819539116, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
       propertyPath: m_Name
       value: Rocks_01b_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506777819539116, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4878519703835568, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
       propertyPath: m_LocalScale.y
@@ -1733,9 +1849,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 851426761}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1850,7 +1978,7 @@ GameObject:
   m_Component:
   - component: {fileID: 327204356}
   - component: {fileID: 327204357}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1942,9 +2070,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 832267092}
     m_Modifications:
+    - target: {fileID: 1411414537714538, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1511573847091138, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01c_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511573847091138, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539331754956752, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4862790751044594, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
       propertyPath: m_LocalScale.x
@@ -2021,7 +2161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 330844188}
   - component: {fileID: 330844189}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2105,6 +2245,57 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &355503049
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 355503050}
+  - component: {fileID: 355503051}
+  m_Layer: 5
+  m_Name: Clue3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &355503050
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355503049}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1131899912}
+  - {fileID: 459503352}
+  m_Father: {fileID: 2115899297}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 562, y: -273.19}
+  m_SizeDelta: {x: 884.64, y: 429.628}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &355503051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355503049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9088f7b4acc123e4eb963c1594a9f959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ok: {fileID: 459503353}
 --- !u!1 &360001027
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,7 +2306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 360001028}
   - component: {fileID: 360001029}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Directional Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2207,9 +2398,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 851426761}
     m_Modifications:
+    - target: {fileID: 1027800583641198, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1455726822243940, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
       propertyPath: m_Name
       value: EA_Clif_01a_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455726822243940, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4042976180323502, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
       propertyPath: m_LocalScale.y
@@ -2275,7 +2474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 381407302}
   - component: {fileID: 381407303}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2371,6 +2570,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EA_Clif_01d_Default
       objectReference: {fileID: 0}
+    - target: {fileID: 1085399662065110, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271492260953874, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4749563533036680, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5464481
@@ -2433,9 +2640,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 126521520}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2498,9 +2717,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 126521520}
     m_Modifications:
+    - target: {fileID: 1411414537714538, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1511573847091138, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01c_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511573847091138, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539331754956752, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4862790751044594, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
       propertyPath: m_LocalScale.x
@@ -2578,6 +2809,14 @@ PrefabInstance:
     - target: {fileID: 1140557636003158, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
       propertyPath: m_Name
       value: EA_Clif_01b_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140557636003158, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1836031162520918, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4969258515551498, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
       propertyPath: m_LocalScale.x
@@ -2700,9 +2939,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 851426761}
     m_Modifications:
+    - target: {fileID: 1007958319892234, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_Name
       value: Rocks_01d_Default (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4326356051608534, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_LocalScale.y
@@ -2766,9 +3013,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 458529440635117156}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2823,6 +3082,127 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
   m_PrefabInstance: {fileID: 431209038}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &459503351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 459503352}
+  - component: {fileID: 459503355}
+  - component: {fileID: 459503354}
+  - component: {fileID: 459503353}
+  m_Layer: 5
+  m_Name: ButtonNext
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &459503352
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459503351}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1323282740}
+  m_Father: {fileID: 355503050}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -14.604, y: 63.677994}
+  m_SizeDelta: {x: 378.764, y: 127.356}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &459503353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459503351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 459503354}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &459503354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459503351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &459503355
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459503351}
+  m_CullTransparentMesh: 1
 --- !u!1001 &521051361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2831,9 +3211,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 851426761}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2896,9 +3288,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 126521520}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2962,7 +3366,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 530855614}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EA_Terrain_Default (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3006,9 +3410,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91563805}
     m_Modifications:
+    - target: {fileID: 1027800583641198, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1455726822243940, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
       propertyPath: m_Name
       value: EA_Clif_01a_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455726822243940, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4042976180323502, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
       propertyPath: m_LocalScale.x
@@ -3080,6 +3492,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EA_Clif_01b_Default
       objectReference: {fileID: 0}
+    - target: {fileID: 1140557636003158, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1836031162520918, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4969258515551498, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5464481
@@ -3144,7 +3564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 578584974}
   - component: {fileID: 578584975}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3238,7 +3658,7 @@ GameObject:
   m_Component:
   - component: {fileID: 586964748}
   - component: {fileID: 586964749}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3364,9 +3784,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 530855614}
     m_Modifications:
+    - target: {fileID: 1331580882174818, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_Name
       value: Rocks_01a_Default (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4691504987128242, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_LocalScale.y
@@ -3430,9 +3858,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 126521520}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3551,9 +3991,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 458529440635117156}
     m_Modifications:
+    - target: {fileID: 1100761395404350, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1969205505206782, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
       propertyPath: m_Name
       value: EA_Clif_01c_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969205505206782, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4295602171541660, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
       propertyPath: m_LocalScale.y
@@ -3617,9 +4065,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 530855614}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3682,9 +4142,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 458529440635117156}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3749,7 +4221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 741261467}
   - component: {fileID: 741261466}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FrameMap1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3786,6 +4258,7 @@ Transform:
   - {fileID: 458529440635117156}
   - {fileID: 530855614}
   - {fileID: 876130290}
+  - {fileID: 834677164}
   m_Father: {fileID: 643185921}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &747007525
@@ -3796,9 +4269,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91563805}
     m_Modifications:
+    - target: {fileID: 1007958319892234, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_Name
       value: Rocks_01d_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4326356051608534, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_LocalScale.y
@@ -4119,7 +4600,7 @@ GameObject:
   m_Component:
   - component: {fileID: 765355442}
   - component: {fileID: 765355443}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4215,6 +4696,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EA_Clif_01b_Default
       objectReference: {fileID: 0}
+    - target: {fileID: 1140557636003158, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1836031162520918, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4969258515551498, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5464481
@@ -4277,9 +4766,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 126521520}
     m_Modifications:
+    - target: {fileID: 1027800583641198, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1455726822243940, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
       propertyPath: m_Name
       value: EA_Clif_01a_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455726822243940, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4042976180323502, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
       propertyPath: m_LocalScale.x
@@ -4349,7 +4846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 809072745}
   - component: {fileID: 809072746}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4433,6 +4930,81 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &824658325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 824658326}
+  - component: {fileID: 824658328}
+  - component: {fileID: 824658327}
+  m_Layer: 8
+  m_Name: Colliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &824658326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824658325}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1975036942}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &824658327
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824658325}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 16.081854, y: 14.13, z: 48.192444}
+  m_Center: {x: 8.52587, y: 0, z: 149.66147}
+--- !u!65 &824658328
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824658325}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 24.710728, y: 17.58, z: 51.98242}
+  m_Center: {x: -18.49211, y: 0, z: 5.45924}
 --- !u!1001 &827820267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4441,9 +5013,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 851426761}
     m_Modifications:
+    - target: {fileID: 1100761395404350, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1969205505206782, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
       propertyPath: m_Name
       value: EA_Clif_01c_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969205505206782, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4295602171541660, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
       propertyPath: m_LocalScale.y
@@ -4508,7 +5088,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 832267092}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EA_Terrain_Default (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4544,6 +5124,81 @@ Transform:
   - {fileID: 1319239328}
   m_Father: {fileID: 1975036942}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1 &834677163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 834677164}
+  - component: {fileID: 834677166}
+  - component: {fileID: 834677165}
+  m_Layer: 8
+  m_Name: Colliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &834677164
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834677163}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 741261467}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &834677165
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834677163}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 16.081854, y: 14.13, z: 48.192444}
+  m_Center: {x: 8.52587, y: 0, z: 149.66147}
+--- !u!65 &834677166
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834677163}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 24.710728, y: 17.58, z: 51.98242}
+  m_Center: {x: -18.49211, y: 0, z: 5.45924}
 --- !u!1 &851426760
 GameObject:
   m_ObjectHideFlags: 0
@@ -4553,7 +5208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 851426761}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EA_Terrain_Default (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4597,9 +5252,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 851426761}
     m_Modifications:
+    - target: {fileID: 1007958319892234, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_Name
       value: Rocks_01d_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4326356051608534, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_LocalScale.y
@@ -4663,9 +5326,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 741261467}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalScale.x
@@ -4740,9 +5415,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 126521520}
     m_Modifications:
+    - target: {fileID: 1331580882174818, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_Name
       value: Rocks_01a_Default (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4691504987128242, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_LocalScale.y
@@ -4806,9 +5489,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 126521520}
     m_Modifications:
+    - target: {fileID: 1007958319892234, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_Name
       value: Rocks_01d_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4326356051608534, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_LocalScale.y
@@ -4874,7 +5565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 907075925}
   - component: {fileID: 907075926}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FrameMap2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4898,6 +5589,7 @@ Transform:
   - {fileID: 91563805}
   - {fileID: 851426761}
   - {fileID: 1767288381}
+  - {fileID: 1862104971}
   m_Father: {fileID: 643185921}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &907075926
@@ -4921,9 +5613,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 458529440635117156}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4986,9 +5690,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 832267092}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5053,7 +5769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 929601364}
   - component: {fileID: 929601365}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5189,9 +5905,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 832267092}
     m_Modifications:
+    - target: {fileID: 1100761395404350, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1969205505206782, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
       propertyPath: m_Name
       value: EA_Clif_01c_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969205505206782, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4295602171541660, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
       propertyPath: m_LocalScale.y
@@ -5255,9 +5979,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 832267092}
     m_Modifications:
+    - target: {fileID: 1331580882174818, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_Name
       value: Rocks_01a_Default (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4691504987128242, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_LocalScale.y
@@ -5325,6 +6057,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EA_Clif_01b_Default
       objectReference: {fileID: 0}
+    - target: {fileID: 1140557636003158, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1836031162520918, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4969258515551498, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5464481
@@ -5387,9 +6127,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91563805}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5577,6 +6329,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EA_Clif_01b_Default
       objectReference: {fileID: 0}
+    - target: {fileID: 1140557636003158, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1836031162520918, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4969258515551498, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5464481
@@ -5641,7 +6401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1019127485}
   - component: {fileID: 1019127486}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5735,7 +6495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1028471492}
   - component: {fileID: 1028471493}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5827,9 +6587,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 530855614}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5892,9 +6664,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 126521520}
     m_Modifications:
+    - target: {fileID: 1100761395404350, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1969205505206782, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
       propertyPath: m_Name
       value: EA_Clif_01c_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969205505206782, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4295602171541660, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
       propertyPath: m_LocalScale.y
@@ -5960,7 +6740,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1095164566}
   - component: {fileID: 1095164567}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6054,7 +6834,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1108573696}
   - component: {fileID: 1108573697}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6138,6 +6918,148 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1131899911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1131899912}
+  - component: {fileID: 1131899914}
+  - component: {fileID: 1131899913}
+  m_Layer: 5
+  m_Name: Title
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1131899912
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131899911}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 355503050}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -137.252}
+  m_SizeDelta: {x: 0, y: 274.503}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1131899913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131899911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "\u0415\u0441\u043B\u0438 \u043F\u043B\u0430\u0442\u0444\u043E\u0440\u043C\u0430
+    \u0441\u0442\u043E\u0438\u0442 \u043D\u0430 \u043C\u0435\u0441\u0435\u0442\u0435,
+    \u043F\u0440\u044B\u0436\u043E\u043A \u0432\u044B\u043F\u043E\u043B\u043D\u044F\u0435\u0442\u0441\u044F
+    \u0440\u043E\u0432\u043D\u043E \u043D\u0430 \u043F\u043B\u0430\u0442\u0444\u043E\u0440\u043C\u0443.
+    \u041D\u043E \u0435\u0441\u043B\u0438 \u043F\u043B\u0430\u0442\u0444\u043E\u0440\u043C\u0430
+    \u0434\u0432\u0438\u0436\u0435\u0442\u0441\u044F, \u0442\u043E \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E
+    \u0441\u043A\u043E\u0440\u0440\u0435\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C
+    \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0435 \u0432 \u0431\u043E\u043A \u0441\u0442\u0440\u0435\u043B\u043A\u0430\u043C\u0438
+    \u043D\u0430 \u043A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0435 \u2190\u2192."
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4280261011
+  m_fontColor: {r: 0.5764706, g: 0.6, b: 0.121568635, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 41.46
+  m_fontSizeBase: 41.46
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1131899914
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131899911}
+  m_CullTransparentMesh: 1
 --- !u!1 &1146904067
 GameObject:
   m_ObjectHideFlags: 0
@@ -6149,7 +7071,7 @@ GameObject:
   - component: {fileID: 1146904068}
   - component: {fileID: 1146904070}
   - component: {fileID: 1146904069}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EA_Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6230,9 +7152,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 851426761}
     m_Modifications:
+    - target: {fileID: 1331580882174818, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_Name
       value: Rocks_01a_Default (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4691504987128242, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_LocalScale.y
@@ -6296,9 +7226,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91563805}
     m_Modifications:
+    - target: {fileID: 1411414537714538, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1511573847091138, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01c_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511573847091138, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539331754956752, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4862790751044594, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
       propertyPath: m_LocalScale.x
@@ -6375,7 +7317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1169237183}
   - component: {fileID: 1169237184}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Directional Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6469,7 +7411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1198242197}
   - component: {fileID: 1198242198}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6564,7 +7506,7 @@ GameObject:
   - component: {fileID: 1203725180}
   - component: {fileID: 1203725182}
   - component: {fileID: 1203725181}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EA_Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6645,9 +7587,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 458529440635117156}
     m_Modifications:
+    - target: {fileID: 1331580882174818, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_Name
       value: Rocks_01a_Default (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4691504987128242, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_LocalScale.y
@@ -6711,9 +7661,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 458529440635117156}
     m_Modifications:
+    - target: {fileID: 1007958319892234, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_Name
       value: Rocks_01d_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4326356051608534, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_LocalScale.y
@@ -6777,9 +7735,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 458529440635117156}
     m_Modifications:
+    - target: {fileID: 1197553132516570, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1506777819539116, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
       propertyPath: m_Name
       value: Rocks_01b_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506777819539116, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4878519703835568, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
       propertyPath: m_LocalScale.y
@@ -7049,9 +8015,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 530855614}
     m_Modifications:
+    - target: {fileID: 1007958319892234, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_Name
       value: Rocks_01d_Default (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4326356051608534, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_LocalScale.y
@@ -7115,9 +8089,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 458529440635117156}
     m_Modifications:
+    - target: {fileID: 1027800583641198, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1455726822243940, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
       propertyPath: m_Name
       value: EA_Clif_01a_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455726822243940, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4042976180323502, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
       propertyPath: m_LocalScale.y
@@ -7185,6 +8167,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EA_Clif_01d_Default
       objectReference: {fileID: 0}
+    - target: {fileID: 1085399662065110, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271492260953874, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4749563533036680, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5464481
@@ -7249,7 +8239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1298865483}
   - component: {fileID: 1298865484}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7345,6 +8335,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EA_Clif_01b_Default
       objectReference: {fileID: 0}
+    - target: {fileID: 1140557636003158, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1836031162520918, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4969258515551498, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5464481
@@ -7407,9 +8405,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91563805}
     m_Modifications:
+    - target: {fileID: 1331580882174818, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_Name
       value: Rocks_01a_Default (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4691504987128242, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_LocalScale.y
@@ -7473,9 +8479,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 832267092}
     m_Modifications:
+    - target: {fileID: 1007958319892234, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_Name
       value: Rocks_01d_Default (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4326356051608534, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_LocalScale.y
@@ -7541,7 +8555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1322182129}
   - component: {fileID: 1322182130}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7625,6 +8639,85 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1323282739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1323282740}
+  - component: {fileID: 1323282742}
+  - component: {fileID: 1323282741}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1323282740
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323282739}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 459503352}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1323282741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323282739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.62352943, g: 0.6, b: 0.13333334, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 48
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 48
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u041E\u043A"
+--- !u!222 &1323282742
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323282739}
+  m_CullTransparentMesh: 1
 --- !u!114 &1360091674 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1718076808097830261, guid: 9bbf9c00135d13e4b9402fd2772396b3, type: 3}
@@ -7646,7 +8739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1371917785}
   - component: {fileID: 1371917786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7819,7 +8912,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1397045696}
   - component: {fileID: 1397045697}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Directional Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7936,10 +9029,10 @@ RectTransform:
   - {fileID: 1004910983}
   m_Father: {fileID: 2115899297}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -501, y: 170.07}
-  m_SizeDelta: {x: 726.323, y: 340.145}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 562, y: -317.93}
+  m_SizeDelta: {x: 726.323, y: 340.14502}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1399623868
 MonoBehaviour:
@@ -7962,9 +9055,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91563805}
     m_Modifications:
+    - target: {fileID: 1331580882174818, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_Name
       value: Rocks_01a_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4691504987128242, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_LocalScale.y
@@ -8028,9 +9129,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 530855614}
     m_Modifications:
+    - target: {fileID: 1007958319892234, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_Name
       value: Rocks_01d_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4326356051608534, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_LocalScale.y
@@ -8094,9 +9203,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 458529440635117156}
     m_Modifications:
+    - target: {fileID: 1007958319892234, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_Name
       value: Rocks_01d_Default (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4326356051608534, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_LocalScale.y
@@ -8281,9 +9398,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 126521520}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8348,7 +9477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1470515872}
   - component: {fileID: 1470515873}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8440,9 +9569,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 832267092}
     m_Modifications:
+    - target: {fileID: 1007958319892234, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_Name
       value: Rocks_01d_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4326356051608534, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_LocalScale.y
@@ -8508,7 +9645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1482784245}
   - component: {fileID: 1482784246}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8600,9 +9737,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 126521520}
     m_Modifications:
+    - target: {fileID: 1007958319892234, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_Name
       value: Rocks_01d_Default (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313009111045172, guid: 652b880097732f148a0e38738f640670, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4326356051608534, guid: 652b880097732f148a0e38738f640670, type: 3}
       propertyPath: m_LocalScale.y
@@ -8666,9 +9811,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 126521520}
     m_Modifications:
+    - target: {fileID: 1331580882174818, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_Name
       value: Rocks_01a_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4691504987128242, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_LocalScale.y
@@ -8732,9 +9885,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 530855614}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8797,9 +9962,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 832267092}
     m_Modifications:
+    - target: {fileID: 1197553132516570, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1506777819539116, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
       propertyPath: m_Name
       value: Rocks_01b_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506777819539116, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4878519703835568, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
       propertyPath: m_LocalScale.y
@@ -8865,7 +10038,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1583475523}
   - component: {fileID: 1583475524}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8961,6 +10134,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EA_Clif_01b_Default
       objectReference: {fileID: 0}
+    - target: {fileID: 1140557636003158, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1836031162520918, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4969258515551498, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5464481
@@ -9023,9 +10204,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 458529440635117156}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9091,7 +10284,7 @@ GameObject:
   - component: {fileID: 1646120130}
   - component: {fileID: 1646120132}
   - component: {fileID: 1646120131}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EA_Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9176,6 +10369,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EA_Clif_01b_Default
       objectReference: {fileID: 0}
+    - target: {fileID: 1140557636003158, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1836031162520918, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4969258515551498, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5464481
@@ -9238,9 +10439,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91563805}
     m_Modifications:
+    - target: {fileID: 1100761395404350, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1969205505206782, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
       propertyPath: m_Name
       value: EA_Clif_01c_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969205505206782, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4295602171541660, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
       propertyPath: m_LocalScale.y
@@ -9307,6 +10516,14 @@ PrefabInstance:
     - target: {fileID: 1085399662065110, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
       propertyPath: m_Name
       value: EA_Clif_01d_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085399662065110, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271492260953874, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4749563533036680, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
       propertyPath: m_LocalScale.y
@@ -9393,6 +10610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _clue1: {fileID: 91197320}
   _clue2: {fileID: 1399623868}
+  _clue3: {fileID: 355503051}
 --- !u!4 &1761180015
 Transform:
   m_ObjectHideFlags: 0
@@ -9416,9 +10634,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 907075925}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalScale.x
@@ -9541,7 +10771,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1799247929}
   - component: {fileID: 1799247930}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9698,9 +10928,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91563805}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9766,7 +11008,7 @@ GameObject:
   - component: {fileID: 1817374239}
   - component: {fileID: 1817374241}
   - component: {fileID: 1817374240}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EA_Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9849,7 +11091,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1835200147}
   - component: {fileID: 1835200148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9941,9 +11183,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 851426761}
     m_Modifications:
+    - target: {fileID: 1331580882174818, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_Name
       value: Rocks_01a_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4691504987128242, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_LocalScale.y
@@ -9999,6 +11249,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4691504987128242, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
   m_PrefabInstance: {fileID: 1849880843}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1862104970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1862104971}
+  - component: {fileID: 1862104973}
+  - component: {fileID: 1862104972}
+  m_Layer: 8
+  m_Name: Colliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1862104971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862104970}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 907075925}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1862104972
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862104970}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 16.081854, y: 14.13, z: 48.192444}
+  m_Center: {x: 8.52587, y: 0, z: 149.66147}
+--- !u!65 &1862104973
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862104970}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 24.710728, y: 17.58, z: 51.98242}
+  m_Center: {x: -18.49211, y: 0, z: 5.45924}
 --- !u!1001 &1865426480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10007,9 +11332,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 530855614}
     m_Modifications:
+    - target: {fileID: 1411414537714538, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1511573847091138, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01c_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511573847091138, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539331754956752, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4862790751044594, guid: b538f75a90be6b94a9a6b2347fe7bf87, type: 3}
       propertyPath: m_LocalScale.x
@@ -10084,9 +11421,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 126521520}
     m_Modifications:
+    - target: {fileID: 1197553132516570, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1506777819539116, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
       propertyPath: m_Name
       value: Rocks_01b_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506777819539116, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4878519703835568, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
       propertyPath: m_LocalScale.y
@@ -10152,7 +11497,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1911663836}
   - component: {fileID: 1911663837}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10244,9 +11589,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 832267092}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10313,6 +11670,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EA_Clif_01d_Default
       objectReference: {fileID: 0}
+    - target: {fileID: 1085399662065110, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271492260953874, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4749563533036680, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5464481
@@ -10375,9 +11740,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 851426761}
     m_Modifications:
+    - target: {fileID: 1197553132516570, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1506777819539116, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
       propertyPath: m_Name
       value: Rocks_01b_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506777819539116, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4878519703835568, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
       propertyPath: m_LocalScale.y
@@ -10441,9 +11814,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91563805}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10506,9 +11891,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91563805}
     m_Modifications:
+    - target: {fileID: 1081042321180716, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_Name
       value: EA_Plant_01e_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118486732427254, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679210897146376, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632009333950674, guid: 88a6c31095668d046b2d8f8c8101c845, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10668,7 +12065,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1975036942}
   - component: {fileID: 1975036943}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FrameMap3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10692,6 +12089,7 @@ Transform:
   - {fileID: 126521520}
   - {fileID: 832267092}
   - {fileID: 210049541}
+  - {fileID: 824658326}
   m_Father: {fileID: 643185921}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1975036943
@@ -10715,9 +12113,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 832267092}
     m_Modifications:
+    - target: {fileID: 1027800583641198, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1455726822243940, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
       propertyPath: m_Name
       value: EA_Clif_01a_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455726822243940, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4042976180323502, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
       propertyPath: m_LocalScale.y
@@ -10781,9 +12187,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91563805}
     m_Modifications:
+    - target: {fileID: 1197553132516570, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1506777819539116, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
       propertyPath: m_Name
       value: Rocks_01b_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506777819539116, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4878519703835568, guid: bf5bd3234c9a24b4796031e2f39ee518, type: 3}
       propertyPath: m_LocalScale.y
@@ -10847,9 +12261,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 126521520}
     m_Modifications:
+    - target: {fileID: 1027800583641198, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1455726822243940, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
       propertyPath: m_Name
       value: EA_Clif_01a_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455726822243940, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4042976180323502, guid: 86906d495e3827c43bc6933c657033ce, type: 3}
       propertyPath: m_LocalScale.y
@@ -11052,7 +12474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2009624098}
   - component: {fileID: 2009624099}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11146,7 +12568,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2009825848}
   - component: {fileID: 2009825849}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11317,9 +12739,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 530855614}
     m_Modifications:
+    - target: {fileID: 1331580882174818, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_Name
       value: Rocks_01a_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854900505331636, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4691504987128242, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
       propertyPath: m_LocalScale.y
@@ -11387,6 +12817,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EA_Clif_01d_Default
       objectReference: {fileID: 0}
+    - target: {fileID: 1085399662065110, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271492260953874, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4749563533036680, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5464481
@@ -11451,7 +12889,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2058627054}
   - component: {fileID: 2058627055}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11545,7 +12983,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2071700495}
   - component: {fileID: 2071700496}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11640,6 +13078,14 @@ PrefabInstance:
     - target: {fileID: 1140557636003158, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
       propertyPath: m_Name
       value: EA_Clif_01b_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140557636003158, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1836031162520918, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4969258515551498, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
       propertyPath: m_LocalScale.y
@@ -11778,6 +13224,14 @@ PrefabInstance:
     - target: {fileID: 1140557636003158, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
       propertyPath: m_Name
       value: EA_Clif_01b_Default (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140557636003158, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1836031162520918, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4969258515551498, guid: d68da814d53d5a842a743c1699c6617c, type: 3}
       propertyPath: m_LocalScale.x
@@ -11937,6 +13391,7 @@ RectTransform:
   m_Children:
   - {fileID: 91197319}
   - {fileID: 1399623867}
+  - {fileID: 355503050}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -11955,6 +13410,14 @@ PrefabInstance:
     - target: {fileID: 1085399662065110, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
       propertyPath: m_Name
       value: EA_Clif_01d_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085399662065110, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271492260953874, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4749563533036680, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
       propertyPath: m_LocalScale.y
@@ -12022,6 +13485,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EA_Clif_01d_Default
       objectReference: {fileID: 0}
+    - target: {fileID: 1085399662065110, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271492260953874, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4749563533036680, guid: a1afd15cbb93fea4bad648ed05e0af69, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5464481
@@ -12084,9 +13555,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 530855614}
     m_Modifications:
+    - target: {fileID: 1100761395404350, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1969205505206782, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
       propertyPath: m_Name
       value: EA_Clif_01c_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969205505206782, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4295602171541660, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
       propertyPath: m_LocalScale.y
@@ -12153,7 +13632,7 @@ GameObject:
   - component: {fileID: 2140753924}
   - component: {fileID: 2140753926}
   - component: {fileID: 2140753925}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EA_Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12288,7 +13767,7 @@ GameObject:
   - component: {fileID: 458544025121643282}
   - component: {fileID: 442972890120483080}
   - component: {fileID: 434581979154890426}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EA_Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12305,7 +13784,7 @@ GameObject:
   m_Component:
   - component: {fileID: 458529440635117156}
   - component: {fileID: 458529440635117157}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EA_Terrain_Default
   m_TagString: Untagged
   m_Icon: {fileID: 0}

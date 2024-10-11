@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
+using UniRx;
 
 public class PlatformView : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlatformView : MonoBehaviour
 
     public bool IsDoodleOnPlatform => _isDoodleOnPlatform;
     public Color ColorDefault => _colorDefault;
+    public ReactiveCommand<PlatformView> OnCollisionMap = new();
 
     public void SetActive(bool value)
         => gameObject.SetActive(value);
@@ -37,6 +39,11 @@ public class PlatformView : MonoBehaviour
         SetActive(false);
     }
 
+    private void Start()
+    {
+        ManagerUniRx.AddObjectDisposable(OnCollisionMap);
+    }
+
     private void OnEnable()
     {
         _isDoodleOnPlatform = false;
@@ -50,9 +57,23 @@ public class PlatformView : MonoBehaviour
             _isDoodleOnPlatform = true;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Map"))
+        {
+            SetActive(false);
+            OnCollisionMap.Execute(this);
+        }
+    }
+
     private void OnValidate()
     {
         if (_outline == null)
             _outline = GetComponent<Outline>();
+    }
+
+    private void OnDestroy()
+    {
+        ManagerUniRx.Dispose(OnCollisionMap);
     }
 }

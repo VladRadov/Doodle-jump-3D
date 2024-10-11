@@ -7,6 +7,7 @@ public class ManagerEducation : BaseManager
 {
     [SerializeField] private ClueView _clue1;
     [SerializeField] private ClueView _clue2;
+    [SerializeField] private ClueView _clue3;
 
     public ReactiveCommand OnEducationEnd = new();
 
@@ -18,7 +19,17 @@ public class ManagerEducation : BaseManager
             _clue2.SetActive(true);
         });
 
-        _clue2.OnOkClick.Subscribe(_ => { OnEducationEnd.Execute(); });
+        _clue2.OnOkClick.Subscribe(_ =>
+        {
+            _clue2.SetActive(false);
+            _clue3.SetActive(true);
+        });
+
+        _clue3.OnOkClick.Subscribe(_ =>
+        {
+            _clue3.SetActive(false);
+            OnEducationEnd.Execute();
+        });
 
         ManagerUniRx.AddObjectDisposable(OnEducationEnd);
     }
