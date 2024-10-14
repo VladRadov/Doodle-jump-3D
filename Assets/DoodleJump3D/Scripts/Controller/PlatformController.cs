@@ -9,9 +9,11 @@ public class PlatformController
 {
     private List<PlatformView> _platformsPrefab;
     private List<PlatformView> _platforms;
-    private List<PlatformView> _selectPlatfroms;
+    private List<PlatformView> _selectPlatforms;
     private ManagerFramesMap _managerFramesMap;
+    private PlatformView _previousSelectedPlatfrom;
     private PlatformView _currentSelectPlatfrom;
+    private PlatformView _nextSelectPlatfrom;
     private CancellationTokenSource _tonekCancelOutlinePlatforms;
 
     private int _countStartPlatform;
@@ -26,13 +28,16 @@ public class PlatformController
     public PlatformController(List<PlatformView> platformsPrefab, int countStartPlatform)
     {
         _platforms = new List<PlatformView>();
-        _selectPlatfroms = new List<PlatformView>();
+        _selectPlatforms = new List<PlatformView>();
         _platformsPrefab = platformsPrefab;
         _countStartPlatform = countStartPlatform;
         _tonekCancelOutlinePlatforms = new CancellationTokenSource();
     }
 
+    public PlatformView PreviousSelectedPlatfrom => _previousSelectedPlatfrom;
     public PlatformView CurrentSelectPlatfrom => _currentSelectPlatfrom;
+    public PlatformView NextSelectPlatfrom => _nextSelectPlatfrom;
+    public ReactiveCommand<PlatformView> OnEntryNextPlatform = new();
 
     public void Initialize(float offsetX, float offsetY, float offsetZ, float minDistnceSelect, PlatformView startPlatform, ManagerFramesMap managerFramesMap)
     {
@@ -43,6 +48,15 @@ public class PlatformController
         _currentSelectPlatfrom = startPlatform;
         _managerFramesMap = managerFramesMap;
     }
+
+    public void SetNextSelectPlatfrom(PlatformView platformView)
+        => _nextSelectPlatfrom = platformView;
+
+    public void SetCurrentSelectPlatfrom(PlatformView platformView)
+        => _currentSelectPlatfrom = platformView;
+
+    public void SetPreviousSelectedPlatfrom(PlatformView platformView)
+        => _previousSelectedPlatfrom = platformView;
 
     public void SpawnerPlatforms()
     {
@@ -116,7 +130,7 @@ public class PlatformController
             var isNoCurrentPlatform = _platforms[i].IsDoodleOnPlatform == false;
 
             if (isActivePlatform && isPlatformNext && isPositionPlatformNearDoodle && isNoCurrentPlatform)
-                _selectPlatfroms.Add(_platforms[i]);
+                _selectPlatforms.Add(_platforms[i]);
 
             if (minimalDistanceNextToPlatform > distanceNextToPlatform && isPlatformNext && isNoCurrentPlatform)
             {
@@ -125,29 +139,34 @@ public class PlatformController
             }
         }
 
-        if (_selectPlatfroms.Count == 0)
-            _selectPlatfroms.Add(platformHope);
-
-        OutlineSelectionAllowedPlatform();
+        if (_selectPlatforms.Count == 0)
+            _selectPlatforms.Add(platformHope);
     }
 
     public async UniTaskVoid OutlineSelectionAllowedPlatform()
     {
-        while (_selectPlatfroms.Count != 0)
+        while (_selectPlatforms.Count != 0)
         {
-            for (int i = 0; i < _selectPlatfroms.Count; i++)
+            for (int i = 0; i < _selectPlatforms.Count; i++)
             {
-                var isPlatformHave = _selectPlatfroms.Count != 0 && i < _selectPlatfroms.Count;
+                var isPlatformHave = _selectPlatforms.Count != 0 && i < _selectPlatforms.Count;
 
                 if (isPlatformHave)
                 {
-                    _currentSelectPlatfrom = _selectPlatfroms[i];
+                    _currentSelectPlatfrom = _selectPlatforms[i];
+
                     _currentSelectPlatfrom.ActiveOutlineColor(_currentSelectPlatfrom.ColorDefault);
                     await UniTask.Delay(500, cancellationToken: _tonekCancelOutlinePlatforms.Token);
                     _currentSelectPlatfrom.SetActiveOutline(false);
                 }
             }
         }
+    }
+
+    public void ShiftRankPlatforms()
+    {
+        SetPreviousSelectedPlatfrom(_nextSelectPlatfrom);
+        SetNextSelectPlatfrom(_currentSelectPlatfrom);
     }
 
     private Vector3 CreatePlatform(Vector3 positionPlatform, Transform parent)
@@ -179,7 +198,7 @@ public class PlatformController
     }
 
     private void ClearSelectPlatforms()
-        => _selectPlatfroms.Clear();
+        => _selectPlatforms.Clear();
 
     private void UseCancelToken()
     {

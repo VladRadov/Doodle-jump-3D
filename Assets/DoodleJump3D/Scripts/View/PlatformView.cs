@@ -18,9 +18,6 @@ public class PlatformView : MonoBehaviour
     public void SetActive(bool value)
         => gameObject.SetActive(value);
 
-    public void SetValueDoodleOnPlatform(bool value)
-        => _isDoodleOnPlatform = value;
-
     public void SetLocalPosition(Vector3 position)
         => transform.localPosition = position;
 

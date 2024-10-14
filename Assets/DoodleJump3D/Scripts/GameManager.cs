@@ -35,9 +35,14 @@ public class GameManager : MonoBehaviour
         {
             if (managerLevel.IsPause == false)
             {
-                jumpingComponent.SetTargetPlatform(managerPlatform.PlatformController.CurrentSelectPlatfrom.transform.position);
-                managerPlatform.OutlineCurrentPlatform();
-                managerPlatform.PlatformController.FormationSelectionAllowedPlatform();
+                if (managerPlatform.PlatformController.PreviousSelectedPlatfrom == null || managerPlatform.PlatformController.PreviousSelectedPlatfrom.IsDoodleOnPlatform)
+                {
+                    managerPlatform.PlatformController.ShiftRankPlatforms();
+                    jumpingComponent.SetTargetPlatform(managerPlatform.PlatformController.NextSelectPlatfrom.transform.position);
+                    managerPlatform.OutlineNextPlatform();
+                    managerPlatform.PlatformController.FormationSelectionAllowedPlatform();
+                    managerPlatform.PlatformController.OutlineSelectionAllowedPlatform();
+                }
             }
         });
 
@@ -54,11 +59,6 @@ public class GameManager : MonoBehaviour
             managerPlatform.PlatformController.NoActiveOldPlatforms(frameMap);
             managerPlatform.PlatformController.RespawnPlatforms(frameMap);
         });
-    }
-
-    public void OnEducationEnd()
-    {
-        
     }
 
     private T GetManager<T>() where T : BaseManager

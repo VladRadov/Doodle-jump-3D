@@ -25,10 +25,11 @@ public class ManagerPlatform : BaseManager
         _platformController.Initialize(_offsetX, _offsetY, _offsetZ, _minDistnceSelect, _startPlatform, _managerFramesMap);
         _platformController.SpawnerPlatforms();
         _platformController.FormationSelectionAllowedPlatform();
+        _platformController.OutlineSelectionAllowedPlatform();
     }
 
-    public void OutlineCurrentPlatform()
+    public void OutlineNextPlatform()
     {
-        _platformController.CurrentSelectPlatfrom.ActiveOutlineColor(_colorEntryPlatfrom);
+        _platformController.NextSelectPlatfrom.ActiveOutlineColor(_colorEntryPlatfrom);
     }
 }
