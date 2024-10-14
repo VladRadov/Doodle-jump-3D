@@ -117,7 +117,7 @@ public class PlatformController
         UseCancelToken();
         ClearSelectPlatforms();
 
-        float minimalDistanceNextToPlatform = 0;
+        float minimalDistanceNextToPlatform = -1;
         PlatformView platformHope = null;
 
         for (int i = 0; i < _platforms.Count; i++)
@@ -181,7 +181,7 @@ public class PlatformController
         if (_platforms.Contains(platform) == false)
         {
             _platforms.Add(platform);
-            platform.OnCollisionMap.Subscribe(platformView => { RespawnPlatform(platformView); });
+            platform.OnCollisionTexture.Subscribe(platformView => { RespawnPlatform(platformView); });
         }
 
         return platform.transform.localPosition;
@@ -190,7 +190,7 @@ public class PlatformController
     private void RespawnPlatform(PlatformView platform)
     {
         var x = Random.Range(-_offsetX, _offsetX);
-        var y = platform.transform.localPosition.y;
+        var y = 0;
         var z = platform.transform.localPosition.z;
 
         platform.SetLocalPosition(new Vector3(x, y, z));

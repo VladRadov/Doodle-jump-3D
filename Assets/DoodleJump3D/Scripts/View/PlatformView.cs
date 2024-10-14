@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cysharp.Threading.Tasks;
 using UniRx;
 
 public class PlatformView : MonoBehaviour
@@ -10,10 +9,12 @@ public class PlatformView : MonoBehaviour
 
     [SerializeField] private Outline _outline;
     [SerializeField] private Color _colorDefault;
+    [SerializeField] private Rigidbody _rigidbody;
 
     public bool IsDoodleOnPlatform => _isDoodleOnPlatform;
     public Color ColorDefault => _colorDefault;
-    public ReactiveCommand<PlatformView> OnCollisionMap = new();
+    public ReactiveCommand<PlatformView> OnCollisionTexture = new();
+    public ReactiveCommand OnCollisionDoodle = new();
 
     public void SetActive(bool value)
         => gameObject.SetActive(value);
@@ -30,9 +31,32 @@ public class PlatformView : MonoBehaviour
         _outline.OutlineColor = colorEntry;
     }
 
+    public void OffGravity()
+    {
+        _rigidbody.constraints = RigidbodyConstraints.FreezePositionY;
+        _rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+    }
+
+    public void OnGravity()
+    {
+        _rigidbody.useGravity = false;
+        _rigidbody.constraints = RigidbodyConstraints.None;
+        _rigidbody.useGravity = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Doodle"))
+        {
+            _isDoodleOnPlatform = true;
+            OnCollisionDoodle.Execute();
+        }
+    }
+
     private void Start()
     {
-        ManagerUniRx.AddObjectDisposable(OnCollisionMap);
+        ManagerUniRx.AddObjectDisposable(OnCollisionTexture);
+        ManagerUniRx.AddObjectDisposable(OnCollisionDoodle);
     }
 
     private void OnEnable()
@@ -40,20 +64,12 @@ public class PlatformView : MonoBehaviour
         _isDoodleOnPlatform = false;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        var doodle = collision.gameObject.GetComponent<DoodleView>();
-
-        if (doodle != null)
-            _isDoodleOnPlatform = true;
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Map"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Map") || other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             SetActive(false);
-            OnCollisionMap.Execute(this);
+            OnCollisionTexture.Execute(this);
         }
     }
 
@@ -61,10 +77,14 @@ public class PlatformView : MonoBehaviour
     {
         if (_outline == null)
             _outline = GetComponent<Outline>();
+
+        if (_rigidbody == null)
+            _rigidbody = GetComponent<Rigidbody>();
     }
 
     private void OnDestroy()
     {
-        ManagerUniRx.Dispose(OnCollisionMap);
+        ManagerUniRx.Dispose(OnCollisionTexture);
+        ManagerUniRx.Dispose(OnCollisionDoodle);
     }
 }

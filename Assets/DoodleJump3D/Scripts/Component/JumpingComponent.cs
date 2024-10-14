@@ -21,7 +21,7 @@ public class JumpingComponent : BaseComponent
     [SerializeField] private float _minLenghtToRotationDoodle;
 
     public ReactiveCommand<Vector3> JumpingOnPlaceCommnad = new();
-    public ReactiveCommand<Vector3> JumpingOnForwardCommnad = new();
+    public ReactiveCommand<Vector3> JumpingOnForwardWithRotationCommnad = new();
 
     public void SetTargetPlatform(Vector3 target)
     {
@@ -49,7 +49,7 @@ public class JumpingComponent : BaseComponent
         _isJumpForward = false;
 
         if(lengthVector > _minLenghtToRotationDoodle)
-            JumpingOnForwardCommnad.Execute(transform.position);
+            JumpingOnForwardWithRotationCommnad.Execute(transform.position);
     }
 
     public override void Start()
@@ -60,7 +60,7 @@ public class JumpingComponent : BaseComponent
         _isJumpForward = false;
 
         ManagerUniRx.AddObjectDisposable(JumpingOnPlaceCommnad);
-        ManagerUniRx.AddObjectDisposable(JumpingOnForwardCommnad);
+        ManagerUniRx.AddObjectDisposable(JumpingOnForwardWithRotationCommnad);
     }
 
     private void SetVelocity(Vector3 speed)
@@ -94,7 +94,7 @@ public class JumpingComponent : BaseComponent
             {
                 var platformView = collision.gameObject.GetComponent<PlatformView>();
 
-                if(platformView != null)
+                if (platformView != null)
                     JumpForward(platformView);
             }
         }
@@ -109,6 +109,6 @@ public class JumpingComponent : BaseComponent
     private void OnDestroy()
     {
         ManagerUniRx.Dispose(JumpingOnPlaceCommnad);
-        ManagerUniRx.Dispose(JumpingOnForwardCommnad);
+        ManagerUniRx.Dispose(JumpingOnForwardWithRotationCommnad);
     }
 }

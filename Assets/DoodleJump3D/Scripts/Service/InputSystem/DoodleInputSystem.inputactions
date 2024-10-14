@@ -26,7 +26,7 @@
             ],
             "bindings": [
                 {
-                    "name": "Keybord",
+                    "name": "Arrows",
                     "id": "12ad5e68-9c3e-473e-8bce-89d309213aac",
                     "path": "2DVector",
                     "interactions": "",
@@ -51,6 +51,39 @@
                     "name": "Right",
                     "id": "e82a120f-4282-42cd-aec8-a4c477106979",
                     "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "AD",
+                    "id": "ea6c9083-8a56-42b7-be6d-494fe2ae3bff",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Left",
+                    "id": "a86f8e1d-fa5d-498c-9b26-893736b19012",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Right",
+                    "id": "b07e2038-f208-4dfe-9d50-c3007edaf1e7",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 
         jumpingComponent.JumpingOnPlaceCommnad.Subscribe(positionDoodle => { effectJumpComponent.Create(positionDoodle); });
 
-        jumpingComponent.JumpingOnForwardCommnad.Subscribe(positionDoodle =>
+        jumpingComponent.JumpingOnForwardWithRotationCommnad.Subscribe(positionDoodle =>
         {
             managerDoodle.DoodleAnimator.PlayRotation();
             managerFramesMap.FramesMapController.CheckAndRespawnFramesMap(positionDoodle);

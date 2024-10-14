@@ -7,23 +7,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Base.009
+      name: Base.004
     second: {fileID: 2100000, guid: b6471bf2b00044b4d95a5b31473e828e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Emission.008
+      name: Emission.003
     second: {fileID: 2100000, guid: dd536e613ec6f5c43aed80e6a3983590, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: EmissionGrass.008
-    second: {fileID: 2100000, guid: 924e8a882522c9f499995021e1fb5850, type: 2}
+      name: EmissionTop
+    second: {fileID: 2100000, guid: f1eb5f286de62c34db02b59852bbf01d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Grass.009
-    second: {fileID: 2100000, guid: d6b80d779963f1247998ae47d5781921, type: 2}
+      name: Top
+    second: {fileID: 2100000, guid: 55e418bdfca1bcf4aa63d2261cb100d4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

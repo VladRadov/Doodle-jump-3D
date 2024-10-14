@@ -8,9 +8,7 @@ public class InvisibleComponent : BaseComponent
 
     private void OnCollisionEnter(Collision collision)
     {
-        var doodle = collision.gameObject.GetComponent<DoodleView>();
-
-        if (doodle != null)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Doodle"))
             gameObject.SetActive(false);
     }
 }
