@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 7402302785405399208}
   - component: {fileID: 632934942336846329}
   - component: {fileID: 3998134057232905098}
+  - component: {fileID: 7630646522133045420}
   m_Layer: 3
   m_Name: PlatformYellow
   m_TagString: Untagged
@@ -255,3 +256,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7630646522133045420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7783130839866915705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e914c3b3ebb1a34cbd38069cf944092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isOnState: 1
+  _childeCub: {fileID: 4093913599362949656}
+  _meshRenderer: {fileID: 180479976068506004}
+  _prefabExplosion: {fileID: -5042794743393291139, guid: 64789825a7c145c4d9b47284c582193c, type: 3}
+  _stepExplosion: 0.1
+  _delayExplosion: 200
