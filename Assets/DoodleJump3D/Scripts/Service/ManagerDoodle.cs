@@ -11,6 +11,7 @@ public class ManagerDoodle : BaseManager
 
     public DoodleController DoodleController => _doodleController;
     public DoodleAnimator DoodleAnimator => _doodleAnimator;
+    public DoodleView DoodleView => _doodleView;
 
     public override void Initialize()
     {

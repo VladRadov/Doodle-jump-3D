@@ -1,14 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 public class DoodleView : MonoBehaviour
 {
+    private Transform _transform;
+
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private CapsuleCollider _capsuleCollider;
     [SerializeField] private List<BaseComponent> _components;
 
     public List<BaseComponent> Components => _components;
+    public ReactiveCommand<int> ChangingPosition = new();
+
+    private void Start()
+    {
+        _transform = transform;
+        ManagerUniRx.AddObjectDisposable(ChangingPosition);
+    }
+
+    private void Update()
+    {
+        ChangingPosition.Execute(((int)_transform.position.z));
+    }
 
     private void OnValidate()
     {
@@ -25,5 +40,10 @@ public class DoodleView : MonoBehaviour
             if (_components.Contains(component) == false)
                 _components.Add(component);
         }
+    }
+
+    private void OnDestroy()
+    {
+        ManagerUniRx.Dispose(ChangingPosition);
     }
 }

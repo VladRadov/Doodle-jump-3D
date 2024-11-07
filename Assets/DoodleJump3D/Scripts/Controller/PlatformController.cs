@@ -105,9 +105,9 @@ public class PlatformController
     {
         for (int i = 0; i < _platforms.Count; i++)
         {
-            var isPlatformOnFramemap = _platforms[i].transform.parent == frameMapView.transform;
+            var isPlatformOnFrameMap = _platforms[i].transform.parent == frameMapView.transform;
 
-            if (isPlatformOnFramemap)
+            if (isPlatformOnFrameMap)
                 _platforms[i].SetActive(false);
         }
     }

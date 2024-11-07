@@ -44,6 +44,15 @@ public class PlatformView : MonoBehaviour
         _rigidbody.useGravity = true;
     }
 
+    protected virtual void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Map") || other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            SetActive(false);
+            OnCollisionTexture.Execute(this);
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Doodle"))
@@ -62,15 +71,6 @@ public class PlatformView : MonoBehaviour
     private void OnEnable()
     {
         _isDoodleOnPlatform = false;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Map") || other.gameObject.layer == LayerMask.NameToLayer("Ground"))
-        {
-            SetActive(false);
-            OnCollisionTexture.Execute(this);
-        }
     }
 
     private void OnValidate()

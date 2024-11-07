@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
         var managerFramesMap = GetManager<ManagerFramesMap>();
         var managerEducation = GetManager<ManagerEducation>();
         var managerLevel = GetManager<ManagerLevel>();
+        var managerEnemies = GetManager<ManagerEnemies>();
+        var managerDistance = GetManager<ManagerDistance>();
 
         var inputComponent = managerDoodle.DoodleController.GetDoodleComponent<InputComponent>();
         var moveComponent = managerDoodle.DoodleController.GetDoodleComponent<MoveComponent>();
@@ -58,7 +60,11 @@ public class GameManager : MonoBehaviour
         {
             managerPlatform.PlatformController.NoActiveOldPlatforms(frameMap);
             managerPlatform.PlatformController.RespawnPlatforms(frameMap);
+            managerEnemies.EnemyController.NoActiveOldEnemies(frameMap);
+            managerEnemies.SpawnEnemy(frameMap.transform);
         });
+
+        managerDoodle.DoodleView.ChangingPosition.Subscribe(zPosition => { managerDistance.IncreasingDistance(zPosition); });
     }
 
     private T GetManager<T>() where T : BaseManager

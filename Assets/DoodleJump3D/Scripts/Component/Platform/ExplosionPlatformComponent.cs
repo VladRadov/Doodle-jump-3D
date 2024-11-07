@@ -4,6 +4,7 @@ using Cysharp.Threading.Tasks;
 public class ExplosionPlatformComponent : BaseComponent
 {
     private Color _colorEmission;
+    private Color _defaultColorEmission;
     private bool _isStartedExplosion;
     private Material _material;
 
@@ -18,6 +19,7 @@ public class ExplosionPlatformComponent : BaseComponent
         base.Start();
         _material = transform.GetComponent<Renderer>().material;
         _colorEmission = _material.GetColor("_EmissionColor");
+        _defaultColorEmission = _colorEmission;
     }
 
     private void OnEnable()
@@ -39,12 +41,17 @@ public class ExplosionPlatformComponent : BaseComponent
         }
 
         var explosion = PoolObjects<ExplosionView>.GetObject(_prefabExplosion, transform.position, Quaternion.identity);
+        Explosion(explosion);
+    }
 
+    private async void Explosion(ExplosionView explosion)
+    {
         _meshRenderer.enabled = false;
         _childeCub.SetActive(false);
         await UniTask.Delay(1000);
         explosion.SetActive(false);
         gameObject.SetActive(false);
+        _material.SetColor("_EmissionColor", _defaultColorEmission);
     }
 
     private void OnCollisionEnter(Collision collision)

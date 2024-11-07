@@ -15,6 +15,10 @@ public class PoolObjects<T> where T : MonoBehaviour
             if (currentObject != null && currentObject.gameObject != null && currentObject.gameObject.activeSelf == false)
             {
                 currentObject.gameObject.SetActive(true);
+
+                if (transformParent != null)
+                    currentObject.transform.parent = transformParent;
+
                 return currentObject;
             }
         }
