@@ -19,11 +19,14 @@ public class GameManager : MonoBehaviour
         var managerLevel = GetManager<ManagerLevel>();
         var managerEnemies = GetManager<ManagerEnemies>();
         var managerDistance = GetManager<ManagerDistance>();
+        var managerCamera = GetManager<ManagerCamera>();
 
         var inputComponent = managerDoodle.DoodleController.GetDoodleComponent<InputComponent>();
         var moveComponent = managerDoodle.DoodleController.GetDoodleComponent<MoveComponent>();
         var effectJumpComponent = managerDoodle.DoodleController.GetDoodleComponent<EffectJumpComponent>();
         var jumpingComponent = managerDoodle.DoodleController.GetDoodleComponent<JumpingComponent>();
+        var effectShakeComponent = managerDoodle.DoodleController.GetDoodleComponent<EffectShakeComponent>();
+        var shotDoodleComponent = managerDoodle.DoodleController.GetDoodleComponent<ShotDoodleComponent>();
 
         managerEducation.OnEducationEnd.Subscribe(_ => { managerLevel.SetActivePause(false); });
 
@@ -33,13 +36,15 @@ public class GameManager : MonoBehaviour
                 moveComponent.Move(value);
         });
 
+        inputComponent.ShootingCommand.Subscribe(_ => { shotDoodleComponent.Shot(); });
+
         inputComponent.JumpCommand.Subscribe(_ =>
         {
             if (managerLevel.IsPause == false)
             {
                 if (managerPlatform.PlatformController.PreviousSelectedPlatfrom == null || managerPlatform.PlatformController.PreviousSelectedPlatfrom.IsDoodleOnPlatform)
                 {
-                    managerPlatform.PlatformController.ShiftRankPlatforms();
+                    managerPlatform.PlatformController.ShiftRankPlatforams();
                     jumpingComponent.SetTargetPlatform(managerPlatform.PlatformController.NextSelectPlatfrom.transform.position);
                     managerPlatform.OutlineNextPlatform();
                     managerPlatform.PlatformController.FormationSelectionAllowedPlatform();
@@ -48,7 +53,11 @@ public class GameManager : MonoBehaviour
             }
         });
 
-        jumpingComponent.JumpingOnPlaceCommnad.Subscribe(positionDoodle => { effectJumpComponent.Create(positionDoodle); });
+        jumpingComponent.JumpingOnPlaceCommnad.Subscribe(positionDoodle =>
+        {
+            effectJumpComponent.Create(positionDoodle);
+            managerCamera.ShakeCamera.Shake();
+        });
 
         jumpingComponent.JumpingOnForwardWithRotationCommnad.Subscribe(positionDoodle =>
         {
@@ -65,6 +74,7 @@ public class GameManager : MonoBehaviour
         });
 
         managerDoodle.DoodleView.ChangingPosition.Subscribe(zPosition => { managerDistance.IncreasingDistance(zPosition); });
+        managerDoodle.DoodleView.DoodleDieCommand.Subscribe(_ => { effectShakeComponent.SetActive(true); });
     }
 
     private T GetManager<T>() where T : BaseManager

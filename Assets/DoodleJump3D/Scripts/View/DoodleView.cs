@@ -13,16 +13,24 @@ public class DoodleView : MonoBehaviour
 
     public List<BaseComponent> Components => _components;
     public ReactiveCommand<int> ChangingPosition = new();
+    public ReactiveCommand DoodleDieCommand = new();
 
     private void Start()
     {
         _transform = transform;
         ManagerUniRx.AddObjectDisposable(ChangingPosition);
+        ManagerUniRx.AddObjectDisposable(DoodleDieCommand);
     }
 
     private void Update()
     {
         ChangingPosition.Execute(((int)_transform.position.z));
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+            DoodleDieCommand.Execute();
     }
 
     private void OnValidate()
@@ -45,5 +53,6 @@ public class DoodleView : MonoBehaviour
     private void OnDestroy()
     {
         ManagerUniRx.Dispose(ChangingPosition);
+        ManagerUniRx.Dispose(DoodleDieCommand);
     }
 }

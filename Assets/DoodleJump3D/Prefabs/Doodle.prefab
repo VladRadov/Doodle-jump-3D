@@ -865,6 +865,7 @@ GameObject:
   - component: {fileID: 270815325591158021}
   - component: {fileID: 8385837221562799441}
   - component: {fileID: 902256797796844902}
+  - component: {fileID: 6198218252667628351}
   m_Layer: 0
   m_Name: Doodle
   m_TagString: Untagged
@@ -918,6 +919,7 @@ MonoBehaviour:
   - {fileID: 270815325591158021}
   - {fileID: 2353595814710894259}
   - {fileID: 902256797796844902}
+  - {fileID: 6198218252667628351}
 --- !u!54 &2381747764778486002
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1075,6 +1077,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isOnState: 0
   _effectShake: {fileID: 0}
+--- !u!114 &6198218252667628351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268115652102787550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08f83eeada81d8d46b80f7cdeb17166b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isOnState: 1
+  _bulletViewPrefab: {fileID: 0}
+  _speedShot: 0
 --- !u!1 &5595710811243021937
 GameObject:
   m_ObjectHideFlags: 0

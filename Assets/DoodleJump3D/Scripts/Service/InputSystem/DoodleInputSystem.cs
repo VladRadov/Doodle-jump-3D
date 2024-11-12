@@ -44,6 +44,15 @@ public partial class @DoodleInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Shot"",
+                    ""type"": ""Button"",
+                    ""id"": ""30746bf1-e930-4ae9-8e59-fe591ad0f6a1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -123,6 +132,17 @@ public partial class @DoodleInputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0e460576-06a5-4ac1-9c3b-1517a7596bc0"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and keybord"",
+                    ""action"": ""Shot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -150,6 +170,7 @@ public partial class @DoodleInputSystem: IInputActionCollection2, IDisposable
         m_Doodle = asset.FindActionMap("Doodle", throwIfNotFound: true);
         m_Doodle_Move = m_Doodle.FindAction("Move", throwIfNotFound: true);
         m_Doodle_Jump = m_Doodle.FindAction("Jump", throwIfNotFound: true);
+        m_Doodle_Shot = m_Doodle.FindAction("Shot", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -213,12 +234,14 @@ public partial class @DoodleInputSystem: IInputActionCollection2, IDisposable
     private List<IDoodleActions> m_DoodleActionsCallbackInterfaces = new List<IDoodleActions>();
     private readonly InputAction m_Doodle_Move;
     private readonly InputAction m_Doodle_Jump;
+    private readonly InputAction m_Doodle_Shot;
     public struct DoodleActions
     {
         private @DoodleInputSystem m_Wrapper;
         public DoodleActions(@DoodleInputSystem wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Doodle_Move;
         public InputAction @Jump => m_Wrapper.m_Doodle_Jump;
+        public InputAction @Shot => m_Wrapper.m_Doodle_Shot;
         public InputActionMap Get() { return m_Wrapper.m_Doodle; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -234,6 +257,9 @@ public partial class @DoodleInputSystem: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
+            @Shot.started += instance.OnShot;
+            @Shot.performed += instance.OnShot;
+            @Shot.canceled += instance.OnShot;
         }
 
         private void UnregisterCallbacks(IDoodleActions instance)
@@ -244,6 +270,9 @@ public partial class @DoodleInputSystem: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
+            @Shot.started -= instance.OnShot;
+            @Shot.performed -= instance.OnShot;
+            @Shot.canceled -= instance.OnShot;
         }
 
         public void RemoveCallbacks(IDoodleActions instance)
@@ -274,5 +303,6 @@ public partial class @DoodleInputSystem: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnShot(InputAction.CallbackContext context);
     }
 }

@@ -155,6 +155,9 @@ public class PlatformController
                 {
                     _currentSelectPlatfrom = _selectPlatforms[i];
 
+                    if (_currentSelectPlatfrom == null)
+                        return;
+
                     _currentSelectPlatfrom.ActiveOutlineColor(_currentSelectPlatfrom.ColorDefault);
                     await UniTask.Delay(500, cancellationToken: _tonekCancelOutlinePlatforms.Token);
                     _currentSelectPlatfrom.SetActiveOutline(false);
@@ -163,7 +166,7 @@ public class PlatformController
         }
     }
 
-    public void ShiftRankPlatforms()
+    public void ShiftRankPlatforams()
     {
         SetPreviousSelectedPlatfrom(_nextSelectPlatfrom);
         SetNextSelectPlatfrom(_currentSelectPlatfrom);

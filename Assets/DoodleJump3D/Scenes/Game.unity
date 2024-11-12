@@ -1987,6 +1987,7 @@ MonoBehaviour:
   - {fileID: 943899925}
   - {fileID: 1329852213}
   - {fileID: 706833975}
+  - {fileID: 1029488335}
 --- !u!4 &320355778
 Transform:
   m_ObjectHideFlags: 0
@@ -6698,6 +6699,51 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1029488333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1029488334}
+  - component: {fileID: 1029488335}
+  m_Layer: 0
+  m_Name: CameraManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1029488334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029488333}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1936099405}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1029488335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029488333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c1e8e80a08efc4987ec42d5f3477bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shakeCamera: {fileID: 2105690254}
 --- !u!1001 &1041784493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12180,6 +12226,7 @@ Transform:
   - {fileID: 943899926}
   - {fileID: 1329852212}
   - {fileID: 706833974}
+  - {fileID: 1029488334}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1940500779
@@ -12348,6 +12395,7 @@ GameObject:
   - component: {fileID: 1954973349}
   - component: {fileID: 1954973348}
   - component: {fileID: 1954973347}
+  - component: {fileID: 1954973350}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -12431,6 +12479,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1954973350
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954973345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: e9ce97b7a206dc64d90931ea044e0c72, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1975036941
 GameObject:
   m_ObjectHideFlags: 0
@@ -13527,6 +13592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2105690253}
   - component: {fileID: 2105690252}
+  - component: {fileID: 2105690254}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -13589,6 +13655,22 @@ Transform:
   - {fileID: 1954973346}
   m_Father: {fileID: 532420505}
   m_LocalEulerAnglesHint: {x: 13.12, y: 0, z: 0}
+--- !u!114 &2105690254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105690251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b902f9f3d1f5646b56ad7a11521432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _amplitudeGain: 0.7
+  _frequencyGain: 0.7
+  _durationShake: 500
+  _virtualCamera: {fileID: 2105690252}
 --- !u!1001 &2110928010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14308,6 +14390,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 6198218252667628351, guid: c2178c3c4dcca454ab1ab4439f941924, type: 3}
+      propertyPath: _speedShot
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198218252667628351, guid: c2178c3c4dcca454ab1ab4439f941924, type: 3}
+      propertyPath: _bulletViewPrefab
+      value: 
+      objectReference: {fileID: 6963130459335351896, guid: c17d02ad12ab8ab4aa18dd99eb097951, type: 3}
     - target: {fileID: 6765762322697730876, guid: c2178c3c4dcca454ab1ab4439f941924, type: 3}
       propertyPath: _minLenghtToRotationDoodle
       value: 25
