@@ -1466,7 +1466,7 @@ GameObject:
   - component: {fileID: 588209875115571094}
   - component: {fileID: 5040113200424268304}
   - component: {fileID: 8216558892738312948}
-  - component: {fileID: 5204803373822807346}
+  - component: {fileID: 6677678978743041871}
   m_Layer: 10
   m_Name: BlueEnemy
   m_TagString: Untagged
@@ -1579,7 +1579,7 @@ CapsuleCollider:
   m_Height: 5.883832
   m_Direction: 1
   m_Center: {x: 0, y: 0.18212318, z: 3.1340292}
---- !u!114 &5204803373822807346
+--- !u!114 &6677678978743041871
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1588,7 +1588,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8340412000346004186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6572d064ea517ac45b4730a4bf97da81, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c238b16f0f8887458ec49ac8d947b92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8678845587934787345
