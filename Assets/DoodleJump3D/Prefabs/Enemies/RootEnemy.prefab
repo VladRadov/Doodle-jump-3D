@@ -679,6 +679,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3707351123516497501}
+  - component: {fileID: 4062669149563005900}
   m_Layer: 10
   m_Name: RootEnemy
   m_TagString: Untagged
@@ -702,6 +703,19 @@ Transform:
   - {fileID: 7481134545599331846}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4062669149563005900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5974900505295319711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4ba4eabf2179b43a5f1540356f022c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyView: {fileID: 6677678978743041871}
 --- !u!1 &6015758252504394962
 GameObject:
   m_ObjectHideFlags: 0

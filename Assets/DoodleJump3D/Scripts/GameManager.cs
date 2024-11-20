@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
         var managerEnemies = GetManager<ManagerEnemies>();
         var managerDistance = GetManager<ManagerDistance>();
         var managerCamera = GetManager<ManagerCamera>();
+        var managerAudio = GetManager<ManagerAudio>();
 
         var inputComponent = managerDoodle.DoodleController.GetDoodleComponent<InputComponent>();
         var moveComponent = managerDoodle.DoodleController.GetDoodleComponent<MoveComponent>();
@@ -57,6 +58,7 @@ public class GameManager : MonoBehaviour
         {
             effectJumpComponent.Create(positionDoodle);
             managerCamera.ShakeCamera.Shake();
+            managerAudio.PlayJump();
         });
 
         jumpingComponent.JumpingOnForwardWithRotationCommnad.Subscribe(positionDoodle =>
@@ -74,7 +76,10 @@ public class GameManager : MonoBehaviour
         });
 
         managerDoodle.DoodleView.ChangingPosition.Subscribe(zPosition => { managerDistance.IncreasingDistance(zPosition); });
+
         managerDoodle.DoodleView.DoodleDieCommand.Subscribe(_ => { effectShakeComponent.SetActive(true); });
+
+        managerEnemies.CreateEnemyCommand.Subscribe(_ => { managerAudio.PlayEnemySound(); });
     }
 
     private T GetManager<T>() where T : BaseManager
