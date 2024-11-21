@@ -9308,6 +9308,7 @@ MonoBehaviour:
   _enemyPrefabs:
   - {fileID: -3014560227550499327, guid: ac1b029704f4b5d4d9fc8265529c4f7d, type: 3}
   - {fileID: 4062669149563005900, guid: 0797b28db4f90c24fa24479d5cff2bd3, type: 3}
+  - {fileID: 259768869307295331, guid: 25b2a82f98cebd64087d22d8470bf62e, type: 3}
   _borderX: 4
   _yPositionEnemy: 5
 --- !u!114 &1360091674 stripped
