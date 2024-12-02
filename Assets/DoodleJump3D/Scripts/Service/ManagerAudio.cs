@@ -10,7 +10,15 @@ public class ManagerAudio : BaseManager
 
     public override void Initialize()
     {
+        _audioSource.volume = DataContainer.Instance.Settings.VolumeSounds;
+        _audioSourceEnemy.volume = DataContainer.Instance.Settings.VolumeSounds;
+    }
 
+    public void ChangeVolume(float volume)
+    {
+        _audioSource.volume = volume;
+        _audioSourceEnemy.volume = volume;
+        DataContainer.Instance.Settings.VolumeSounds = volume;
     }
 
     public void PlayJump() => Play(_audioSource, "Jump", false);

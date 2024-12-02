@@ -5,6 +5,7 @@ using UniRx;
 
 public class ManagerEducation : BaseManager
 {
+    [SerializeField] private GameObject _parentPanel;
     [SerializeField] private ClueView _clue1;
     [SerializeField] private ClueView _clue2;
     [SerializeField] private ClueView _clue3;
@@ -33,6 +34,9 @@ public class ManagerEducation : BaseManager
 
         ManagerUniRx.AddObjectDisposable(OnEducationEnd);
     }
+
+    public void SetActive(bool value)
+        => _parentPanel.gameObject.SetActive(value);
 
     private void OnDestroy()
     {
