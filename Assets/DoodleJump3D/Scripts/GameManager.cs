@@ -51,6 +51,8 @@ public class GameManager : MonoBehaviour
                     managerPlatform.PlatformController.FormationSelectionAllowedPlatform();
                     managerPlatform.PlatformController.OutlineSelectionAllowedPlatform();
                 }
+                else
+                    Debug.Log("!");
             }
         });
 

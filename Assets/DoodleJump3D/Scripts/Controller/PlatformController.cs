@@ -49,11 +49,11 @@ public class PlatformController
         _managerFramesMap = managerFramesMap;
     }
 
-    public void SetNextSelectPlatfrom(PlatformView platformView)
-        => _nextSelectPlatfrom = platformView;
-
     public void SetCurrentSelectPlatfrom(PlatformView platformView)
         => _currentSelectPlatfrom = platformView;
+
+    public void SetNextSelectPlatfrom(PlatformView platformView)
+        => _nextSelectPlatfrom = platformView;
 
     public void SetPreviousSelectedPlatfrom(PlatformView platformView)
         => _previousSelectedPlatfrom = platformView;
@@ -131,8 +131,8 @@ public class PlatformController
 
             if (isActivePlatform && isPlatformNext && isPositionPlatformNearDoodle && isNoCurrentPlatform)
                 _selectPlatforms.Add(_platforms[i]);
-
-            if (minimalDistanceNextToPlatform > distanceNextToPlatform && isPlatformNext && isNoCurrentPlatform)
+            
+            if ((minimalDistanceNextToPlatform == -1 || minimalDistanceNextToPlatform > distanceNextToPlatform) && isActivePlatform && isPlatformNext && isNoCurrentPlatform)
             {
                 minimalDistanceNextToPlatform = distanceNextToPlatform;
                 platformHope = _platforms[i];
@@ -153,14 +153,14 @@ public class PlatformController
 
                 if (isPlatformHave)
                 {
-                    _currentSelectPlatfrom = _selectPlatforms[i];
+                    _nextSelectPlatfrom = _selectPlatforms[i];
 
-                    if (_currentSelectPlatfrom == null)
+                    if (_nextSelectPlatfrom == null)
                         return;
 
-                    _currentSelectPlatfrom.ActiveOutlineColor(_currentSelectPlatfrom.ColorDefault);
+                    _nextSelectPlatfrom.ActiveOutlineColor(_nextSelectPlatfrom.ColorDefault);
                     await UniTask.Delay(500, cancellationToken: _tonekCancelOutlinePlatforms.Token);
-                    _currentSelectPlatfrom.SetActiveOutline(false);
+                    _nextSelectPlatfrom.SetActiveOutline(false);
                 }
             }
         }
@@ -168,8 +168,8 @@ public class PlatformController
 
     public void ShiftRankPlatforams()
     {
-        SetPreviousSelectedPlatfrom(_nextSelectPlatfrom);
-        SetNextSelectPlatfrom(_currentSelectPlatfrom);
+        SetPreviousSelectedPlatfrom(_currentSelectPlatfrom);
+        SetCurrentSelectPlatfrom(_nextSelectPlatfrom);
     }
 
     private Vector3 CreatePlatform(Vector3 positionPlatform, Transform parent)
