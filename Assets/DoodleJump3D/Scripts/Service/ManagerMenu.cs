@@ -8,6 +8,7 @@ public class ManagerMenu : BaseManager
 {
     [SerializeField] private MenuView _menuPanel;
     [SerializeField] private SettingsView _settingsView;
+    [SerializeField] private AchievementsView _achievementsView;
     [SerializeField] private Button _play;
     [SerializeField] private Button _settings;
     [SerializeField] private Button _achievements;
@@ -30,7 +31,7 @@ public class ManagerMenu : BaseManager
 
         _achievements.onClick.AddListener(() =>
         {
-
+            _achievementsView.SetActive(true);
         });
     }
 

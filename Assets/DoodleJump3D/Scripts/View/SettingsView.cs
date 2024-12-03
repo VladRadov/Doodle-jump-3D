@@ -5,6 +5,7 @@ using UniRx;
 public class SettingsView : MonoBehaviour
 {
     [SerializeField] private Slider _sliderSounds;
+    [SerializeField] private Button _close;
 
     public ReactiveCommand<float> ChangingVolume = new();
 
@@ -18,6 +19,7 @@ public class SettingsView : MonoBehaviour
     {
         _sliderSounds.value = DataContainer.Instance.Settings.VolumeSounds;
         _sliderSounds.onValueChanged.AddListener((value) => { ChangeVolume(value); });
+        _close.onClick.AddListener(() => { SetActive(false); });
         ManagerUniRx.AddObjectDisposable(ChangingVolume);
     }
 
