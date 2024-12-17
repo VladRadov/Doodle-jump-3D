@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
 using UnityEngine;
 using UniRx;
-using Cysharp.Threading.Tasks;
 
 public class JumpingComponent : BaseComponent
 {
@@ -10,6 +7,8 @@ public class JumpingComponent : BaseComponent
     private bool _isJumpOnPlace;
     private bool _isJumpForward;
     private Vector3 _targetPlatform;
+    private bool _isFlying;
+    private FixedJoint _fixedJoint;
 
     private float _vX;
     private float _vY;
@@ -23,9 +22,29 @@ public class JumpingComponent : BaseComponent
     public ReactiveCommand<Vector3> JumpingOnPlaceCommnad = new();
     public ReactiveCommand<Vector3> JumpingOnForwardWithRotationCommnad = new();
 
+    public void SetFlying(Rigidbody rocket)
+    {
+        _fixedJoint = gameObject.AddComponent<FixedJoint>();
+        _fixedJoint.connectedBody = rocket;
+
+        SetVelocity(Vector3.zero);
+        _rigidbody.useGravity = false;
+        _isFlying = true;
+    }
+
+    public void EndFlying()
+    {
+        if (_fixedJoint != null)
+            Destroy(_fixedJoint);
+
+        _rigidbody.useGravity = true;
+        _isFlying = false;
+    }
+
     public void SetTargetPlatform(Vector3 target)
     {
         _isJumpForward = true;
+        _isFlying = false;
         _targetPlatform = target;
     }
 
@@ -68,6 +87,9 @@ public class JumpingComponent : BaseComponent
 
     private void FixedUpdate()
     {
+        if (_isFlying)
+            return;
+
         if (_isJumpOnPlace)
         {
             _vX = 0;

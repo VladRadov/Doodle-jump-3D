@@ -26,11 +26,13 @@ public class ManagerMenu : BaseManager
 
         _settings.onClick.AddListener(() =>
         {
+            _achievementsView.SetActive(false);
             _settingsView.SetActive(true);
         });
 
         _achievements.onClick.AddListener(() =>
         {
+            _settingsView.SetActive(false);
             _achievementsView.SetActive(true);
         });
     }

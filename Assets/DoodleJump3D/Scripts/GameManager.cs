@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
         var managerCamera = GetManager<ManagerCamera>();
         var managerAudio = GetManager<ManagerAudio>();
         var managerMenu = GetManager<ManagerMenu>();
+        var managerRocket = GetManager<ManagerRocket>();
 
         var inputComponent = managerDoodle.DoodleController.GetDoodleComponent<InputComponent>();
         var moveComponent = managerDoodle.DoodleController.GetDoodleComponent<MoveComponent>();
@@ -74,6 +75,7 @@ public class GameManager : MonoBehaviour
             managerPlatform.PlatformController.RespawnPlatforms(frameMap);
             managerEnemies.EnemyController.NoActiveOldEnemies(frameMap);
             managerEnemies.SpawnEnemy(frameMap.transform);
+            managerRocket.SpawnRocket(frameMap.transform);
         });
 
         managerDoodle.DoodleView.ChangingPosition.Subscribe(zPosition => { managerDistance.IncreasingDistance(zPosition); });

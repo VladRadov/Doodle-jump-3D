@@ -251,9 +251,9 @@ RectTransform:
   - {fileID: 1989569806}
   m_Father: {fileID: 168326526}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 253, y: -71.4}
   m_SizeDelta: {x: 513.584, y: 142.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &27848342
@@ -1110,7 +1110,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -285.6}
-  m_SizeDelta: {x: 506, y: 0}
+  m_SizeDelta: {x: 506, y: 571.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &168326527
 MonoBehaviour:
@@ -2790,6 +2790,7 @@ MonoBehaviour:
   - {fileID: 1029488335}
   - {fileID: 723244285}
   - {fileID: 87423546}
+  - {fileID: 591286655}
 --- !u!4 &320355778
 Transform:
   m_ObjectHideFlags: 0
@@ -5150,6 +5151,51 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &591286653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 591286654}
+  - component: {fileID: 591286655}
+  m_Layer: 0
+  m_Name: RocketManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &591286654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591286653}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1936099405}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &591286655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591286653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0b09bd09784874788f84057aab88eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rocketPrefab: {fileID: 2996007479238288896, guid: 2a1f29a86eff12b43b4f91a4d84b67a4, type: 3}
 --- !u!1 &624543138
 GameObject:
   m_ObjectHideFlags: 0
@@ -7335,9 +7381,9 @@ RectTransform:
   - {fileID: 547984603}
   m_Father: {fileID: 168326526}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 253, y: -499.80002}
   m_SizeDelta: {x: 513.584, y: 142.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &844172808
@@ -8184,9 +8230,9 @@ RectTransform:
   - {fileID: 327107598}
   m_Father: {fileID: 168326526}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 253, y: -357}
   m_SizeDelta: {x: 513.584, y: 142.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &970395170
@@ -9553,7 +9599,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1090257405
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15704,6 +15750,7 @@ Transform:
   - {fileID: 1029488334}
   - {fileID: 723244283}
   - {fileID: 87423545}
+  - {fileID: 591286654}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1940500779
@@ -16007,9 +16054,9 @@ RectTransform:
   - {fileID: 55318051}
   m_Father: {fileID: 168326526}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 253, y: -214.20001}
   m_SizeDelta: {x: 513.584, y: 142.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1972790822
@@ -18316,6 +18363,10 @@ PrefabInstance:
     - target: {fileID: 1919089528415780747, guid: c2178c3c4dcca454ab1ab4439f941924, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2353595814710894259, guid: c2178c3c4dcca454ab1ab4439f941924, type: 3}
+      propertyPath: _speed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2531451243893337079, guid: c2178c3c4dcca454ab1ab4439f941924, type: 3}
       propertyPath: m_Layer
