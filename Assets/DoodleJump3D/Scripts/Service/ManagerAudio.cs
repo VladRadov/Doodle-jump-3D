@@ -6,22 +6,30 @@ public class ManagerAudio : BaseManager
 {
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioSource _audioSourceEnemy;
+    [SerializeField] private AudioSource _audioSourceRocket;
     [SerializeField] private List<Audio> _sounds;
 
     public override void Initialize()
     {
-        _audioSource.volume = DataContainer.Instance.Settings.VolumeSounds;
-        _audioSourceEnemy.volume = DataContainer.Instance.Settings.VolumeSounds;
+        _audioSource.volume = DataSettingsContainer.Instance.Settings.VolumeSounds;
+        _audioSourceEnemy.volume = DataSettingsContainer.Instance.Settings.VolumeSounds;
+        _audioSourceRocket.volume = DataSettingsContainer.Instance.Settings.VolumeSounds;
     }
 
     public void ChangeVolume(float volume)
     {
         _audioSource.volume = volume;
         _audioSourceEnemy.volume = volume;
-        DataContainer.Instance.Settings.VolumeSounds = volume;
+        _audioSourceRocket.volume = volume;
+
+        DataSettingsContainer.Instance.Settings.VolumeSounds = volume;
     }
 
     public void PlayJump() => Play(_audioSource, "Jump", false);
+
+    public void PlayFall() => Play(_audioSource, "Fall", false);
+
+    public void PlayRocket() => Play(_audioSourceRocket, "Rocket", false);
 
     public void PlayEnemySound() => Play(_audioSourceEnemy, "EnemySound", true);
 

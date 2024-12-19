@@ -12,6 +12,12 @@ public class MoveComponent : BaseComponent
         _rigidbody.AddForce(newForce * _speed * Time.deltaTime, ForceMode.VelocityChange);
     }
 
+    public void MoveToPosition(Vector3 targetPosition)
+    {
+        var force = new Vector3(targetPosition.x, 0, targetPosition.z) - new Vector3(transform.position.x, 0, transform.position.z);
+        _rigidbody.AddForceAtPosition(force * _speed * Time.deltaTime, targetPosition, ForceMode.VelocityChange);
+    }
+
     private void OnValidate()
     {
         if (_rigidbody == null)

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
+using Cysharp.Threading.Tasks;
 
 public class GameManager : MonoBehaviour
 {
@@ -56,6 +57,16 @@ public class GameManager : MonoBehaviour
             }
         });
 
+        jumpingComponent.DoodleEndFlyingCommand.Subscribe(doodlePosition =>
+        {
+            var findedNearPlatformFromDoodle = managerPlatform.PlatformController.FindNearPlatformFromDoodle(doodlePosition);
+            managerPlatform.PlatformController.SetCurrentSelectPlatfrom(findedNearPlatformFromDoodle);
+            moveComponent.MoveToPosition(findedNearPlatformFromDoodle.transform.position);
+            managerPlatform.OutlineNextPlatform();
+            managerPlatform.PlatformController.FormationSelectionAllowedPlatform();
+            managerPlatform.PlatformController.OutlineSelectionAllowedPlatform();
+        });
+
         jumpingComponent.JumpingOnPlaceCommnad.Subscribe(positionDoodle =>
         {
             effectJumpComponent.Create(positionDoodle);
@@ -69,6 +80,10 @@ public class GameManager : MonoBehaviour
             managerFramesMap.FramesMapController.CheckAndRespawnFramesMap(positionDoodle);
         });
 
+        jumpingComponent.FlyingCommand.Subscribe(positionDoodle => { managerFramesMap.FramesMapController.CheckAndRespawnFramesMap(positionDoodle); });
+
+        jumpingComponent.DoodleStartFlyingCommand.Subscribe(_ => { managerAudio.PlayRocket(); });
+
         managerFramesMap.FramesMapController.OnRespawnFrameMap.Subscribe(frameMap =>
         {
             managerPlatform.PlatformController.NoActiveOldPlatforms(frameMap);
@@ -80,7 +95,13 @@ public class GameManager : MonoBehaviour
 
         managerDoodle.DoodleView.ChangingPosition.Subscribe(zPosition => { managerDistance.IncreasingDistance(zPosition); });
 
-        managerDoodle.DoodleView.DoodleDieCommand.Subscribe(_ => { effectShakeComponent.SetActive(true); });
+        managerDoodle.DoodleView.DoodleDieCommand.Subscribe(async _ =>
+        {
+            managerAudio.PlayFall();
+            effectShakeComponent.SetActive(true);
+            await UniTask.Run(async () => { await UniTask.Delay(DataSettingsContainer.Instance.Settings.DelayAfterDieDoodle); });
+            managerMenu.GameOverView.SetActive(true);
+        });
 
         managerEnemies.CreateEnemyCommand.Subscribe(_ => { managerAudio.PlayEnemySound(); });
 

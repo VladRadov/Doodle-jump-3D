@@ -9,6 +9,7 @@ public class JumpingComponent : BaseComponent
     private Vector3 _targetPlatform;
     private bool _isFlying;
     private FixedJoint _fixedJoint;
+    private Transform _transform;
 
     private float _vX;
     private float _vY;
@@ -21,9 +22,14 @@ public class JumpingComponent : BaseComponent
 
     public ReactiveCommand<Vector3> JumpingOnPlaceCommnad = new();
     public ReactiveCommand<Vector3> JumpingOnForwardWithRotationCommnad = new();
+    public ReactiveCommand DoodleStartFlyingCommand = new();
+    public ReactiveCommand<Vector3> DoodleEndFlyingCommand = new();
+    public ReactiveCommand<Vector3> FlyingCommand = new();
 
-    public void SetFlying(Rigidbody rocket)
+    public void StartFlying(Rigidbody rocket)
     {
+        DoodleStartFlyingCommand.Execute();
+
         _fixedJoint = gameObject.AddComponent<FixedJoint>();
         _fixedJoint.connectedBody = rocket;
 
@@ -39,6 +45,10 @@ public class JumpingComponent : BaseComponent
 
         _rigidbody.useGravity = true;
         _isFlying = false;
+        _vY = _speedJump;
+
+        DoodleEndFlyingCommand.Execute(_transform.position);
+        JumpingOnForwardWithRotationCommnad.Execute(_transform.position);
     }
 
     public void SetTargetPlatform(Vector3 target)
@@ -48,9 +58,9 @@ public class JumpingComponent : BaseComponent
         _targetPlatform = target;
     }
 
-    public void JumpForward(PlatformView platformView)
+    public void JumpForward()
     {
-        Vector3 fromTo = _targetPlatform - transform.position;
+        Vector3 fromTo = _targetPlatform - _transform.position;
         Vector3 fromToXZ = new Vector3(fromTo.x, 0, fromTo.z);
 
         float lengthVector = fromToXZ.magnitude;
@@ -68,18 +78,22 @@ public class JumpingComponent : BaseComponent
         _isJumpForward = false;
 
         if(lengthVector > _minLenghtToRotationDoodle)
-            JumpingOnForwardWithRotationCommnad.Execute(transform.position);
+            JumpingOnForwardWithRotationCommnad.Execute(_transform.position);
     }
 
     public override void Start()
     {
         base.Start();
 
+        _transform = transform;
         _isJumpOnPlace = true;
         _isJumpForward = false;
 
         ManagerUniRx.AddObjectDisposable(JumpingOnPlaceCommnad);
         ManagerUniRx.AddObjectDisposable(JumpingOnForwardWithRotationCommnad);
+        ManagerUniRx.AddObjectDisposable(DoodleStartFlyingCommand);
+        ManagerUniRx.AddObjectDisposable(DoodleEndFlyingCommand);
+        ManagerUniRx.AddObjectDisposable(FlyingCommand);
     }
 
     private void SetVelocity(Vector3 speed)
@@ -88,7 +102,10 @@ public class JumpingComponent : BaseComponent
     private void FixedUpdate()
     {
         if (_isFlying)
+        {
+            FlyingCommand.Execute(_transform.position);
             return;
+        }
 
         if (_isJumpOnPlace)
         {
@@ -108,17 +125,12 @@ public class JumpingComponent : BaseComponent
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            JumpingOnPlaceCommnad.Execute(transform.position);
+            JumpingOnPlaceCommnad.Execute(_transform.position);
 
             if (_isJumpForward == false)
                 _isJumpOnPlace = true;
             else
-            {
-                var platformView = collision.gameObject.GetComponent<PlatformView>();
-
-                if (platformView != null)
-                    JumpForward(platformView);
-            }
+                JumpForward();
         }
     }
 
@@ -132,5 +144,8 @@ public class JumpingComponent : BaseComponent
     {
         ManagerUniRx.Dispose(JumpingOnPlaceCommnad);
         ManagerUniRx.Dispose(JumpingOnForwardWithRotationCommnad);
+        ManagerUniRx.Dispose(DoodleStartFlyingCommand);
+        ManagerUniRx.Dispose(DoodleEndFlyingCommand);
+        ManagerUniRx.Dispose(FlyingCommand);
     }
 }

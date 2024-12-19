@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c544cf75d56d594aaf25c32b616dfd9, type: 3}
-  m_Name: Settings
+  m_Script: {fileID: 11500000, guid: 3a5077f0fb0eb824aa0c0da0c4847b3d, type: 3}
+  m_Name: Fall
   m_EditorClassIdentifier: 
-  _volumeSounds: 1
-  _delayAfterDieDoodle: 1000
+  _name: Fall
+  _audioClip: {fileID: 8300000, guid: 7651a1b2499e45f48a4b71c2ebd6ea0b, type: 3}

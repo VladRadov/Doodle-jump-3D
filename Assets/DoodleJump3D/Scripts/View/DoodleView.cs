@@ -6,6 +6,7 @@ using UniRx;
 public class DoodleView : MonoBehaviour
 {
     private Transform _transform;
+    private bool _isDie;
 
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private CapsuleCollider _capsuleCollider;
@@ -18,19 +19,30 @@ public class DoodleView : MonoBehaviour
     private void Start()
     {
         _transform = transform;
+        _isDie = false;
+
         ManagerUniRx.AddObjectDisposable(ChangingPosition);
         ManagerUniRx.AddObjectDisposable(DoodleDieCommand);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         ChangingPosition.Execute(((int)_transform.position.z));
+
+        if (_isDie == false && _transform.position.y < -2)
+        {
+            _isDie = true;
+            DoodleDieCommand.Execute();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (_isDie == false && collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            _isDie = true;
             DoodleDieCommand.Execute();
+        }
     }
 
     private void OnValidate()

@@ -155,7 +155,7 @@ MonoBehaviour:
   _boxCollider: {fileID: 5094937234845789148}
   _backBraceBottom: {fileID: 8182840562505868741}
   _speed: {x: 0, y: 300, z: 5000}
-  _timeFlying: 7
+  _timeFlying: 4.5
   _offsetConnectedDoodle: {x: 0, y: -1.5, z: 2}
 --- !u!54 &2267326372196980186
 Rigidbody:

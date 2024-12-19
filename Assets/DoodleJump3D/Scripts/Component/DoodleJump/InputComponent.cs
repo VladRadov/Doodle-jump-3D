@@ -14,8 +14,10 @@ public class InputComponent : BaseComponent
     private void Awake()
     {
         _playerInput = new DoodleInputSystem();
+
         _playerInput.Doodle.Jump.started += JumpStarted;
         _playerInput.Doodle.Shot.started += ShotStarted;
+
         ManagerUniRx.AddObjectDisposable(InputCommand);
         ManagerUniRx.AddObjectDisposable(JumpCommand);
         ManagerUniRx.AddObjectDisposable(ShootingCommand);

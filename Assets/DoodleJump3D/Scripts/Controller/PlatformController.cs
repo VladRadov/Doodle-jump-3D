@@ -172,6 +172,28 @@ public class PlatformController
         SetCurrentSelectPlatfrom(_nextSelectPlatfrom);
     }
 
+    public PlatformView FindNearPlatformFromDoodle(Vector3 doodlePosition)
+    {
+        float minimalDistanceNextToPlatform = -1;
+        PlatformView platformHope = null;
+
+        for (int i = 0; i < _platforms.Count; i++)
+        {
+            var distanceNextToPlatform = Mathf.Abs(doodlePosition.z - _platforms[i].transform.position.z);
+
+            var isActivePlatform = _platforms[i].gameObject.activeSelf;
+            var isPlatformNext = Mathf.Abs(doodlePosition.z) < Mathf.Abs(_platforms[i].transform.position.z);
+
+            if (isActivePlatform && isPlatformNext && (minimalDistanceNextToPlatform == -1 || minimalDistanceNextToPlatform > distanceNextToPlatform))
+            {
+                minimalDistanceNextToPlatform = distanceNextToPlatform;
+                platformHope = _platforms[i];
+            }
+        }
+
+        return platformHope;
+    }
+
     private Vector3 CreatePlatform(Vector3 positionPlatform, Transform parent)
     {
         var indexPlatform = Random.Range(0, _platformsPrefab.Count);

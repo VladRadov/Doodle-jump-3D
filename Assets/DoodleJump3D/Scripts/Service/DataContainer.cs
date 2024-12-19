@@ -1,15 +1,12 @@
 using UnityEngine;
 
-public class DataContainer : MonoBehaviour
+public class DataContainer<T> : MonoBehaviour
 {
-    [SerializeField] private Settings _settings;
+    public static T Instance;
 
-    public Settings Settings => _settings;
-    public static DataContainer Instance;
-
-    private void Awake()
+    public void Initialize(T instance)
     {
         if (Instance == null)
-            Instance = this;
+            Instance = instance;
     }
 }

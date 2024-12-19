@@ -14,7 +14,6 @@ public class FlyRocketComponent : MonoBehaviour
     [SerializeField] private float _timeFlying;
     [SerializeField] private Vector3 _offsetConnectedDoodle;
 
-    public ReactiveCommand FlyingCommand = new();
     public ReactiveCommand FlyingEndCommand = new();
 
     public void FlyRocket()
@@ -24,7 +23,6 @@ public class FlyRocketComponent : MonoBehaviour
     {
         _isFlying = false;
 
-        ManagerUniRx.AddObjectDisposable(FlyingCommand);
         ManagerUniRx.AddObjectDisposable(FlyingEndCommand);
     }
 
@@ -51,8 +49,9 @@ public class FlyRocketComponent : MonoBehaviour
 
             other.transform.position = transform.position + _offsetConnectedDoodle;
             var jumpingComponent = other.GetComponent<JumpingComponent>();
-            jumpingComponent.SetFlying(_rigidbody);
+            jumpingComponent.StartFlying(_rigidbody);
 
+            FlyingEndCommand = new();
             FlyingEndCommand.Subscribe(_ =>
             {
                 jumpingComponent.EndFlying();
@@ -76,7 +75,6 @@ public class FlyRocketComponent : MonoBehaviour
 
     private void OnDestroy()
     {
-        ManagerUniRx.Dispose(FlyingCommand);
         ManagerUniRx.Dispose(FlyingEndCommand);
     }
 }

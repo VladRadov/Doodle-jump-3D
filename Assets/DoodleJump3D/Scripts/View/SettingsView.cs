@@ -17,7 +17,7 @@ public class SettingsView : MonoBehaviour
 
     private void Start()
     {
-        _sliderSounds.value = DataContainer.Instance.Settings.VolumeSounds;
+        _sliderSounds.value = DataSettingsContainer.Instance.Settings.VolumeSounds;
         _sliderSounds.onValueChanged.AddListener((value) => { ChangeVolume(value); });
         _close.onClick.AddListener(() => { SetActive(false); });
         ManagerUniRx.AddObjectDisposable(ChangingVolume);
