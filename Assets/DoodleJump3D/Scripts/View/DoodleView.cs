@@ -15,6 +15,7 @@ public class DoodleView : MonoBehaviour
     public List<BaseComponent> Components => _components;
     public ReactiveCommand<int> ChangingPosition = new();
     public ReactiveCommand DoodleDieCommand = new();
+    public bool IsDie => _isDie;
 
     private void Start()
     {
@@ -29,7 +30,7 @@ public class DoodleView : MonoBehaviour
     {
         ChangingPosition.Execute(((int)_transform.position.z));
 
-        if (_isDie == false && _transform.position.y < -2)
+        if (_isDie == false && _transform.position.y < -4)
         {
             _isDie = true;
             DoodleDieCommand.Execute();

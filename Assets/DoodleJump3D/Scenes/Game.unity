@@ -5186,7 +5186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21d2cdd72cdc50449be88f93ed4747b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameData: {fileID: 11400000, guid: db15880ed25064547b02fc2da436b79b, type: 2}
+  _gameData: {fileID: 11400000, guid: a3ea224a727e9584695b685d7716283c, type: 2}
 --- !u!114 &584134815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5239,7 +5239,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: -1122.737, y: -239.44104}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &584852332
@@ -19668,6 +19668,10 @@ PrefabInstance:
       propertyPath: _bulletViewPrefab
       value: 
       objectReference: {fileID: 6963130459335351896, guid: c17d02ad12ab8ab4aa18dd99eb097951, type: 3}
+    - target: {fileID: 6765762322697730876, guid: c2178c3c4dcca454ab1ab4439f941924, type: 3}
+      propertyPath: _gravity
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 6765762322697730876, guid: c2178c3c4dcca454ab1ab4439f941924, type: 3}
       propertyPath: _minLenghtToRotationDoodle
       value: 25

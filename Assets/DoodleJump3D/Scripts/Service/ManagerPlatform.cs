@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,5 +30,11 @@ public class ManagerPlatform : BaseManager
     public void OutlineNextPlatform()
     {
         _platformController.NextSelectPlatfrom.ActiveOutlineColor(_colorEntryPlatfrom);
+    }
+
+    private void OnDestroy()
+    {
+        if(_platformController != null)
+            _platformController.Dispose();
     }
 }

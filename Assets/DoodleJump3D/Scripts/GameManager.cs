@@ -90,15 +90,21 @@ public class GameManager : MonoBehaviour
             managerPlatform.PlatformController.RespawnPlatforms(frameMap);
             managerEnemies.EnemyController.NoActiveOldEnemies(frameMap);
             managerEnemies.SpawnEnemy(frameMap.transform);
-            managerRocket.SpawnRocket(frameMap.transform);
         });
 
-        managerDoodle.DoodleView.ChangingPosition.Subscribe(zPosition => { managerDistance.IncreasingDistance(zPosition); });
+        managerDoodle.DoodleView.ChangingPosition.Subscribe(zPosition =>
+        {
+            if (managerDoodle.DoodleView.IsDie == false)
+                managerDistance.IncreasingDistance(zPosition);
+        });
 
         managerDoodle.DoodleView.DoodleDieCommand.Subscribe(async _ =>
         {
+            jumpingComponent.OnDieDoodle();
             managerAudio.PlayFall();
+            managerPlatform.PlatformController.ClearSlectePlatforms();
             effectShakeComponent.SetActive(true);
+            managerDistance.SaveResult();
             await UniTask.Run(async () => { await UniTask.Delay(DataSettingsContainer.Instance.Settings.DelayAfterDieDoodle); });
             managerMenu.GameOverView.SetActive(true);
         });
@@ -108,6 +114,17 @@ public class GameManager : MonoBehaviour
         managerMenu.PlayingCommand.Subscribe(_ => { managerEducation.SetActive(true); });
 
         managerMenu.SettingsView.ChangingVolume.Subscribe(volume => { managerAudio.ChangeVolume(volume); });
+
+        managerPlatform.PlatformController.RespawnPlatformCommand.Subscribe(lastPositionPlatform =>
+        {
+            var randomIndex = Random.Range(0, 6);
+
+            if (randomIndex == 2)
+            {
+                managerRocket.SpawnRocket(lastPositionPlatform);
+                Debug.Log("!");
+            }
+        });
     }
 
     private T GetManager<T>() where T : BaseManager

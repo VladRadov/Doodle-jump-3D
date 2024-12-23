@@ -51,6 +51,15 @@ public class JumpingComponent : BaseComponent
         JumpingOnForwardWithRotationCommnad.Execute(_transform.position);
     }
 
+    public void OnDieDoodle()
+    {
+        if (_fixedJoint != null)
+            Destroy(_fixedJoint);
+
+        _rigidbody.useGravity = true;
+        _isFlying = false;
+    }
+
     public void SetTargetPlatform(Vector3 target)
     {
         _isJumpForward = true;
@@ -99,7 +108,7 @@ public class JumpingComponent : BaseComponent
     private void SetVelocity(Vector3 speed)
         => _rigidbody.velocity = speed;
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (_isFlying)
         {

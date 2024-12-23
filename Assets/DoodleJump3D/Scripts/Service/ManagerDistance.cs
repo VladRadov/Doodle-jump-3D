@@ -20,6 +20,14 @@ public class ManagerDistance : BaseManager
         UpdateDistance();
     }
 
+    public void SaveResult()
+    {
+        GameDataContainer.Instance.GameData.CurrentResult = _currentDistace;
+
+        if(GameDataContainer.Instance.GameData.BestResult < _currentDistace)
+            GameDataContainer.Instance.GameData.BestResult = _currentDistace;
+    }
+
     private void ResetDistance()
     {
         _currentDistace = 0;

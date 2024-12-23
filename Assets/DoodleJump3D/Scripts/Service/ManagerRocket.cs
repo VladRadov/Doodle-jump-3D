@@ -11,9 +11,9 @@ public class ManagerRocket : BaseManager
 
     }
 
-    public void SpawnRocket(Transform platform)
+    public void SpawnRocket(Transform parent)
     {
-        var rocket = PoolObjects<RocketView>.GetObject(_rocketPrefab);
-        rocket.transform.position = new Vector3(platform.position.x, platform.position.y + 5, platform.position.z);
+        var rocket = PoolObjects<RocketView>.GetObject(_rocketPrefab, parent);
+        rocket.transform.localPosition = new Vector3(0, 5, 0);
     }
 }

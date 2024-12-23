@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
+using System;
 
 public class PlatformView : MonoBehaviour
 {
@@ -23,12 +24,18 @@ public class PlatformView : MonoBehaviour
         => transform.localPosition = position;
 
     public void SetActiveOutline(bool value)
-        => _outline.enabled = value;
+    {
+        if(_outline != null)
+            _outline.enabled = value;
+    }
 
     public void ActiveOutlineColor(Color colorEntry)
     {
-        _outline.enabled = true;
-        _outline.OutlineColor = colorEntry;
+        if (_outline != null)
+        {
+            _outline.enabled = true;
+            _outline.OutlineColor = colorEntry;
+        }
     }
 
     public void OffGravity()

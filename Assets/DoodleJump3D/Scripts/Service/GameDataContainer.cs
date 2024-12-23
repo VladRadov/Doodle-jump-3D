@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class GameDataContainer : DataContainer<GameDataContainer>
 {
-    [SerializeField] private GameData _gameData;
+    [SerializeField] private BaseGameData _gameData;
 
-    public GameData GameData => _gameData;
+    public BaseGameData GameData => _gameData;
 
     private void Awake()
     {
