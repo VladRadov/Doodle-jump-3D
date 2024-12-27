@@ -12,8 +12,12 @@ public class MovablePlatformComponent : BaseComponent
     [SerializeField] private float _delayChangeRoute;
 
     public override void Start()
+        => base.Start();
+
+    public void ChangeRoute()
     {
-        base.Start();
+        _route *= -1;
+        _timer = 0;
     }
 
     private void OnEnable()
@@ -25,7 +29,10 @@ public class MovablePlatformComponent : BaseComponent
 
     private void Update()
     {
-        ChageRoute();
+        _timer += Time.deltaTime;
+
+        if (_timer >= _delayChangeRoute)
+            ChangeRoute();
         Move();
     }
 
@@ -38,17 +45,6 @@ public class MovablePlatformComponent : BaseComponent
     private void Move()
     {
         _rigidbody.velocity = Vector3.left * _speed * _route;
-    }
-
-    private void ChageRoute()
-    {
-        _timer += Time.deltaTime;
-
-        if (_timer >= _delayChangeRoute)
-        {
-            _route *= -1;
-            _timer = 0;
-        }
     }
 
     private void OnValidate()

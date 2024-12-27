@@ -88,6 +88,8 @@ public class PlatformController
     public void RespawnPlatforms(FrameMapView frameMapView)
     {
         Vector3 lastLocalPositionPlatform = Vector3.zero;
+        PlatformView lastPlatform = null;
+
         for (int i = 0; i < _countStartPlatform; i++)
         {
             var countPlatform = Random.Range(1, MAX_COUNT_PLATFORM_OF_FRAME);
@@ -102,10 +104,11 @@ public class PlatformController
 
                 var platform = CreatePlatform(new Vector3(x, y, z), frameMapView.transform);
                 lastLocalPositionPlatform = platform.transform.localPosition;
-
-                RespawnPlatformCommand.Execute(platform.transform);
+                lastPlatform = platform;
             }
         }
+
+        RespawnPlatformCommand.Execute(lastPlatform.transform);
     }
 
     public void NoActiveOldPlatforms(FrameMapView frameMapView)

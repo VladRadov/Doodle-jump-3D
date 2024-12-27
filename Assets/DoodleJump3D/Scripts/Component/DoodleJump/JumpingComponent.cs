@@ -4,12 +4,15 @@ using UniRx;
 public class JumpingComponent : BaseComponent
 {
     private Rigidbody _rigidbody;
-    private bool _isJumpOnPlace;
-    private bool _isJumpForward;
-    private Vector3 _targetPlatform;
-    private bool _isFlying;
     private FixedJoint _fixedJoint;
     private Transform _transform;
+
+    private bool _isJumpOnPlace;
+    private bool _isJumpForward;
+    private bool _isFlying;
+    private bool _isAllowedToSide;
+
+    private Vector3 _targetPlatform;
 
     private float _vX;
     private float _vY;
@@ -22,13 +25,17 @@ public class JumpingComponent : BaseComponent
 
     public ReactiveCommand<Vector3> JumpingOnPlaceCommnad = new();
     public ReactiveCommand<Vector3> JumpingOnForwardWithRotationCommnad = new();
-    public ReactiveCommand DoodleStartFlyingCommand = new();
+    public ReactiveCommand<Transform> DoodleStartFlyingCommand = new();
     public ReactiveCommand<Vector3> DoodleEndFlyingCommand = new();
     public ReactiveCommand<Vector3> FlyingCommand = new();
 
+    public bool IsFlying => _isFlying;
+    public bool IsJumpOnPlace => _isJumpOnPlace;
+    public bool IsAllowedToSide => _isAllowedToSide;
+
     public void StartFlying(Rigidbody rocket)
     {
-        DoodleStartFlyingCommand.Execute();
+        DoodleStartFlyingCommand.Execute(_transform);
 
         _fixedJoint = gameObject.AddComponent<FixedJoint>();
         _fixedJoint.connectedBody = rocket;
@@ -45,7 +52,9 @@ public class JumpingComponent : BaseComponent
 
         _rigidbody.useGravity = true;
         _isFlying = false;
-        _vY = _speedJump;
+        _isAllowedToSide = false;
+
+        JumpingOnPlace();
 
         DoodleEndFlyingCommand.Execute(_transform.position);
         JumpingOnForwardWithRotationCommnad.Execute(_transform.position);
@@ -63,7 +72,6 @@ public class JumpingComponent : BaseComponent
     public void SetTargetPlatform(Vector3 target)
     {
         _isJumpForward = true;
-        _isFlying = false;
         _targetPlatform = target;
     }
 
@@ -95,8 +103,10 @@ public class JumpingComponent : BaseComponent
         base.Start();
 
         _transform = transform;
+
         _isJumpOnPlace = true;
         _isJumpForward = false;
+        _isAllowedToSide = true;
 
         ManagerUniRx.AddObjectDisposable(JumpingOnPlaceCommnad);
         ManagerUniRx.AddObjectDisposable(JumpingOnForwardWithRotationCommnad);
@@ -117,23 +127,28 @@ public class JumpingComponent : BaseComponent
         }
 
         if (_isJumpOnPlace)
-        {
-            _vX = 0;
-            _vY = _speedJump;
-            _vZ = 0;
-            SetVelocity(new Vector3(_vX, _vY, _vZ));
-
-            _isJumpOnPlace = false;
-        }
+            JumpingOnPlace();
 
         _vY -= _gravity * Time.deltaTime;
         SetVelocity(new Vector3(_rigidbody.velocity.x, _vY, _rigidbody.velocity.z));
+    }
+
+    private void JumpingOnPlace()
+    {
+        _vX = 0;
+        _vY = _speedJump;
+        _vZ = 0;
+        SetVelocity(new Vector3(_vX, _vY, _vZ));
+
+        _isJumpOnPlace = false;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
+            _isAllowedToSide = true;
+
             JumpingOnPlaceCommnad.Execute(_transform.position);
 
             if (_isJumpForward == false)

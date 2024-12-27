@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10f13fe6ea3e44c49af201fcf7246196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rocketEffectComponent: {fileID: 0}
 --- !u!114 &2917848479918560285
 MonoBehaviour:
   m_ObjectHideFlags: 0

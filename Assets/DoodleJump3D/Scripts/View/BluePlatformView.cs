@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class BluePlatformView : PlatformView
 {
+    [SerializeField] private MovablePlatformComponent _movablePlatformComponent;
+
     protected override void OnTriggerEnter(Collider other)
     {
-        //if (other.gameObject.layer == LayerMask.NameToLayer("Map"))
-        //SetActive(false);
+        _movablePlatformComponent.ChangeRoute();
+    }
 
-        //if(other.gameObject.layer == LayerMask.NameToLayer("Ground"))
-        //OnCollisionTexture.Execute(this);
-
-        base.OnTriggerEnter(other);
+    private void OnValidate()
+    {
+        if (_movablePlatformComponent == null)
+            _movablePlatformComponent = GetComponent<MovablePlatformComponent>();
     }
 }
