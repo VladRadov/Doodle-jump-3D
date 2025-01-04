@@ -33,6 +33,7 @@ public class MovablePlatformComponent : BaseComponent
 
         if (_timer >= _delayChangeRoute)
             ChangeRoute();
+
         Move();
     }
 

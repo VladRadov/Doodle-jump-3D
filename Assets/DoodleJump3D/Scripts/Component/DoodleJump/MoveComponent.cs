@@ -1,21 +1,41 @@
 using UnityEngine;
 
+using Cysharp.Threading.Tasks;
+
 public class MoveComponent : BaseComponent
 {
     private Rigidbody _rigidbody;
+    private bool _isMoveToPosition;
 
-    [SerializeField] private float _speed;
+    [SerializeField] private float _speedMove;
+    [SerializeField] private float _speedMoveTransform;
 
     public void Move(Vector2 force)
     {
         var newForce = new Vector3(force.x, 0, 0);
-        _rigidbody.AddForce(newForce * _speed * Time.deltaTime, ForceMode.VelocityChange);
+        _rigidbody.AddForce(newForce * _speedMove * Time.deltaTime, ForceMode.VelocityChange);
     }
 
-    public void MoveToPosition(Vector3 targetPosition)
+    public async void MoveToPosition(Vector3 targetPosition)
     {
-        var force = new Vector3(targetPosition.x, 0, targetPosition.z) - new Vector3(transform.position.x, 0, transform.position.z);
-        _rigidbody.AddForceAtPosition(force * _speed * Time.deltaTime, targetPosition, ForceMode.VelocityChange);
+        _isMoveToPosition = true;
+
+        var targetPositionNoY = new Vector3(targetPosition.x, transform.position.y, targetPosition.z);
+
+        while (_isMoveToPosition)
+        {
+            targetPositionNoY = new Vector3(targetPosition.x, transform.position.y, targetPosition.z);
+            var newPosition = Vector3.Lerp(transform.position, targetPositionNoY, _speedMoveTransform * Time.deltaTime);
+            _rigidbody.MovePosition(newPosition);
+
+            await UniTask.Delay(10);
+        }
+    }
+
+    public void EndMoveToPosition()
+    {
+        if(_isMoveToPosition)
+            _isMoveToPosition = false;
     }
 
     private void OnValidate()

@@ -9,6 +9,7 @@ public class ManagerEducation : BaseManager
     [SerializeField] private ClueView _clue1;
     [SerializeField] private ClueView _clue2;
     [SerializeField] private ClueView _clue3;
+    [SerializeField] private ClueView _clue4;
 
     public ReactiveCommand OnEducationEnd = new();
 
@@ -29,6 +30,13 @@ public class ManagerEducation : BaseManager
         _clue3.OnOkClick.Subscribe(_ =>
         {
             _clue3.SetActive(false);
+            _clue4.SetActive(true);
+            OnEducationEnd.Execute();
+        });
+
+        _clue4.OnOkClick.Subscribe(_ =>
+        {
+            _clue4.SetActive(false);
             OnEducationEnd.Execute();
         });
 

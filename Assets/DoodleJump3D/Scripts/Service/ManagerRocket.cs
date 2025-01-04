@@ -27,6 +27,9 @@ public class ManagerRocket : BaseManager
     {
         while (_isFlying)
         {
+            if (doodleTransform == null)
+                break;
+
             var smokeEffect = PoolObjects<SmokeEffectView>.GetObject(_smokeEffectPrefab);
             smokeEffect.SetPosition(doodleTransform.position);
             await UniTask.Delay(100);

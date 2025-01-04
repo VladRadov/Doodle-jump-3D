@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
             var findedNearPlatformFromDoodle = managerPlatform.PlatformController.FindNearPlatformFromDoodle(doodlePosition);
             managerPlatform.PlatformController.SetCurrentSelectPlatfrom(findedNearPlatformFromDoodle);
             moveComponent.MoveToPosition(findedNearPlatformFromDoodle.transform.position);
+
             managerPlatform.OutlineNextPlatform();
             managerPlatform.PlatformController.FormationSelectionAllowedPlatform();
             managerPlatform.PlatformController.OutlineSelectionAllowedPlatform();
@@ -71,6 +72,7 @@ public class GameManager : MonoBehaviour
 
         jumpingComponent.JumpingOnPlaceCommnad.Subscribe(positionDoodle =>
         {
+            moveComponent.EndMoveToPosition();
             effectJumpComponent.Create(positionDoodle);
             managerCamera.ShakeCamera.Shake();
             managerAudio.PlayJump();
