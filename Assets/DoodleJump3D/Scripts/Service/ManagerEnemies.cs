@@ -27,7 +27,7 @@ public class ManagerEnemies : BaseManager
         CreateEnemyCommand.Execute();
 
         var newPosition = GetRandomPosition();
-        rootEnemy.EnemyView.SetLocalPosition(newPosition);
+        rootEnemy.SetLocalPosition(newPosition);
 
         _enemyController.AddEnemyStorage(rootEnemy.EnemyView);
     }

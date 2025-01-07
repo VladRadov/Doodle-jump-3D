@@ -45,16 +45,17 @@ public class GameManager : MonoBehaviour
 
         inputComponent.JumpCommand.Subscribe(_ =>
         {
-            if (jumpingComponent.IsFlying == false && managerLevel.IsPause == false)
+            if (jumpingComponent.IsFlying || managerLevel.IsPause)
+                return;
+
+            if (managerPlatform.PlatformController.PreviousSelectedPlatfrom == null || managerPlatform.PlatformController.PreviousSelectedPlatfrom.IsDoodleOnPlatform)
             {
-                if (managerPlatform.PlatformController.PreviousSelectedPlatfrom == null || managerPlatform.PlatformController.PreviousSelectedPlatfrom.IsDoodleOnPlatform)
-                {
-                    managerPlatform.PlatformController.ShiftRankPlatforams();
-                    jumpingComponent.SetTargetPlatform(managerPlatform.PlatformController.NextSelectPlatfrom.transform.position);
-                    managerPlatform.OutlineNextPlatform();
-                    managerPlatform.PlatformController.FormationSelectionAllowedPlatform();
-                    managerPlatform.PlatformController.OutlineSelectionAllowedPlatform();
-                }
+                managerPlatform.PlatformController.ShiftRankPlatforams();
+                jumpingComponent.SetTargetPlatform(managerPlatform.PlatformController.NextSelectPlatfrom.transform.position);
+
+                managerPlatform.OutlineNextPlatform();
+                managerPlatform.PlatformController.FormationSelectionAllowedPlatform();
+                managerPlatform.PlatformController.OutlineSelectionAllowedPlatform();
             }
         });
 
@@ -67,6 +68,7 @@ public class GameManager : MonoBehaviour
             managerPlatform.OutlineNextPlatform();
             managerPlatform.PlatformController.FormationSelectionAllowedPlatform();
             managerPlatform.PlatformController.OutlineSelectionAllowedPlatform();
+
             managerRocket.SetFlagFlying(false);
         });
 

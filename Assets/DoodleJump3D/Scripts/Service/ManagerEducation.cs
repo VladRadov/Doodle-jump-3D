@@ -31,7 +31,6 @@ public class ManagerEducation : BaseManager
         {
             _clue3.SetActive(false);
             _clue4.SetActive(true);
-            OnEducationEnd.Execute();
         });
 
         _clue4.OnOkClick.Subscribe(_ =>

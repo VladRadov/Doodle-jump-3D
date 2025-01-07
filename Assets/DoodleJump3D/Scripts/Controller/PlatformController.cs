@@ -22,7 +22,7 @@ public class PlatformController
     private float _offsetZ;
     private float _minDistanceSelect;
 
-    private const int START_POSITION_Z = 5;
+    private const int START_POSITION_Z = 6;
     private const int MAX_COUNT_PLATFORM_OF_FRAME = 5;
 
     public PlatformController(List<PlatformView> platformsPrefab, int countStartPlatform)

@@ -8320,7 +8320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 231944989351416915, guid: 2a1f29a86eff12b43b4f91a4d84b67a4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2614489088994927845, guid: 2a1f29a86eff12b43b4f91a4d84b67a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13849,7 +13849,7 @@ MonoBehaviour:
   - {fileID: 259768869307295331, guid: 25b2a82f98cebd64087d22d8470bf62e, type: 3}
   - {fileID: 6582206227019148182, guid: c98fd241da3959e4e9dbe4415e4e2d65, type: 3}
   _borderX: 4
-  _yPositionEnemy: 10
+  _yPositionEnemy: 8
 --- !u!1 &1356120655
 GameObject:
   m_ObjectHideFlags: 0

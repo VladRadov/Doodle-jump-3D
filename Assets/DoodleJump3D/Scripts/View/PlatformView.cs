@@ -51,13 +51,19 @@ public class PlatformView : MonoBehaviour
         _rigidbody.useGravity = true;
     }
 
-    protected virtual void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerStay(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Map") || other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             SetActive(false);
             OnCollisionTexture.Execute(this);
         }
+    }
+
+    protected virtual void Start()
+    {
+        ManagerUniRx.AddObjectDisposable(OnCollisionTexture);
+        ManagerUniRx.AddObjectDisposable(OnCollisionDoodle);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -67,12 +73,6 @@ public class PlatformView : MonoBehaviour
             _isDoodleOnPlatform = true;
             OnCollisionDoodle.Execute();
         }
-    }
-
-    private void Start()
-    {
-        ManagerUniRx.AddObjectDisposable(OnCollisionTexture);
-        ManagerUniRx.AddObjectDisposable(OnCollisionDoodle);
     }
 
     private void OnEnable()

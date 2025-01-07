@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using Cysharp.Threading.Tasks;
 
 public class MovablePlatformComponent : BaseComponent
 {
