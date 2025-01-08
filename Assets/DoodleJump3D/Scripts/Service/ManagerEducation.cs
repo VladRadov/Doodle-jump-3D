@@ -24,10 +24,7 @@ public class ManagerEducation : BaseManager
         _clue3.OnOkClick.Subscribe(_ => { MoveCluePanel(_clue3, _clue4); });
         _clue4.OnOkClick.Subscribe(async _ =>
         {
-            MoveCluePanel(null, _clue4);
-            await UniTask.Delay(500);
-
-            _clue4.SetActive(false);
+            MoveCluePanel(_clue4, _clue4);
             OnEducationEnd.Execute();
         });
 
