@@ -1,13 +1,9 @@
 using UnityEngine;
 using UniRx;
-using DG.Tweening;
-using Cysharp.Threading.Tasks;
 
 public class ManagerEducation : BaseManager
 {
-    private Vector2 START_Y_POSITION = new Vector2(502, -232);
-    private Vector2 END_Y_POSITION = new Vector2(502, 500);
-    private float SPEED_MOVE_Y_POSITION = 0.3f;
+    private AnimationPanel _animationPanel;
 
     [SerializeField] private GameObject _parentPanel;
     [SerializeField] private ClueView _clue1;
@@ -19,12 +15,14 @@ public class ManagerEducation : BaseManager
 
     public override void Initialize()
     {
-        _clue1.OnOkClick.Subscribe(_ => { MoveCluePanel(_clue1, _clue2); });
-        _clue2.OnOkClick.Subscribe(_ => { MoveCluePanel(_clue2, _clue3); });
-        _clue3.OnOkClick.Subscribe(_ => { MoveCluePanel(_clue3, _clue4); });
-        _clue4.OnOkClick.Subscribe(async _ =>
+        _animationPanel = new AnimationPanel(new Vector2(502, -232), new Vector2(502, 500), 0.3f);
+
+        _clue1.OnOkClick.Subscribe(_ => { _animationPanel.MoveDOAchorPos(_clue2.gameObject, _clue1.gameObject); });
+        _clue2.OnOkClick.Subscribe(_ => { _animationPanel.MoveDOAchorPos(_clue3.gameObject, _clue2.gameObject); });
+        _clue3.OnOkClick.Subscribe(_ => { _animationPanel.MoveDOAchorPos(_clue4.gameObject, _clue3.gameObject); });
+        _clue4.OnOkClick.Subscribe(_ =>
         {
-            MoveCluePanel(_clue4, _clue4);
+            _animationPanel.MoveDOAchorPos(_clue4.gameObject, _clue4.gameObject);
             OnEducationEnd.Execute();
         });
 
@@ -34,27 +32,9 @@ public class ManagerEducation : BaseManager
     public void SetActive(bool value)
     {
         _parentPanel.gameObject.SetActive(value);
-        MoveCluePanel(null, _clue1);
-    }
 
-    private async void MoveCluePanel(ClueView clueNoActive, ClueView clueActive)
-    {
-        clueActive?.SetActive(true);
-
-        if (clueNoActive != null)
-        {
-            var recTransformClueNoActive = clueNoActive.GetComponent<RectTransform>();
-            recTransformClueNoActive.DOAnchorPos(END_Y_POSITION, SPEED_MOVE_Y_POSITION);
-        }
-        if (clueActive != null)
-        {
-            await UniTask.Delay(500);
-
-            var recTransformClueActive = clueActive.GetComponent<RectTransform>();
-            recTransformClueActive.DOAnchorPos(START_Y_POSITION, SPEED_MOVE_Y_POSITION);
-        }
-
-        clueNoActive?.SetActive(false);
+        if(value)
+            _animationPanel.MoveDOAchorPos(_clue1.gameObject);
     }
 
     private void OnDestroy()

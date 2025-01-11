@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using UniRx;
 
@@ -8,6 +9,7 @@ public class SettingsView : MonoBehaviour
     [SerializeField] private Button _close;
 
     public ReactiveCommand<float> ChangingVolume = new();
+    public UnityEvent ClosingEventHandler;
 
     public void SetActive(bool value)
         => gameObject.SetActive(value);
@@ -19,7 +21,7 @@ public class SettingsView : MonoBehaviour
     {
         _sliderSounds.value = DataSettingsContainer.Instance.Settings.VolumeSounds;
         _sliderSounds.onValueChanged.AddListener((value) => { ChangeVolume(value); });
-        _close.onClick.AddListener(() => { SetActive(false); });
+        _close.onClick.AddListener(() => { ClosingEventHandler?.Invoke(); });
         ManagerUniRx.AddObjectDisposable(ChangingVolume);
     }
 

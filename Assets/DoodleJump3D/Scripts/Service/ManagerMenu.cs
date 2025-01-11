@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
 
 public class ManagerMenu : BaseManager
 {
+    private AnimationPanel _animationPanel;
+
     [SerializeField] private MenuView _menuPanel;
     [SerializeField] private SettingsView _settingsView;
     [SerializeField] private AchievementsView _achievementsView;
@@ -20,6 +20,8 @@ public class ManagerMenu : BaseManager
 
     public override void Initialize()
     {
+        _animationPanel = new AnimationPanel(new Vector2(0, 0), new Vector2(0, 882), 0.3f);
+
         _play.onClick.AddListener(() =>
         {
             PlayingCommand.Execute();
@@ -28,14 +30,22 @@ public class ManagerMenu : BaseManager
 
         _settings.onClick.AddListener(() =>
         {
-            _achievementsView.SetActive(false);
-            _settingsView.SetActive(true);
+            _animationPanel.MoveDOAchorPos(_settingsView.gameObject, _achievementsView.gameObject);
         });
 
         _achievements.onClick.AddListener(() =>
         {
-            _settingsView.SetActive(false);
-            _achievementsView.SetActive(true);
+            _animationPanel.MoveDOAchorPos(_achievementsView.gameObject, _settingsView.gameObject);
+        });
+
+        _settingsView.ClosingEventHandler.AddListener(() =>
+        {
+            _animationPanel.MoveDOAchorPos(null, _settingsView.gameObject);
+        });
+
+        _achievementsView.ClosingEventHandler.AddListener(() =>
+        {
+            _animationPanel.MoveDOAchorPos(null, _achievementsView.gameObject);
         });
     }
 
