@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
+
 using UniRx;
+using Cysharp.Threading.Tasks;
 
 public class ManagerMenu : BaseManager
 {
@@ -46,6 +48,18 @@ public class ManagerMenu : BaseManager
         _achievementsView.ClosingEventHandler.AddListener(() =>
         {
             _animationPanel.MoveDOAchorPos(null, _achievementsView.gameObject);
+        });
+
+        _gameOverView.GameOverCommand.Subscribe(_ =>
+        {
+            _animationPanel.MoveDOAchorPos(_gameOverView.gameObject, null);
+        });
+
+        _gameOverView.StartNewGameCommand.Subscribe(async _ =>
+        {
+            _animationPanel.MoveDOAchorPos(null, _gameOverView.gameObject);
+            await UniTask.Delay(500);
+            ManagerScenes.Instance.LoadAsyncFromCoroutine("Game");
         });
     }
 

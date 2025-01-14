@@ -1,8 +1,10 @@
+using Cinemachine;
 using UnityEngine;
 
 public class ManagerCamera : BaseManager
 {
     [SerializeField] private ShakeCamera _shakeCamera;
+    [SerializeField] private CinemachineVirtualCamera _virtualCamera;
 
     public ShakeCamera ShakeCamera => _shakeCamera;
 
@@ -10,4 +12,7 @@ public class ManagerCamera : BaseManager
     {
 
     }
+
+    public void ResetFollowCamera()
+        => _virtualCamera.Follow = null;
 }

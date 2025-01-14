@@ -117,13 +117,14 @@ public class GameManager : MonoBehaviour
 
         managerDoodle.DoodleView.DoodleDieCommand.Subscribe(async _ =>
         {
+            managerCamera.ResetFollowCamera();
             jumpingComponent.OnDieDoodle();
             managerAudio.PlayFall();
             managerPlatform.PlatformController.ClearSlectePlatforms();
             effectShakeComponent.SetActive(true);
             managerDistance.SaveResult();
             await UniTask.Run(async () => { await UniTask.Delay(DataSettingsContainer.Instance.Settings.DelayAfterDieDoodle); });
-            managerMenu.GameOverView.SetActive(true);
+            managerMenu.GameOverView.GameOverCommand.Execute();
         });
 
         managerEnemies.CreateEnemyCommand.Subscribe(_ => { managerAudio.PlayEnemySound(); });
