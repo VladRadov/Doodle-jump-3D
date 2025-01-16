@@ -6734,6 +6734,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4295602171541660, guid: 27c3faa0d10c39742aab8ab802a5dd37, type: 3}
   m_PrefabInstance: {fileID: 687164997}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &702731756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 702731757}
+  - component: {fileID: 702731758}
+  m_Layer: 0
+  m_Name: AchievementsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &702731757
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702731756}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1936099405}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &702731758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702731756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3ee085d31a02742924558cd09a419a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _achievements:
+  - {fileID: 11400000, guid: fde156570c8ae15409c3c37447c57d7f, type: 2}
+  - {fileID: 11400000, guid: 8c237196122e55746a8bdd889627096c, type: 2}
+  - {fileID: 11400000, guid: 1e150ce85842c2f42bc26417c88af8e6, type: 2}
+  - {fileID: 11400000, guid: b49d212966cb17940bac964b4b7fc99d, type: 2}
+  - {fileID: 11400000, guid: 410380e1adba4a14d897cfcfac59e7ed, type: 2}
+  - {fileID: 11400000, guid: 83b4cc5d8d9460541b384976963c293c, type: 2}
+  - {fileID: 11400000, guid: b0d01d89310587f4d82acf858c0fd2e2, type: 2}
+  - {fileID: 11400000, guid: d06f80814b384d44a962d003f182df9c, type: 2}
+  - {fileID: 11400000, guid: d08a69fda4905184096ee59e579c8bd4, type: 2}
+  - {fileID: 11400000, guid: e9fda41ba88034f4587570f3685d7ad3, type: 2}
 --- !u!1 &706833973
 GameObject:
   m_ObjectHideFlags: 0
@@ -17836,6 +17891,7 @@ Transform:
   - {fileID: 591286654}
   - {fileID: 491480475}
   - {fileID: 126308160}
+  - {fileID: 702731757}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1940500779
