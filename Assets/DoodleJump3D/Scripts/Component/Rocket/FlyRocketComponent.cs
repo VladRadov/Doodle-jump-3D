@@ -13,11 +13,15 @@ public class FlyRocketComponent : MonoBehaviour
     [SerializeField] private Vector3 _speed;
     [SerializeField] private float _timeFlying;
     [SerializeField] private Vector3 _offsetConnectedDoodle;
+    [SerializeField] private Vector3 _rotateFlyingToRocket;
 
     public ReactiveCommand FlyingEndCommand = new();
 
     public void FlyRocket()
-        => _rigidbody.AddForce(_speed * Time.deltaTime, ForceMode.VelocityChange);
+    {
+        transform.rotation = Quaternion.Euler(_rotateFlyingToRocket);
+        _rigidbody.AddForce(_speed * Time.deltaTime, ForceMode.VelocityChange);
+    }
 
     private void Start()
     {
@@ -47,7 +51,9 @@ public class FlyRocketComponent : MonoBehaviour
             _boxCollider.isTrigger = false;
             _isFlying = true;
 
-            other.transform.position = transform.position + _offsetConnectedDoodle;
+            var doodle = other.GetComponent<DoodleView>();
+            transform.position = doodle.PointJointRocket;
+            //other.transform.position = transform.position + _offsetConnectedDoodle;
             var jumpingComponent = other.GetComponent<JumpingComponent>();
             jumpingComponent.StartFlying(_rigidbody);
 

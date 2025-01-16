@@ -1,8 +1,7 @@
-using System;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
 
-public class DoodleAnimator : MonoBehaviour
+public class DoodleAnimator : BaseComponent
 {
     [SerializeField] private Animator _animator;
     [Header("Время задержки перед сальто в мсек.")]
@@ -13,4 +12,7 @@ public class DoodleAnimator : MonoBehaviour
         await UniTask.Delay(_timeDelayRotation);
         _animator.Play("Rotation", 0, 0);
     }
+
+    public void SetActiveAnimator(bool value)
+        => _animator.enabled = value;
 }

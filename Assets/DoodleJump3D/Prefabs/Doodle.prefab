@@ -398,6 +398,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1778704305247434261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2821366616876832435}
+  m_Layer: 9
+  m_Name: PointRocketJoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2821366616876832435
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778704305247434261}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7988827347317766475}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1789537217198256710
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,6 +889,7 @@ GameObject:
   - component: {fileID: 3509104780736491037}
   - component: {fileID: 2381747764778486002}
   - component: {fileID: 4532521973148175871}
+  - component: {fileID: 3821883146911770907}
   - component: {fileID: 3328293305804017740}
   - component: {fileID: 2353595814710894259}
   - component: {fileID: 6765762322697730876}
@@ -895,6 +927,7 @@ Transform:
   - {fileID: 2408301990945983141}
   - {fileID: 761189380416628059}
   - {fileID: 5389263756924712570}
+  - {fileID: 2821366616876832435}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3509104780736491037
@@ -920,6 +953,8 @@ MonoBehaviour:
   - {fileID: 2353595814710894259}
   - {fileID: 902256797796844902}
   - {fileID: 6198218252667628351}
+  - {fileID: 3821883146911770907}
+  - {fileID: 8385837221562799441}
 --- !u!54 &2381747764778486002
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -970,6 +1005,20 @@ CapsuleCollider:
   m_Height: 4.9915915
   m_Direction: 1
   m_Center: {x: -0.021546006, y: 2.5300393, z: -1.8564895e-15}
+--- !u!114 &3821883146911770907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268115652102787550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57e1e26d022135942a07b3dbc1919cae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isOnState: 1
+  _rotateFlyingToRocket: {x: 0, y: 0, z: 0}
 --- !u!114 &3328293305804017740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -996,7 +1045,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isOnState: 1
-  _speed: 40
+  _speedMove: 0
+  _speedMoveTransform: 0
 --- !u!114 &6765762322697730876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1061,6 +1111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81379b16378e6c54d95e7b664c01a894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isOnState: 0
   _animator: {fileID: 787549349572406749}
   _timeDelayRotation: 200
 --- !u!114 &902256797796844902

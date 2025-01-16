@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
         var jumpingComponent = managerDoodle.DoodleController.GetDoodleComponent<JumpingComponent>();
         var effectShakeComponent = managerDoodle.DoodleController.GetDoodleComponent<EffectShakeComponent>();
         var shotDoodleComponent = managerDoodle.DoodleController.GetDoodleComponent<ShotDoodleComponent>();
+        var rotateComponent = managerDoodle.DoodleController.GetDoodleComponent<RotateComponent>();
+        var doodleAnimator = managerDoodle.DoodleController.GetDoodleComponent<DoodleAnimator>();
 
         managerEducation.OnEducationEnd.Subscribe(_ => { managerLevel.SetActivePause(false); });
 
@@ -59,8 +61,25 @@ public class GameManager : MonoBehaviour
             }
         });
 
+        jumpingComponent.DoodleStartFlyingCommand.Subscribe(doodleTransform =>
+        {
+            doodleAnimator.SetActiveAnimator(false);
+            rotateComponent.RotateFlyingToRocket();
+            managerAudio.PlayRocket();
+            managerPostProcessProfile.StartRocketEffect();
+            managerRocket.SetFlagFlying(true);
+            managerRocket.StartSmokeEffect(doodleTransform);
+        });
+
+        jumpingComponent.FlyingCommand.Subscribe(positionDoodle =>
+        {
+            managerFramesMap.FramesMapController.CheckAndRespawnFramesMap(positionDoodle);
+        });
+
         jumpingComponent.DoodleEndFlyingCommand.Subscribe(doodlePosition =>
         {
+            rotateComponent.ResetRotate();
+
             var findedNearPlatformFromDoodle = managerPlatform.PlatformController.FindNearPlatformFromDoodle(doodlePosition);
             managerPlatform.PlatformController.SetCurrentSelectPlatfrom(findedNearPlatformFromDoodle);
             moveComponent.MoveToPosition(findedNearPlatformFromDoodle.transform.position);
@@ -84,16 +103,6 @@ public class GameManager : MonoBehaviour
         {
             managerDoodle.DoodleAnimator.PlayRotation();
             managerFramesMap.FramesMapController.CheckAndRespawnFramesMap(positionDoodle);
-        });
-
-        jumpingComponent.FlyingCommand.Subscribe(positionDoodle => { managerFramesMap.FramesMapController.CheckAndRespawnFramesMap(positionDoodle); });
-
-        jumpingComponent.DoodleStartFlyingCommand.Subscribe(doodleTransform =>
-        {
-            managerAudio.PlayRocket();
-            managerPostProcessProfile.StartRocketEffect();
-            managerRocket.SetFlagFlying(true);
-            managerRocket.StartSmokeEffect(doodleTransform);
         });
 
         jumpingComponent.DoodleEndFlyingCommand.Subscribe(_ =>

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
@@ -11,11 +10,13 @@ public class DoodleView : MonoBehaviour
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private CapsuleCollider _capsuleCollider;
     [SerializeField] private List<BaseComponent> _components;
+    [SerializeField] private Transform _pointJointRocket;
 
     public List<BaseComponent> Components => _components;
     public ReactiveCommand<int> ChangingPosition = new();
     public ReactiveCommand DoodleDieCommand = new();
     public bool IsDie => _isDie;
+    public Vector3 PointJointRocket => _pointJointRocket.position;
 
     private void Start()
     {
