@@ -18,5 +18,5 @@ MonoBehaviour:
     \u0438\u0433\u0440\u0443"
   _maxCountSuccess: 1000
   _currentCountSuccess: 0
-  _levelAchievement: 4
-  _isAchievementSuccess: 0
+  _levelAchivement: 2
+  _isAchivementSuccess: 0

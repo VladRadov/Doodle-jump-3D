@@ -16,5 +16,5 @@ MonoBehaviour:
   _description: "\u0423\u0431\u0435\u0439 20 \u043C\u043E\u043D\u0441\u0442\u0440\u043E\u0432"
   _maxCountSuccess: 20
   _currentCountSuccess: 0
-  _levelAchievement: 9
-  _isAchievementSuccess: 0
+  _levelAchivement: 3
+  _isAchivementSuccess: 0
