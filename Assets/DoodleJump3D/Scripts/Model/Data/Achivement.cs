@@ -12,7 +12,7 @@ public class Achivement : ScriptableObject
 
     public int LevelAchivement => _levelAchivement;
     public bool IsAchivementSuccess => _isAchivementSuccess;
-    public string Description => _description;
+    public virtual string Description => _description;
     public int CurrentCountSuccess => _currentCountSuccess;
     public int MaxCountSuccess => _maxCountSuccess;
 }

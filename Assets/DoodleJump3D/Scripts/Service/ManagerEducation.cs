@@ -15,14 +15,26 @@ public class ManagerEducation : BaseManager
 
     public override void Initialize()
     {
-        _animationPanel = new AnimationPanel(new Vector2(502, -232), new Vector2(502, 500), 0.3f);
+        _animationPanel = new AnimationPanel(0.3f);
 
-        _clue1.OnOkClick.Subscribe(_ => { _animationPanel.MoveDOAchorPos(_clue2.gameObject, _clue1.gameObject); });
-        _clue2.OnOkClick.Subscribe(_ => { _animationPanel.MoveDOAchorPos(_clue3.gameObject, _clue2.gameObject); });
-        _clue3.OnOkClick.Subscribe(_ => { _animationPanel.MoveDOAchorPos(_clue4.gameObject, _clue3.gameObject); });
-        _clue4.OnOkClick.Subscribe(_ =>
+        _clue1.OnOkClick.Subscribe(async _ =>
         {
-            _animationPanel.MoveDOAchorPos(_clue4.gameObject, _clue4.gameObject);
+            await _animationPanel.MoveDOAchorPosHideObject(_clue1.gameObject, new Vector2(502, 500));
+            _animationPanel.MoveDOAchorPosActiveObject(_clue2.gameObject, new Vector2(502, -232));
+        });
+        _clue2.OnOkClick.Subscribe(async _ =>
+        {
+            await _animationPanel.MoveDOAchorPosHideObject(_clue2.gameObject, new Vector2(502, 500));
+            _animationPanel.MoveDOAchorPosActiveObject(_clue3.gameObject, new Vector2(502, -232));
+        });
+        _clue3.OnOkClick.Subscribe(async _ =>
+        {
+            await _animationPanel.MoveDOAchorPosHideObject(_clue3.gameObject, new Vector2(502, 500));
+            _animationPanel.MoveDOAchorPosActiveObject(_clue4.gameObject, new Vector2(502, -232));
+        });
+        _clue4.OnOkClick.Subscribe(async _ =>
+        {
+            await _animationPanel.MoveDOAchorPosHideObject(_clue4.gameObject, new Vector2(502, 500));
             OnEducationEnd.Execute();
         });
 
@@ -33,8 +45,8 @@ public class ManagerEducation : BaseManager
     {
         _parentPanel.gameObject.SetActive(value);
 
-        if(value)
-            _animationPanel.MoveDOAchorPos(_clue1.gameObject);
+        if (value)
+            _animationPanel.MoveDOAchorPosActiveObject(_clue1.gameObject, new Vector2(502, -232));
     }
 
     private void OnDestroy()

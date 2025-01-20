@@ -22,7 +22,7 @@ public class ManagerMenu : BaseManager
 
     public override void Initialize()
     {
-        _animationPanel = new AnimationPanel(new Vector2(0, 0), new Vector2(0, 882), 0.3f);
+        _animationPanel = new AnimationPanel( 0.3f);
 
         _play.onClick.AddListener(() =>
         {
@@ -30,34 +30,36 @@ public class ManagerMenu : BaseManager
             _menuPanel.SetActive(false);
         });
 
-        _settings.onClick.AddListener(() =>
+        _settings.onClick.AddListener(async () =>
         {
-            _animationPanel.MoveDOAchorPos(_settingsView.gameObject, _achievementsView.gameObject);
+            await _animationPanel.MoveDOAchorPosHideObject(_achievementsView.gameObject, new Vector2(0, 882));
+            _animationPanel.MoveDOAchorPosActiveObject(_settingsView.gameObject, new Vector2(0, 0));
         });
 
-        _achievements.onClick.AddListener(() =>
+        _achievements.onClick.AddListener(async () =>
         {
-            _animationPanel.MoveDOAchorPos(_achievementsView.gameObject, _settingsView.gameObject);
+            await _animationPanel.MoveDOAchorPosHideObject(_settingsView.gameObject, new Vector2(0, 882));
+            _animationPanel.MoveDOAchorPosActiveObject(_achievementsView.gameObject, new Vector2(0, 0));
         });
 
         _settingsView.ClosingEventHandler.AddListener(() =>
         {
-            _animationPanel.MoveDOAchorPos(null, _settingsView.gameObject);
+            _animationPanel.MoveDOAchorPosHideObject(_settingsView.gameObject, new Vector2(0, 882));
         });
 
         _achievementsView.ClosingEventHandler.AddListener(() =>
         {
-            _animationPanel.MoveDOAchorPos(null, _achievementsView.gameObject);
+            _animationPanel.MoveDOAchorPosHideObject(_achievementsView.gameObject, new Vector2(0, 882));
         });
 
         _gameOverView.GameOverCommand.Subscribe(_ =>
         {
-            _animationPanel.MoveDOAchorPos(_gameOverView.gameObject, null);
+            _animationPanel.MoveDOAchorPosActiveObject(_gameOverView.gameObject, new Vector2(0, 882));
         });
 
         _gameOverView.StartNewGameCommand.Subscribe(async _ =>
         {
-            _animationPanel.MoveDOAchorPos(null, _gameOverView.gameObject);
+            _animationPanel.MoveDOAchorPosHideObject(_gameOverView.gameObject, new Vector2(0, 882));
             await UniTask.Delay(500);
             ManagerScenes.Instance.LoadAsyncFromCoroutine("Game");
         });
