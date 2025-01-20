@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9ccb58e678d02945b021715b5b11d5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 225adb80e02dac844b6b19e365e676c9, type: 3}
   m_Name: Runner2000
   m_EditorClassIdentifier: 
-  _name: "\u041C\u0430\u0440\u0430\u0444\u043E\u043D\u0435\u0446"
+  _name: "\u041E\u043B\u0438\u043C\u043F\u0438\u0430\u0434\u0435\u0446"
   _description: "\u041F\u0440\u043E\u0439\u0434\u0438 \u0434\u0438\u0441\u0442\u0430\u043D\u0446\u0438\u044E
     \u0432 2000 \u043C\u0435\u0442\u0440\u043E\u0432 \u0437\u0430 \u043E\u0434\u043D\u0443
     \u0438\u0433\u0440\u0443"

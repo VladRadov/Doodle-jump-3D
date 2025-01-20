@@ -738,6 +738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _descriptionAchievement: {fileID: 633701004}
   _progressAchievement: {fileID: 81572608}
+  endMovePositionAnimation: {x: -81, y: 10}
 --- !u!1 &87423544
 GameObject:
   m_ObjectHideFlags: 0
@@ -3726,6 +3727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _descriptionAchievement: {fileID: 88159958}
   _progressAchievement: {fileID: 360555083}
+  endMovePositionAnimation: {x: -98, y: 81}
 --- !u!1001 &377761846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7372,18 +7374,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _achivements:
-  - {fileID: 11400000, guid: fde156570c8ae15409c3c37447c57d7f, type: 2}
-  - {fileID: 11400000, guid: 8c237196122e55746a8bdd889627096c, type: 2}
-  - {fileID: 11400000, guid: 1e150ce85842c2f42bc26417c88af8e6, type: 2}
-  - {fileID: 11400000, guid: b49d212966cb17940bac964b4b7fc99d, type: 2}
-  - {fileID: 11400000, guid: 410380e1adba4a14d897cfcfac59e7ed, type: 2}
-  - {fileID: 11400000, guid: 83b4cc5d8d9460541b384976963c293c, type: 2}
-  - {fileID: 11400000, guid: d7ce016bbdc6c9447bf1e96a583d97ba, type: 2}
-  - {fileID: 11400000, guid: 06b7e29adbe39b24489e3cb473a170b5, type: 2}
-  - {fileID: 11400000, guid: b0d01d89310587f4d82acf858c0fd2e2, type: 2}
-  - {fileID: 11400000, guid: d06f80814b384d44a962d003f182df9c, type: 2}
-  - {fileID: 11400000, guid: d08a69fda4905184096ee59e579c8bd4, type: 2}
-  - {fileID: 11400000, guid: e9fda41ba88034f4587570f3685d7ad3, type: 2}
+  - {fileID: 11400000, guid: ff2f46f23b00bb8469642c9ea1e5e047, type: 2}
+  - {fileID: 11400000, guid: aae3f4379553eb54ba0dd7290c6bd3aa, type: 2}
+  - {fileID: 11400000, guid: bba64b7a2867e814f86cb2494b2f8dd0, type: 2}
+  - {fileID: 11400000, guid: 0e3c990a572cb3d4e83e27317ba8a743, type: 2}
+  - {fileID: 11400000, guid: 3997658f46e85f9489e276f28b9dc206, type: 2}
+  - {fileID: 11400000, guid: 66672cf18ac1ee94bbf4e7713e5ed866, type: 2}
+  - {fileID: 11400000, guid: d08d33eb08a4ddb4c8a63f1cdc711a45, type: 2}
+  - {fileID: 11400000, guid: 41e1a4703a7a46843ab120e7cc8cc42d, type: 2}
+  - {fileID: 11400000, guid: 2de1f2cc7e4b9054591d012b9e30663e, type: 2}
+  - {fileID: 11400000, guid: c70b00d1c0ed50d428219c6ef9b33a29, type: 2}
+  - {fileID: 11400000, guid: 7ca56b809955a6d458a069fbf03e8290, type: 2}
+  - {fileID: 11400000, guid: ceb472c944d17e3469a83a4b7ce590f2, type: 2}
   _achivementsItem:
   - {fileID: 360555084}
   - {fileID: 81572609}
@@ -13082,6 +13084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _descriptionAchievement: {fileID: 779820707}
   _progressAchievement: {fileID: 1141460095}
+  endMovePositionAnimation: {x: -128, y: -60}
 --- !u!1 &1146904067
 GameObject:
   m_ObjectHideFlags: 0

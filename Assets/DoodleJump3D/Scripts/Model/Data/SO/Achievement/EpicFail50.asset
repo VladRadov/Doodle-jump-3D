@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9ccb58e678d02945b021715b5b11d5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 8491dabe912a31b418aa7db02a2f0802, type: 3}
   m_Name: EpicFail50
   m_EditorClassIdentifier: 
   _name: "\u042D\u043F\u0438\u0447\u0435\u0441\u0438\u043A\u0439 \u043F\u0440\u043E\u0432\u0430\u043B"

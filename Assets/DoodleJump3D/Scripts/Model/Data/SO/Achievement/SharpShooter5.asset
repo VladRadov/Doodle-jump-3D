@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9ccb58e678d02945b021715b5b11d5f, type: 3}
+  m_Script: {fileID: 11500000, guid: baef2cd404d33bc44aa919f69433b5c9, type: 3}
   m_Name: SharpShooter5
   m_EditorClassIdentifier: 
   _name: "\u041C\u0435\u0442\u043A\u0438\u0439 \u0441\u0442\u0440\u0435\u043B\u043E\u043A"
