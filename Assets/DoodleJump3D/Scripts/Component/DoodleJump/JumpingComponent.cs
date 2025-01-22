@@ -24,6 +24,7 @@ public class JumpingComponent : BaseComponent
     [SerializeField] private float _minLenghtToRotationDoodle;
 
     public ReactiveCommand<Vector3> JumpingOnPlaceCommnad = new();
+    public ReactiveCommand JumpingOnForwardCommnad = new();
     public ReactiveCommand<Vector3> JumpingOnForwardWithRotationCommnad = new();
     public ReactiveCommand<Transform> DoodleStartFlyingCommand = new();
     public ReactiveCommand<Vector3> DoodleEndFlyingCommand = new();
@@ -94,6 +95,8 @@ public class JumpingComponent : BaseComponent
         SetVelocity(new Vector3(_vX, _vY, _vZ));
         _isJumpForward = false;
 
+        JumpingOnForwardCommnad.Execute();
+
         if(lengthVector > _minLenghtToRotationDoodle)
             JumpingOnForwardWithRotationCommnad.Execute(_transform.position);
     }
@@ -109,6 +112,7 @@ public class JumpingComponent : BaseComponent
         _isAllowedToSide = true;
 
         ManagerUniRx.AddObjectDisposable(JumpingOnPlaceCommnad);
+        ManagerUniRx.AddObjectDisposable(JumpingOnForwardCommnad);
         ManagerUniRx.AddObjectDisposable(JumpingOnForwardWithRotationCommnad);
         ManagerUniRx.AddObjectDisposable(DoodleStartFlyingCommand);
         ManagerUniRx.AddObjectDisposable(DoodleEndFlyingCommand);
@@ -167,6 +171,7 @@ public class JumpingComponent : BaseComponent
     private void OnDestroy()
     {
         ManagerUniRx.Dispose(JumpingOnPlaceCommnad);
+        ManagerUniRx.Dispose(JumpingOnForwardCommnad);
         ManagerUniRx.Dispose(JumpingOnForwardWithRotationCommnad);
         ManagerUniRx.Dispose(DoodleStartFlyingCommand);
         ManagerUniRx.Dispose(DoodleEndFlyingCommand);

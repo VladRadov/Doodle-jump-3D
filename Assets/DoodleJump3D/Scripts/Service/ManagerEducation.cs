@@ -35,6 +35,7 @@ public class ManagerEducation : BaseManager
         _clue4.OnOkClick.Subscribe(async _ =>
         {
             await _animationPanel.MoveDOAchorPosHideObject(_clue4.gameObject, new Vector2(502, 500));
+            GameDataContainer.Instance.GameData.EndEducation();
             OnEducationEnd.Execute();
         });
 

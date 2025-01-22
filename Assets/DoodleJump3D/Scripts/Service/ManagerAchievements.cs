@@ -8,9 +8,18 @@ public class ManagerAchievements : BaseManager
     [SerializeField] private List<Achivement> _achivements;
     [SerializeField] private List<AchivementView> _achivementsItem;
 
+    public AchievementsController Controller => _achievementsController;
+
     public override void Initialize()
     {
         _achievementsController = new AchievementsController(_achivements, _achivementsItem);
-        _achievementsController.LoadingNoCompletedAchivements();
+    }
+
+    public void ShowAchivements()
+        => _achievementsController?.LoadingNoCompletedAchivements();
+
+    public void OnDisable()
+    {
+        _achievementsController.Dispose();
     }
 }

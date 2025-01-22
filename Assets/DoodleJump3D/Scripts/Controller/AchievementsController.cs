@@ -24,7 +24,7 @@ public class AchievementsController
     public ReactiveCommand JumpPlatformCommand = new();
     public ReactiveCommand KillEnemyCommand = new();
     public ReactiveCommand RotateDoodleCommand = new();
-    public ReactiveCommand DistanceCompletedCommand = new();
+    public ReactiveCommand<int> DistanceCompletedCommand = new();
 
     public async void LoadingNoCompletedAchivements()
     {
@@ -47,7 +47,7 @@ public class AchievementsController
             else if (findedNoCompletedAchivements[i] is AchivementRotate)
                 RotateDoodleCommand.Subscribe(_ => { findedNoCompletedAchivements[i].IncreaseCountSuccess(); });
             else if (findedNoCompletedAchivements[i] is AchivementRunner)
-                DistanceCompletedCommand.Subscribe(_ => { findedNoCompletedAchivements[i].IncreaseCountSuccess(); });
+                DistanceCompletedCommand.Subscribe(distance => { findedNoCompletedAchivements[i].IncreaseCountSuccess(distance); });
             else if (findedNoCompletedAchivements[i] is AchivementSharpShooter)
                 DistanceCompletedCommand.Subscribe(_ => { findedNoCompletedAchivements[i].IncreaseCountSuccess(); });
 

@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
         var managerMenu = GetManager<ManagerMenu>();
         var managerRocket = GetManager<ManagerRocket>();
         var managerPostProcessProfile = GetManager<ManagerPostProcessProfile>();
+        var managerAchievements = GetManager<ManagerAchievements>();
 
         var inputComponent = managerDoodle.DoodleController.GetDoodleComponent<InputComponent>();
         var moveComponent = managerDoodle.DoodleController.GetDoodleComponent<MoveComponent>();
@@ -35,7 +36,11 @@ public class GameManager : MonoBehaviour
         var rotateComponent = managerDoodle.DoodleController.GetDoodleComponent<RotateComponent>();
         var doodleAnimator = managerDoodle.DoodleController.GetDoodleComponent<DoodleAnimator>();
 
-        managerEducation.OnEducationEnd.Subscribe(_ => { managerLevel.SetActivePause(false); });
+        managerEducation.OnEducationEnd.Subscribe(_ =>
+        {
+            managerLevel.SetActivePause(false);
+            managerAchievements.ShowAchivements();
+        });
 
         inputComponent.InputCommand.Subscribe(value =>
         {
@@ -63,6 +68,7 @@ public class GameManager : MonoBehaviour
 
         jumpingComponent.DoodleStartFlyingCommand.Subscribe(doodleTransform =>
         {
+            managerAchievements.Controller.FlyRocketCommand.Execute();
             doodleAnimator.SetActiveAnimator(false);
             rotateComponent.RotateFlyingToRocket();
             managerAudio.PlayRocket();
@@ -101,6 +107,7 @@ public class GameManager : MonoBehaviour
 
         jumpingComponent.JumpingOnForwardWithRotationCommnad.Subscribe(positionDoodle =>
         {
+            managerAchievements.Controller.RotateDoodleCommand.Execute();
             managerDoodle.DoodleAnimator.PlayRotation();
             managerFramesMap.FramesMapController.CheckAndRespawnFramesMap(positionDoodle);
         });
@@ -108,6 +115,11 @@ public class GameManager : MonoBehaviour
         jumpingComponent.DoodleEndFlyingCommand.Subscribe(_ =>
         {
             managerPostProcessProfile.StopRocketEffect();
+        });
+
+        jumpingComponent.JumpingOnForwardCommnad.Subscribe(_ =>
+        {
+            managerAchievements.Controller.JumpPlatformCommand.Execute();
         });
 
         managerFramesMap.FramesMapController.OnRespawnFrameMap.Subscribe(frameMap =>
@@ -121,7 +133,15 @@ public class GameManager : MonoBehaviour
         managerDoodle.DoodleView.ChangingPosition.Subscribe(zPosition =>
         {
             if (managerDoodle.DoodleView.IsDie == false)
+            {
                 managerDistance.IncreasingDistance(zPosition);
+                managerAchievements.Controller.DistanceCompletedCommand.Execute(zPosition);
+            }
+        });
+
+        managerEnemies.DieEnemyCommand.Subscribe(_ =>
+        {
+            managerAchievements.Controller.KillEnemyCommand.Execute();
         });
 
         managerDoodle.DoodleView.DoodleDieCommand.Subscribe(async _ =>
@@ -138,7 +158,13 @@ public class GameManager : MonoBehaviour
 
         managerEnemies.CreateEnemyCommand.Subscribe(_ => { managerAudio.PlayEnemySound(); });
 
-        managerMenu.PlayingCommand.Subscribe(_ => { managerEducation.SetActive(true); });
+        managerMenu.PlayingCommand.Subscribe(_ =>
+        {
+            if (GameDataContainer.Instance.GameData.IsEducation == false)
+                managerEducation.SetActive(true);
+            else
+                managerAchievements.ShowAchivements();
+        });
 
         managerMenu.SettingsView.ChangingVolume.Subscribe(volume => { managerAudio.ChangeVolume(volume); });
 

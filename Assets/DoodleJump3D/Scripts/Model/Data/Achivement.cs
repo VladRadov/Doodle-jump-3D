@@ -24,4 +24,13 @@ public class Achivement : ScriptableObject
         if (_maxCountSuccess == _currentCountSuccess && _isAchivementSuccess == false)
             _isAchivementSuccess = true;
     }
+
+    public void IncreaseCountSuccess(int value)
+    {
+        if (_maxCountSuccess != _currentCountSuccess)
+            _currentCountSuccess += value;
+
+        if (_maxCountSuccess == _currentCountSuccess && _isAchivementSuccess == false)
+            _isAchivementSuccess = true;
+    }
 }

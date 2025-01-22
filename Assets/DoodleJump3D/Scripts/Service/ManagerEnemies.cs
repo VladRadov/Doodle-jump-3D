@@ -13,11 +13,14 @@ public class ManagerEnemies : BaseManager
 
     public EnemyController EnemyController => _enemyController;
     public ReactiveCommand CreateEnemyCommand = new();
+    public ReactiveCommand DieEnemyCommand = new();
 
     public override void Initialize()
     {
         _enemyController = new EnemyController();
+
         ManagerUniRx.AddObjectDisposable(CreateEnemyCommand);
+        ManagerUniRx.AddObjectDisposable(DieEnemyCommand);
     }
 
     public void SpawnEnemy(Transform parent)
@@ -30,6 +33,9 @@ public class ManagerEnemies : BaseManager
         rootEnemy.SetLocalPosition(newPosition);
 
         _enemyController.AddEnemyStorage(rootEnemy.EnemyView);
+
+        rootEnemy.EnemyView.DieEnemyCommand = new();
+        rootEnemy.EnemyView.DieEnemyCommand.Subscribe(_ => { DieEnemyCommand.Execute(); });
     }
 
     private Vector3 GetRandomPosition()
@@ -41,5 +47,6 @@ public class ManagerEnemies : BaseManager
     private void OnDestroy()
     {
         ManagerUniRx.Dispose(CreateEnemyCommand);
+        ManagerUniRx.Dispose(DieEnemyCommand);
     }
 }
