@@ -17,5 +17,6 @@ MonoBehaviour:
     20 \u0440\u0430\u0437"
   _maxCountSuccess: 20
   _currentCountSuccess: 0
-  _levelAchivement: 4
-  _isAchivementSuccess: 0
+  _levelAchievement: 4
+  _isAchievementSuccess: 0
+  _icon: {fileID: 21300000, guid: c79e282dc907c0e408e0ad1976471c7b, type: 3}

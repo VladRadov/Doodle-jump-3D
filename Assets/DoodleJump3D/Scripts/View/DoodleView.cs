@@ -6,6 +6,7 @@ public class DoodleView : MonoBehaviour
 {
     private Transform _transform;
     private bool _isDie;
+    private int _zPosition;
 
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private CapsuleCollider _capsuleCollider;
@@ -21,6 +22,7 @@ public class DoodleView : MonoBehaviour
     private void Start()
     {
         _transform = transform;
+        _zPosition = (int)_transform.position.z;
         _isDie = false;
 
         ManagerUniRx.AddObjectDisposable(ChangingPosition);
@@ -29,7 +31,11 @@ public class DoodleView : MonoBehaviour
 
     private void FixedUpdate()
     {
-        ChangingPosition.Execute(((int)_transform.position.z));
+        if (_zPosition != (int)_transform.position.z)
+        {
+            _zPosition = (int)_transform.position.z;
+            ChangingPosition.Execute(_zPosition);
+        }
 
         if (_isDie == false && _transform.position.y < -4)
         {

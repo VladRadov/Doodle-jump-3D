@@ -1,36 +1,43 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Achivement", menuName = "ScriptableObject/Achivement")]
-public class Achivement : ScriptableObject
+public class Achievement : ScriptableObject
 {
     [SerializeField] private string _name;
     [SerializeField] private string _description;
     [SerializeField] private int _maxCountSuccess;
     [SerializeField] private int _currentCountSuccess;
-    [SerializeField] private int _levelAchivement;
-    [SerializeField] private bool _isAchivementSuccess;
+    [SerializeField] private int _levelAchievement;
+    [SerializeField] private bool _isAchievementSuccess;
+    [SerializeField] private Sprite _icon;
 
-    public int LevelAchivement => _levelAchivement;
-    public bool IsAchivementSuccess => _isAchivementSuccess;
+    public int LevelAchievement => _levelAchievement;
+    public bool IsAchievementSuccess => _isAchievementSuccess;
     public virtual string Description => _description;
+    public virtual string Name => _name;
     public int CurrentCountSuccess => _currentCountSuccess;
     public int MaxCountSuccess => _maxCountSuccess;
+    public Sprite Icon => _icon;
 
     public void IncreaseCountSuccess()
     {
         if(_maxCountSuccess != _currentCountSuccess)
             ++_currentCountSuccess;
 
-        if (_maxCountSuccess == _currentCountSuccess && _isAchivementSuccess == false)
-            _isAchivementSuccess = true;
+        CheckSuccessAchievement();
     }
 
     public void IncreaseCountSuccess(int value)
     {
         if (_maxCountSuccess != _currentCountSuccess)
-            _currentCountSuccess += value;
+            _currentCountSuccess = value;
 
-        if (_maxCountSuccess == _currentCountSuccess && _isAchivementSuccess == false)
-            _isAchivementSuccess = true;
+        CheckSuccessAchievement();
+    }
+
+    public void CheckSuccessAchievement()
+    {
+        if (_maxCountSuccess == _currentCountSuccess && _isAchievementSuccess == false)
+            _isAchievementSuccess = true;
     }
 }

@@ -135,7 +135,7 @@ public class GameManager : MonoBehaviour
             if (managerDoodle.DoodleView.IsDie == false)
             {
                 managerDistance.IncreasingDistance(zPosition);
-                managerAchievements.Controller.DistanceCompletedCommand.Execute(zPosition);
+                managerAchievements.Controller.DistanceCompletedCommand.Execute();
             }
         });
 
@@ -163,7 +163,10 @@ public class GameManager : MonoBehaviour
             if (GameDataContainer.Instance.GameData.IsEducation == false)
                 managerEducation.SetActive(true);
             else
+            {
+                managerLevel.SetActivePause(false);
                 managerAchievements.ShowAchivements();
+            }
         });
 
         managerMenu.SettingsView.ChangingVolume.Subscribe(volume => { managerAudio.ChangeVolume(volume); });

@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68f8f9a933ab21d4ea82fa209f80cccd, type: 3}
+  m_Script: {fileID: 11500000, guid: 80ca33af958a7254fb07aee230227f8d, type: 3}
   m_Name: KillMonsters20
   m_EditorClassIdentifier: 
   _name: "\u0418\u0441\u0442\u0438\u043D\u043D\u044B\u0439 \u043F\u043E\u0431\u0435\u0434\u0438\u0442\u0435\u043B\u044C"
   _description: "\u0423\u0431\u0435\u0439 20 \u043C\u043E\u043D\u0441\u0442\u0440\u043E\u0432"
   _maxCountSuccess: 20
   _currentCountSuccess: 0
-  _levelAchivement: 3
-  _isAchivementSuccess: 0
+  _levelAchievement: 4
+  _isAchievementSuccess: 0
+  _icon: {fileID: 21300000, guid: c79e282dc907c0e408e0ad1976471c7b, type: 3}

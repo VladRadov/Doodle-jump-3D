@@ -1,57 +1,53 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using UniRx;
 using Cysharp.Threading.Tasks;
 
 public class AchievementsController
 {
-    private readonly List<Achivement> _achivements;
-    private readonly List<AchivementView> _achivementsItem;
+    private List<Achievement> _achievements;
+    private readonly List<AchievementView> _achievementsItem;
+    private List<Achievement> _currentAchievements;
 
-    public AchievementsController(List<Achivement> achivements, List<AchivementView> achivementsItem)
+    public AchievementsController(List<Achievement> achievements, List<AchievementView> achievementsItem)
     {
-        _achivements = achivements;
-        _achivementsItem = achivementsItem;
+        _achievements = achievements;
+        _achievementsItem = achievementsItem;
 
         ManagerUniRx.AddObjectDisposable(FlyRocketCommand);
         ManagerUniRx.AddObjectDisposable(JumpPlatformCommand);
         ManagerUniRx.AddObjectDisposable(KillEnemyCommand);
         ManagerUniRx.AddObjectDisposable(RotateDoodleCommand);
         ManagerUniRx.AddObjectDisposable(DistanceCompletedCommand);
+        ManagerUniRx.AddObjectDisposable(TakeTheStarCommand);
     }
 
     public ReactiveCommand FlyRocketCommand = new();
     public ReactiveCommand JumpPlatformCommand = new();
     public ReactiveCommand KillEnemyCommand = new();
     public ReactiveCommand RotateDoodleCommand = new();
-    public ReactiveCommand<int> DistanceCompletedCommand = new();
+    public ReactiveCommand DistanceCompletedCommand = new();
+    public ReactiveCommand TakeTheStarCommand = new();
 
-    public async void LoadingNoCompletedAchivements()
+    public async void LoadingNoCompletedAchievements()
     {
-        var findedNoCompletedAchivements = FindNoCompletedAchivements();
-
-        if (findedNoCompletedAchivements.Count == 0)
+        if (TryFindNoCompletedAchievements() == false)
             return;
 
-        for (int i = 0; i < _achivementsItem.Count; i++)
+        for (int i = 0; i < _achievementsItem.Count; i++)
         {
-            if (i >= findedNoCompletedAchivements.Count)
+            if (i >= _currentAchievements.Count)
                 return;
+            
+            var currentAchievement = _currentAchievements[i];
+            var achievementItem = _achievementsItem[i];
 
-            if (findedNoCompletedAchivements[i] is AchivementAstronaut)
-                FlyRocketCommand.Subscribe(_ => { findedNoCompletedAchivements[i].IncreaseCountSuccess(); });
-            else if(findedNoCompletedAchivements[i] is AchivementEpicFail)
-                JumpPlatformCommand.Subscribe(_ => { findedNoCompletedAchivements[i].IncreaseCountSuccess(); });
-            else if (findedNoCompletedAchivements[i] is AchivementKillMonsters)
-                KillEnemyCommand.Subscribe(_ => { findedNoCompletedAchivements[i].IncreaseCountSuccess(); });
-            else if (findedNoCompletedAchivements[i] is AchivementRotate)
-                RotateDoodleCommand.Subscribe(_ => { findedNoCompletedAchivements[i].IncreaseCountSuccess(); });
-            else if (findedNoCompletedAchivements[i] is AchivementRunner)
-                DistanceCompletedCommand.Subscribe(distance => { findedNoCompletedAchivements[i].IncreaseCountSuccess(distance); });
-            else if (findedNoCompletedAchivements[i] is AchivementSharpShooter)
-                DistanceCompletedCommand.Subscribe(_ => { findedNoCompletedAchivements[i].IncreaseCountSuccess(); });
+            currentAchievement.CheckSuccessAchievement();
+            SubcriberSuccessedAchievements(currentAchievement, achievementItem);
 
-            _achivementsItem[i].Initialize(findedNoCompletedAchivements[i]);
+            _achievementsItem[i].Initialize(_currentAchievements[i]);
 
             await UniTask.Delay(500);
         }
@@ -64,35 +60,73 @@ public class AchievementsController
         ManagerUniRx.Dispose(KillEnemyCommand);
         ManagerUniRx.Dispose(RotateDoodleCommand);
         ManagerUniRx.Dispose(DistanceCompletedCommand);
+        ManagerUniRx.Dispose(TakeTheStarCommand);
     }
 
-    private List<Achivement> FindNoCompletedAchivements()
+    private void SubcriberSuccessedAchievements(Achievement currentAchievement, AchievementView achievementItem)
     {
-        SortAchivementAscendingLevel();
-        List<Achivement> findedAchivements = new();
-
-        foreach (var achivement in _achivements)
+        Action actionOnIncreaseCountSuccessAchievement = () =>
         {
-            if (achivement.IsAchivementSuccess)
-                continue;
+            currentAchievement.IncreaseCountSuccess();
+            achievementItem.SetProgressAchievement(currentAchievement.CurrentCountSuccess);
 
-            findedAchivements = FindAchivements(achivement.LevelAchivement);
+            if(IsCurrentAchievementsComplited())
+                ChangeActiveAchievements();
+        };
 
-            if (findedAchivements != null)
-                break;
+        if (currentAchievement is AchievementAstronaut)
+            FlyRocketCommand.Subscribe(_ => { actionOnIncreaseCountSuccessAchievement(); });
+        else if (currentAchievement is AchievementEpicFail)
+            JumpPlatformCommand.Subscribe(_ => { actionOnIncreaseCountSuccessAchievement(); });
+        else if (currentAchievement is AchievementKillMonsters)
+            KillEnemyCommand.Subscribe(_ => { actionOnIncreaseCountSuccessAchievement(); });
+        else if (currentAchievement is AchievementRotate)
+            RotateDoodleCommand.Subscribe(_ => { actionOnIncreaseCountSuccessAchievement(); });
+        else if (currentAchievement is AchievementRunner)
+            DistanceCompletedCommand.Subscribe(_ => { actionOnIncreaseCountSuccessAchievement(); });
+        else if (currentAchievement is AchievementAstronom)
+            TakeTheStarCommand.Subscribe(_ => { actionOnIncreaseCountSuccessAchievement(); });
+    }
+
+    private bool IsCurrentAchievementsComplited()
+    {
+        return _currentAchievements
+            .Where(achivement => achivement.IsAchievementSuccess == false)
+            .Count() == 0 ? true : false;
+    }
+
+    private async void ChangeActiveAchievements()
+    {
+        for (int i = 0; i < _achievementsItem.Count; i++)
+        {
+            _achievementsItem[i].HideAchivementView();
+            await UniTask.Delay(500);
         }
 
-        return findedAchivements;
+        LoadingNoCompletedAchievements();
     }
 
-    private List<Achivement> FindAchivements(int levelAchivement)
-        => _achivements.FindAll(achivementTemp => achivementTemp.LevelAchivement == levelAchivement);
-
-    private void SortAchivementAscendingLevel()
+    private bool TryFindNoCompletedAchievements()
     {
-        _achivements.Sort((Achivement achivement1, Achivement achivement2) =>
+        SortAchievementAscendingLevel();
+
+        foreach (var achievement in _achievements)
         {
-            return achivement1.LevelAchivement < achivement2.LevelAchivement ? achivement1.LevelAchivement : achivement2.LevelAchivement;
-        });
+            if (achievement.IsAchievementSuccess)
+                continue;
+
+            _currentAchievements = FindAchievements(achievement.LevelAchievement);
+
+            if (_currentAchievements != null)
+                return true;
+        }
+
+        return false;
     }
+
+    private List<Achievement> FindAchievements(int levelAchievement)
+        => _achievements.FindAll(achivementTemp => achivementTemp.LevelAchievement == levelAchievement);
+
+    private void SortAchievementAscendingLevel()
+        => _achievements = _achievements.OrderBy(achievement => achievement.LevelAchievement).ToList();
 }

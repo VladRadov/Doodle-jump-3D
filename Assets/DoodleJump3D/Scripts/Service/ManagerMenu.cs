@@ -10,7 +10,7 @@ public class ManagerMenu : BaseManager
 
     [SerializeField] private MenuView _menuPanel;
     [SerializeField] private SettingsView _settingsView;
-    [SerializeField] private AchievementsView _achievementsView;
+    [SerializeField] private AchievementsOnMenuView _achievementsView;
     [SerializeField] private GameOverView _gameOverView;
     [SerializeField] private Button _play;
     [SerializeField] private Button _settings;
