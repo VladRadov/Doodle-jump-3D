@@ -54,7 +54,7 @@ public class ManagerMenu : BaseManager
 
         _gameOverView.GameOverCommand.Subscribe(_ =>
         {
-            _animationPanel.MoveDOAchorPosActiveObject(_gameOverView.gameObject, new Vector2(0, 882));
+            _animationPanel.MoveDOAchorPosActiveObject(_gameOverView.gameObject, new Vector2(0, 0));
         });
 
         _gameOverView.StartNewGameCommand.Subscribe(async _ =>

@@ -16,6 +16,7 @@ public class DoodleView : MonoBehaviour
     public List<BaseComponent> Components => _components;
     public ReactiveCommand<int> ChangingPosition = new();
     public ReactiveCommand DoodleDieCommand = new();
+    public ReactiveCommand GetStarCommand = new();
     public bool IsDie => _isDie;
     public Vector3 PointJointRocket => _pointJointRocket.position;
 
@@ -27,6 +28,7 @@ public class DoodleView : MonoBehaviour
 
         ManagerUniRx.AddObjectDisposable(ChangingPosition);
         ManagerUniRx.AddObjectDisposable(DoodleDieCommand);
+        ManagerUniRx.AddObjectDisposable(GetStarCommand);
     }
 
     private void FixedUpdate()
@@ -41,6 +43,17 @@ public class DoodleView : MonoBehaviour
         {
             _isDie = true;
             DoodleDieCommand.Execute();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Star"))
+        {
+            var starView = other.gameObject.GetComponent<StarView>();
+            starView.SetActive(false);
+
+            GetStarCommand.Execute();
         }
     }
 
@@ -74,5 +87,6 @@ public class DoodleView : MonoBehaviour
     {
         ManagerUniRx.Dispose(ChangingPosition);
         ManagerUniRx.Dispose(DoodleDieCommand);
+        ManagerUniRx.Dispose(GetStarCommand);
     }
 }

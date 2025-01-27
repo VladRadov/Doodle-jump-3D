@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
         var managerRocket = GetManager<ManagerRocket>();
         var managerPostProcessProfile = GetManager<ManagerPostProcessProfile>();
         var managerAchievements = GetManager<ManagerAchievements>();
+        var managerStars = GetManager<ManagerStars>();
 
         var inputComponent = managerDoodle.DoodleController.GetDoodleComponent<InputComponent>();
         var moveComponent = managerDoodle.DoodleController.GetDoodleComponent<MoveComponent>();
@@ -169,9 +170,27 @@ public class GameManager : MonoBehaviour
             }
         });
 
-        managerMenu.SettingsView.ChangingVolume.Subscribe(volume => { managerAudio.ChangeVolume(volume); });
+        managerDoodle.DoodleView.GetStarCommand.Subscribe(_ =>
+        {
+            managerAchievements.Controller.TakeTheStarCommand.Execute();
+        });
 
-        managerPlatform.PlatformController.RespawnPlatformCommand.Subscribe(lastPositionPlatform => { managerRocket.SpawnRocket(lastPositionPlatform); });
+        managerMenu.SettingsView.ChangingVolume.Subscribe(volume =>
+        {
+            managerAudio.ChangeVolume(volume);
+        });
+
+        managerPlatform.PlatformController.RespawnPlatformEventHandler.AddListener((positionPlatform, indePlatform) =>
+        {
+            managerRocket.SpawnRocket(positionPlatform, indePlatform);
+            managerStars.SpawStar(positionPlatform, indePlatform);
+        });
+
+        managerPlatform.PlatformController.StartRespawnPlatformCommand.Subscribe(countStartPlatform =>
+        {
+            managerRocket.GetRandomIndexPlatformForSpawnRocket(countStartPlatform);
+            managerStars.GetRandomIndexPlatformForSpawnRocket(countStartPlatform);
+        });
     }
 
     private T GetManager<T>() where T : BaseManager

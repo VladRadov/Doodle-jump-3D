@@ -2812,6 +2812,7 @@ MonoBehaviour:
   - {fileID: 591286655}
   - {fileID: 126308161}
   - {fileID: 702731758}
+  - {fileID: 1314008730}
 --- !u!4 &320355778
 Transform:
   m_ObjectHideFlags: 0
@@ -8658,6 +8659,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2917848479918560285, guid: 2a1f29a86eff12b43b4f91a4d84b67a4, type: 3}
+      propertyPath: _speed.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917848479918560285, guid: 2a1f29a86eff12b43b4f91a4d84b67a4, type: 3}
       propertyPath: _speed.z
       value: 5000
       objectReference: {fileID: 0}
@@ -14089,6 +14094,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4691504987128242, guid: 2f4bc0193724cd943921d722c237e387, type: 3}
   m_PrefabInstance: {fileID: 1310065903}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1314008728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1314008729}
+  - component: {fileID: 1314008730}
+  m_Layer: 0
+  m_Name: StarsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1314008729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314008728}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1936099405}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1314008730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314008728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39ac3557c4de57b4588e87afd683e69c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _starViewPrefab: {fileID: 8543795371968137026, guid: 1f341db87119d9443a106a3e2cbd74c4, type: 3}
 --- !u!1001 &1319239327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18467,6 +18517,7 @@ Transform:
   - {fileID: 491480475}
   - {fileID: 126308160}
   - {fileID: 702731757}
+  - {fileID: 1314008729}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1940500779
@@ -20764,7 +20815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2821366616876832435, guid: c2178c3c4dcca454ab1ab4439f941924, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.53
+      value: -1.74
       objectReference: {fileID: 0}
     - target: {fileID: 3471563056935380062, guid: c2178c3c4dcca454ab1ab4439f941924, type: 3}
       propertyPath: m_Layer

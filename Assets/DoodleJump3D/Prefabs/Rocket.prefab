@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1477021946744851836}
   - component: {fileID: 5292034557285760424}
   - component: {fileID: 6446488035600688585}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: BottomEngine.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 2917848479918560285}
   - component: {fileID: 2267326372196980186}
   - component: {fileID: 5094937234845789148}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10f13fe6ea3e44c49af201fcf7246196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rocketEffectComponent: {fileID: 0}
 --- !u!114 &2917848479918560285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +157,7 @@ MonoBehaviour:
   _speed: {x: 0, y: 300, z: 5000}
   _timeFlying: 4.5
   _offsetConnectedDoodle: {x: 0, y: -1.5, z: 2}
+  _rotateFlyingToRocket: {x: -28, y: 180, z: 0}
 --- !u!54 &2267326372196980186
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 3638560652500130435}
   - component: {fileID: 2352370612966102086}
   - component: {fileID: 3012408468956955122}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: BackBraceTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 8451172383210549566}
   - component: {fileID: 92738166184326405}
   - component: {fileID: 6716191430192348380}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ConnectionsTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 6574786253672359537}
   - component: {fileID: 2094085929558500876}
   - component: {fileID: 8198702025563333866}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TopEngine.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 3888044710593612301}
   - component: {fileID: 7277978030984341849}
   - component: {fileID: 7954393404741551563}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ConnectionsBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 2552564558341601512}
   - component: {fileID: 5830150095786343043}
   - component: {fileID: 2421153933233021647}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: CenterEngine.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -635,7 +635,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 832757185649480782}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Engine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,7 +669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1981401422151659689}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Engine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -705,7 +705,7 @@ GameObject:
   - component: {fileID: 7485613112001915631}
   - component: {fileID: 8736940825932885572}
   - component: {fileID: 7469748421584640148}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: CenterEngine.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -789,7 +789,7 @@ GameObject:
   - component: {fileID: 8182840562505868741}
   - component: {fileID: 831491492416134900}
   - component: {fileID: 6083405844165800423}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: BackBraceBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -873,7 +873,7 @@ GameObject:
   - component: {fileID: 7198611535599025437}
   - component: {fileID: 8937544281217195264}
   - component: {fileID: 8732344671681204059}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TopEngine.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -957,7 +957,7 @@ GameObject:
   - component: {fileID: 5856974147225034871}
   - component: {fileID: 4447783187322054517}
   - component: {fileID: 5054961614015510885}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: BottomEngine.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1106,6 +1106,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RocketFire (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 425361774300899131, guid: 54889e56ee5376146a1750cc743a5f36, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1191,6 +1195,10 @@ PrefabInstance:
     - target: {fileID: 425361774300899131, guid: 54889e56ee5376146a1750cc743a5f36, type: 3}
       propertyPath: m_Name
       value: RocketFire
+      objectReference: {fileID: 0}
+    - target: {fileID: 425361774300899131, guid: 54889e56ee5376146a1750cc743a5f36, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

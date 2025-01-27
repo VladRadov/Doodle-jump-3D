@@ -9,6 +9,7 @@ public class SettingsView : MonoBehaviour
     [SerializeField] private Button _close;
 
     public ReactiveCommand<float> ChangingVolume = new();
+    [HideInInspector]
     public UnityEvent ClosingEventHandler;
 
     public void SetActive(bool value)

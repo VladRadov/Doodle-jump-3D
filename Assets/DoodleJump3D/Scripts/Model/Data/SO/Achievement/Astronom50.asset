@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: baef2cd404d33bc44aa919f69433b5c9, type: 3}
-  m_Name: Astronom100
+  m_Name: Astronom50
   m_EditorClassIdentifier: 
   _name: "\u041D\u0430 \u043F\u0443\u0442\u0438 \u043A \u0437\u0432\u0435\u0437\u0434\u0430\u043C"
-  _description: "\u0421\u043E\u0431\u0435\u0440\u0438 1000 \u0437\u0432\u0435\u0437\u0434\u043E\u0447\u0435\u043A"
-  _maxCountSuccess: 1000
-  _currentCountSuccess: 0
+  _description: "\u0421\u043E\u0431\u0435\u0440\u0438 50 \u0437\u0432\u0435\u0437\u0434\u043E\u0447\u0435\u043A"
+  _maxCountSuccess: 50
+  _currentCountSuccess: 3
   _levelAchievement: 1
   _isAchievementSuccess: 0
   _icon: {fileID: 21300000, guid: c79e282dc907c0e408e0ad1976471c7b, type: 3}

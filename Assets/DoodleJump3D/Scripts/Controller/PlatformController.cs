@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.Events;
 using Cysharp.Threading.Tasks;
 using UniRx;
 
@@ -34,13 +35,15 @@ public class PlatformController
         _countStartPlatform = countStartPlatform;
 
         _tonekCancelOutlinePlatforms = new CancellationTokenSource();
-        ManagerUniRx.AddObjectDisposable(RespawnPlatformCommand);
+
+        ManagerUniRx.AddObjectDisposable(StartRespawnPlatformCommand);
     }
 
     public PlatformView PreviousSelectedPlatfrom => _previousSelectedPlatfrom;
     public PlatformView CurrentSelectPlatfrom => _currentSelectPlatfrom;
     public PlatformView NextSelectPlatfrom => _nextSelectPlatfrom;
-    public ReactiveCommand<Transform> RespawnPlatformCommand = new();
+    public UnityEvent<Transform, int> RespawnPlatformEventHandler = new();
+    public ReactiveCommand<int> StartRespawnPlatformCommand = new();
 
     public void Initialize(float offsetX, float offsetY, float offsetZ, float minDistnceSelect, PlatformView startPlatform, ManagerFramesMap managerFramesMap)
     {
@@ -87,8 +90,10 @@ public class PlatformController
 
     public void RespawnPlatforms(FrameMapView frameMapView)
     {
+        StartRespawnPlatformCommand.Execute(_countStartPlatform);
+
         Vector3 lastLocalPositionPlatform = Vector3.zero;
-        PlatformView lastPlatform = null;
+        PlatformView platform = null;
 
         for (int i = 0; i < _countStartPlatform; i++)
         {
@@ -102,13 +107,12 @@ public class PlatformController
                 if (Mathf.Abs(z) > Mathf.Abs(frameMapView.Tail.localPosition.z))
                     continue;
 
-                var platform = CreatePlatform(new Vector3(x, y, z), frameMapView.transform);
+                platform = CreatePlatform(new Vector3(x, y, z), frameMapView.transform);
                 lastLocalPositionPlatform = platform.transform.localPosition;
-                lastPlatform = platform;
             }
-        }
 
-        RespawnPlatformCommand.Execute(lastPlatform.transform);
+            RespawnPlatformEventHandler.Invoke(platform.transform, i);
+        }
     }
 
     public void NoActiveOldPlatforms(FrameMapView frameMapView)
@@ -209,7 +213,7 @@ public class PlatformController
 
     public void Dispose()
     {
-        ManagerUniRx.Dispose(RespawnPlatformCommand);
+        ManagerUniRx.Dispose(StartRespawnPlatformCommand);
     }
 
     private PlatformView CreatePlatform(Vector3 positionPlatform, Transform parent)

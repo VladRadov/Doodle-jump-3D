@@ -5,6 +5,7 @@ using Cysharp.Threading.Tasks;
 public class ManagerRocket : BaseManager
 {
     private bool _isFlying;
+    private int _indexPlatformForSpawn;
 
     [SerializeField] private RocketView _rocketPrefab;
     [SerializeField] private SmokeEffectView _smokeEffectPrefab;
@@ -14,10 +15,16 @@ public class ManagerRocket : BaseManager
 
     }
 
-    public void SpawnRocket(Transform parent)
+    public void GetRandomIndexPlatformForSpawnRocket(int countStartPlatform)
+        => _indexPlatformForSpawn = Random.Range(0, countStartPlatform);
+
+    public void SpawnRocket(Transform parent, int indexCurrentPlatform)
     {
-        var rocket = PoolObjects<RocketView>.GetObject(_rocketPrefab, parent);
-        rocket.transform.localPosition = new Vector3(0, 5, 0);
+        if (indexCurrentPlatform == _indexPlatformForSpawn)
+        {
+            var rocket = PoolObjects<RocketView>.GetObject(_rocketPrefab, parent);
+            rocket.transform.localPosition = new Vector3(0, 5, 0);
+        }
     }
 
     public void SetFlagFlying(bool value)
