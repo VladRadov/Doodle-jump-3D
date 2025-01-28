@@ -37,6 +37,9 @@ public class PlatformController
         _tonekCancelOutlinePlatforms = new CancellationTokenSource();
 
         ManagerUniRx.AddObjectDisposable(StartRespawnPlatformCommand);
+        ManagerUniRx.AddObjectDisposable(ExplodingPlatformCommand);
+        ManagerUniRx.AddObjectDisposable(FallPlatformCommand);
+        ManagerUniRx.AddObjectDisposable(HidePlatformCommand);
     }
 
     public PlatformView PreviousSelectedPlatfrom => _previousSelectedPlatfrom;
@@ -44,6 +47,9 @@ public class PlatformController
     public PlatformView NextSelectPlatfrom => _nextSelectPlatfrom;
     public UnityEvent<Transform, int> RespawnPlatformEventHandler = new();
     public ReactiveCommand<int> StartRespawnPlatformCommand = new();
+    public ReactiveCommand ExplodingPlatformCommand = new();
+    public ReactiveCommand FallPlatformCommand = new();
+    public ReactiveCommand HidePlatformCommand = new();
 
     public void Initialize(float offsetX, float offsetY, float offsetZ, float minDistnceSelect, PlatformView startPlatform, ManagerFramesMap managerFramesMap)
     {
@@ -214,12 +220,36 @@ public class PlatformController
     public void Dispose()
     {
         ManagerUniRx.Dispose(StartRespawnPlatformCommand);
+        ManagerUniRx.Dispose(ExplodingPlatformCommand);
+        ManagerUniRx.Dispose(FallPlatformCommand);
+        ManagerUniRx.Dispose(HidePlatformCommand);
     }
 
     private PlatformView CreatePlatform(Vector3 positionPlatform, Transform parent)
     {
         var indexPlatform = Random.Range(0, _platformsPrefab.Count);
         var platform = PoolObjects<PlatformView>.GetObject(_platformsPrefab[indexPlatform]);
+
+        var explosionPlatformComponent = platform.GetComponent<ExplosionPlatformComponent>();
+        if (explosionPlatformComponent != null)
+        {
+            explosionPlatformComponent.ExplodingPlatformCommand = new();
+            explosionPlatformComponent.ExplodingPlatformCommand.Subscribe(_ => { ExplodingPlatformCommand.Execute(); });
+        }
+
+        var fallPlatformComponent = platform.GetComponent<FallPlatformComponent>();
+        if (fallPlatformComponent != null)
+        {
+            fallPlatformComponent.FallPlatformCommand = new();
+            fallPlatformComponent.FallPlatformCommand.Subscribe(_ => { FallPlatformCommand.Execute(); });
+        }
+
+        var invisibleComponent = platform.GetComponent<InvisibleComponent>();
+        if (invisibleComponent != null)
+        {
+            invisibleComponent.HidePlatformCommand = new();
+            invisibleComponent.HidePlatformCommand.Subscribe(_ => { HidePlatformCommand.Execute(); });
+        }
 
         platform.transform.parent = parent;
         platform.SetLocalPosition(positionPlatform);

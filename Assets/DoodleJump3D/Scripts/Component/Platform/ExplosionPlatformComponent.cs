@@ -1,5 +1,7 @@
 using UnityEngine;
+
 using Cysharp.Threading.Tasks;
+using UniRx;
 
 public class ExplosionPlatformComponent : BaseComponent
 {
@@ -14,12 +16,15 @@ public class ExplosionPlatformComponent : BaseComponent
     [SerializeField] private float _stepExplosion;
     [SerializeField] private int _delayExplosion;
 
+    public ReactiveCommand ExplodingPlatformCommand;
+
     public override void Start()
     {
         base.Start();
         _material = transform.GetComponent<Renderer>().material;
         _colorEmission = _material.GetColor("_EmissionColor");
         _defaultColorEmission = _colorEmission;
+        ManagerUniRx.AddObjectDisposable(ExplodingPlatformCommand);
     }
 
     private void OnEnable()
@@ -42,6 +47,7 @@ public class ExplosionPlatformComponent : BaseComponent
 
         var explosion = PoolObjects<ExplosionView>.GetObject(_prefabExplosion, transform.position, Quaternion.identity);
         Explosion(explosion);
+        ExplodingPlatformCommand.Execute();
     }
 
     private async void Explosion(ExplosionView explosion)
@@ -64,5 +70,10 @@ public class ExplosionPlatformComponent : BaseComponent
     {
         if (_meshRenderer == null)
             _meshRenderer = transform.GetComponent<MeshRenderer>();
+    }
+
+    private void OnDestroy()
+    {
+        ManagerUniRx.Dispose(ExplodingPlatformCommand);
     }
 }

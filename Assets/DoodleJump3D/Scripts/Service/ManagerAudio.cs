@@ -7,6 +7,8 @@ public class ManagerAudio : BaseManager
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioSource _audioSourceEnemy;
     [SerializeField] private AudioSource _audioSourceRocket;
+    [SerializeField] private AudioSource _audioSourceOther;
+    [SerializeField] private AudioSource _audioSourcePlatform;
     [SerializeField] private List<Audio> _sounds;
 
     public override void Initialize()
@@ -14,6 +16,8 @@ public class ManagerAudio : BaseManager
         _audioSource.volume = DataSettingsContainer.Instance.Settings.VolumeSounds;
         _audioSourceEnemy.volume = DataSettingsContainer.Instance.Settings.VolumeSounds;
         _audioSourceRocket.volume = DataSettingsContainer.Instance.Settings.VolumeSounds;
+        _audioSourceOther.volume = DataSettingsContainer.Instance.Settings.VolumeSounds;
+        _audioSourcePlatform.volume = DataSettingsContainer.Instance.Settings.VolumeSounds;
     }
 
     public void ChangeVolume(float volume)
@@ -21,17 +25,37 @@ public class ManagerAudio : BaseManager
         _audioSource.volume = volume;
         _audioSourceEnemy.volume = volume;
         _audioSourceRocket.volume = volume;
+        _audioSourceOther.volume = volume;
+        _audioSourcePlatform.volume = volume;
 
         DataSettingsContainer.Instance.Settings.VolumeSounds = volume;
     }
 
     public void PlayJump() => Play(_audioSource, "Jump", false);
 
+    public void PlayShotDoodle() => Play(_audioSource, "Shot", false);
+
+    public void PlayRotateDoodle() => Play(_audioSource, "RotateDoodle", false);
+
     public void PlayFall() => Play(_audioSource, "Fall", false);
 
     public void PlayRocket() => Play(_audioSourceRocket, "Rocket", false);
 
     public void PlayEnemySound() => Play(_audioSourceEnemy, "EnemySound", true);
+
+    public void PlayEnemyDieSound() => Play(_audioSourceEnemy, "EnemyDie", false);
+
+    public void PlayExplodingPlatform() => Play(_audioSourceOther, "ExplodingPlatform", false);
+
+    public void PlaySoundGetStar() => Play(_audioSourceOther, "GetStar", false);
+
+    public void PlaySoundFallPlatform() => Play(_audioSourcePlatform, "FallPlatform", false);
+
+    public void PlaySoundChangePanelMenu() => Play(_audioSourcePlatform, "ChangePanelMenu", false);
+
+    public void PlaySoundWhitePlatformHide() => Play(_audioSourcePlatform, "WhitePlatformHide", false);
+
+    public void PlaySoundStartGame() => Play(_audioSourceOther, "StartGame", false);
 
     private void Play(AudioSource player, string nameAudio, bool isLoop)
     {

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletView : MonoBehaviour
@@ -12,6 +10,9 @@ public class BulletView : MonoBehaviour
 
     public void SetActive(bool value)
         => gameObject.SetActive(value);
+
+    public void SetPosition(Vector3 newPosition)
+        => transform.position = newPosition;
 
     public void StartShot(float speed)
     {

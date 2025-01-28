@@ -22,6 +22,7 @@ public class AchievementsController
         ManagerUniRx.AddObjectDisposable(RotateDoodleCommand);
         ManagerUniRx.AddObjectDisposable(DistanceCompletedCommand);
         ManagerUniRx.AddObjectDisposable(TakeTheStarCommand);
+        ManagerUniRx.AddObjectDisposable(ChangePanelCommand);
     }
 
     public ReactiveCommand FlyRocketCommand = new();
@@ -30,6 +31,7 @@ public class AchievementsController
     public ReactiveCommand RotateDoodleCommand = new();
     public ReactiveCommand DistanceCompletedCommand = new();
     public ReactiveCommand TakeTheStarCommand = new();
+    public ReactiveCommand ChangePanelCommand = new();
 
     public async void LoadingNoCompletedAchievements()
     {
@@ -48,6 +50,7 @@ public class AchievementsController
             SubcriberSuccessedAchievements(currentAchievement, achievementItem);
 
             _achievementsItem[i].Initialize(_currentAchievements[i]);
+            ChangePanelCommand.Execute();
 
             await UniTask.Delay(500);
         }
@@ -61,6 +64,7 @@ public class AchievementsController
         ManagerUniRx.Dispose(RotateDoodleCommand);
         ManagerUniRx.Dispose(DistanceCompletedCommand);
         ManagerUniRx.Dispose(TakeTheStarCommand);
+        ManagerUniRx.Dispose(ChangePanelCommand);
     }
 
     private void SubcriberSuccessedAchievements(Achievement currentAchievement, AchievementView achievementItem)

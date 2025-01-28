@@ -45,11 +45,17 @@ public class GameManager : MonoBehaviour
 
         inputComponent.InputCommand.Subscribe(value =>
         {
-            if(jumpingComponent.IsAllowedToSide && managerLevel.IsPause == false)
+            if (jumpingComponent.IsAllowedToSide && managerLevel.IsPause == false)
                 moveComponent.Move(value);
         });
 
-        inputComponent.ShootingCommand.Subscribe(_ => { shotDoodleComponent.Shot(); });
+        inputComponent.ShootingCommand.Subscribe(_ =>
+        {
+            if (jumpingComponent.IsFlying || managerLevel.IsPause)
+                return;
+
+            shotDoodleComponent.Shot();
+        });
 
         inputComponent.JumpCommand.Subscribe(_ =>
         {
@@ -111,6 +117,7 @@ public class GameManager : MonoBehaviour
             managerAchievements.Controller.RotateDoodleCommand.Execute();
             managerDoodle.DoodleAnimator.PlayRotation();
             managerFramesMap.FramesMapController.CheckAndRespawnFramesMap(positionDoodle);
+            managerAudio.PlayRotateDoodle();
         });
 
         jumpingComponent.DoodleEndFlyingCommand.Subscribe(_ =>
@@ -143,6 +150,7 @@ public class GameManager : MonoBehaviour
         managerEnemies.DieEnemyCommand.Subscribe(_ =>
         {
             managerAchievements.Controller.KillEnemyCommand.Execute();
+            managerAudio.PlayEnemyDieSound();
         });
 
         managerDoodle.DoodleView.DoodleDieCommand.Subscribe(async _ =>
@@ -168,11 +176,14 @@ public class GameManager : MonoBehaviour
                 managerLevel.SetActivePause(false);
                 managerAchievements.ShowAchivements();
             }
+
+            managerAudio.PlaySoundStartGame();
         });
 
         managerDoodle.DoodleView.GetStarCommand.Subscribe(_ =>
         {
             managerAchievements.Controller.TakeTheStarCommand.Execute();
+            managerAudio.PlaySoundGetStar();
         });
 
         managerMenu.SettingsView.ChangingVolume.Subscribe(volume =>
@@ -190,6 +201,36 @@ public class GameManager : MonoBehaviour
         {
             managerRocket.GetRandomIndexPlatformForSpawnRocket(countStartPlatform);
             managerStars.GetRandomIndexPlatformForSpawnRocket(countStartPlatform);
+        });
+
+        managerPlatform.PlatformController.ExplodingPlatformCommand.Subscribe(_ =>
+        {
+            managerAudio.PlayExplodingPlatform();
+        });
+
+        managerPlatform.PlatformController.FallPlatformCommand.Subscribe(_ =>
+        {
+            managerAudio.PlaySoundFallPlatform();
+        });
+
+        managerPlatform.PlatformController.HidePlatformCommand.Subscribe(_ =>
+        {
+            managerAudio.PlaySoundWhitePlatformHide();
+        });
+
+        shotDoodleComponent.ShotingCommand.Subscribe(_ =>
+        {
+            managerAudio.PlayShotDoodle();
+        });
+
+        managerMenu.ChangePanelCommand.Subscribe(_ =>
+        {
+            managerAudio.PlaySoundChangePanelMenu();
+        });
+
+        managerAchievements.Controller.ChangePanelCommand.Subscribe(_ =>
+        {
+            managerAudio.PlaySoundChangePanelMenu();
         });
     }
 

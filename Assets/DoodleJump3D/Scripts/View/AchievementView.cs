@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+using UniRx;
+
 public class AchievementView : MonoBehaviour
 {
     private AnimationPanel _animationPanel;
