@@ -20,6 +20,9 @@ public class DoodleView : MonoBehaviour
     public bool IsDie => _isDie;
     public Vector3 PointJointRocket => _pointJointRocket.position;
 
+    public void ActiveTriggerCollider()
+        => _capsuleCollider.isTrigger = true;
+
     private void Start()
     {
         _transform = transform;

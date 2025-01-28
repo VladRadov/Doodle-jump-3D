@@ -186,6 +186,9 @@ public class PlatformController
         }
     }
 
+    public void ResetPreviousSelectedPlatfrom()
+        => _previousSelectedPlatfrom = null;
+
     public void ClearSlectePlatforms()
         => _selectPlatforms.Clear();
 

@@ -8,7 +8,7 @@ public class BluePlatformView : PlatformView
 
     [SerializeField] private MovablePlatformComponent _movablePlatformComponent;
 
-    protected override void OnTriggerStay(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
         if (_isChangedRoute == false)
         {

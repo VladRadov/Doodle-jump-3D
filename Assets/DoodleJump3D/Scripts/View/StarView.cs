@@ -33,7 +33,7 @@ public class StarView : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Rocket"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Rocket") || other.gameObject.layer == LayerMask.NameToLayer("Star"))
             SetActive(false);
     }
 

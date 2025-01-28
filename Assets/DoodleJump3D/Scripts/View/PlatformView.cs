@@ -40,6 +40,7 @@ public class PlatformView : MonoBehaviour
 
     public void OffGravity()
     {
+        _rigidbody.useGravity = false;
         _rigidbody.constraints = RigidbodyConstraints.FreezePositionY;
         _rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
     }

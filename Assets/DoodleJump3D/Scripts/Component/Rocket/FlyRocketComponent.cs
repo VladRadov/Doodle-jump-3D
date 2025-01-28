@@ -46,7 +46,7 @@ public class FlyRocketComponent : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Doodle"))
+        if (_isFlying == false && other.gameObject.layer == LayerMask.NameToLayer("Doodle"))
         {
             _boxCollider.isTrigger = false;
             _isFlying = true;

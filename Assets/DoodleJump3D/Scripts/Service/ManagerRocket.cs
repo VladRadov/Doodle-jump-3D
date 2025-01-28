@@ -1,45 +1,16 @@
 using UnityEngine;
 
-using Cysharp.Threading.Tasks;
-
 public class ManagerRocket : BaseManager
 {
-    private bool _isFlying;
-    private int _indexPlatformForSpawn;
+    private RocketsController _rocketsController;
 
     [SerializeField] private RocketView _rocketPrefab;
     [SerializeField] private SmokeEffectView _smokeEffectPrefab;
 
+    public RocketsController Controller => _rocketsController;
+
     public override void Initialize()
     {
-
-    }
-
-    public void GetRandomIndexPlatformForSpawnRocket(int countStartPlatform)
-        => _indexPlatformForSpawn = Random.Range(0, countStartPlatform);
-
-    public void SpawnRocket(Transform parent, int indexCurrentPlatform)
-    {
-        if (indexCurrentPlatform == _indexPlatformForSpawn)
-        {
-            var rocket = PoolObjects<RocketView>.GetObject(_rocketPrefab, parent);
-            rocket.transform.localPosition = new Vector3(0, 5, 0);
-        }
-    }
-
-    public void SetFlagFlying(bool value)
-        => _isFlying = value;
-
-    public async void StartSmokeEffect(Transform doodleTransform)
-    {
-        while (_isFlying)
-        {
-            if (doodleTransform == null)
-                break;
-
-            var smokeEffect = PoolObjects<SmokeEffectView>.GetObject(_smokeEffectPrefab);
-            smokeEffect.SetPosition(doodleTransform.position);
-            await UniTask.Delay(100);
-        }
+        _rocketsController = new RocketsController(_rocketPrefab, _smokeEffectPrefab);
     }
 }

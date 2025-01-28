@@ -75,13 +75,14 @@ public class GameManager : MonoBehaviour
 
         jumpingComponent.DoodleStartFlyingCommand.Subscribe(doodleTransform =>
         {
+            managerPlatform.PlatformController.ResetPreviousSelectedPlatfrom();
             managerAchievements.Controller.FlyRocketCommand.Execute();
             doodleAnimator.SetActiveAnimator(false);
             rotateComponent.RotateFlyingToRocket();
             managerAudio.PlayRocket();
             managerPostProcessProfile.StartRocketEffect();
-            managerRocket.SetFlagFlying(true);
-            managerRocket.StartSmokeEffect(doodleTransform);
+            managerRocket.Controller.SetFlagFlying(true);
+            managerRocket.Controller.StartSmokeEffect(doodleTransform);
         });
 
         jumpingComponent.FlyingCommand.Subscribe(positionDoodle =>
@@ -101,7 +102,8 @@ public class GameManager : MonoBehaviour
             managerPlatform.PlatformController.FormationSelectionAllowedPlatform();
             managerPlatform.PlatformController.OutlineSelectionAllowedPlatform();
 
-            managerRocket.SetFlagFlying(false);
+            managerRocket.Controller.SetFlagFlying(false);
+            doodleAnimator.SetActiveAnimator(true);
         });
 
         jumpingComponent.JumpingOnPlaceCommnad.Subscribe(positionDoodle =>
@@ -136,6 +138,7 @@ public class GameManager : MonoBehaviour
             managerPlatform.PlatformController.RespawnPlatforms(frameMap);
             managerEnemies.EnemyController.NoActiveOldEnemies(frameMap);
             managerEnemies.SpawnEnemy(frameMap.transform);
+            managerRocket.Controller.ClearNoActiveRockets();
         });
 
         managerDoodle.DoodleView.ChangingPosition.Subscribe(zPosition =>
@@ -155,6 +158,7 @@ public class GameManager : MonoBehaviour
 
         managerDoodle.DoodleView.DoodleDieCommand.Subscribe(async _ =>
         {
+            managerDoodle.DoodleView.ActiveTriggerCollider();
             managerCamera.ResetFollowCamera();
             jumpingComponent.OnDieDoodle();
             managerAudio.PlayFall();
@@ -193,13 +197,13 @@ public class GameManager : MonoBehaviour
 
         managerPlatform.PlatformController.RespawnPlatformEventHandler.AddListener((positionPlatform, indePlatform) =>
         {
-            managerRocket.SpawnRocket(positionPlatform, indePlatform);
+            managerRocket.Controller.SpawnRocket(positionPlatform, indePlatform);
             managerStars.SpawStar(positionPlatform, indePlatform);
         });
 
         managerPlatform.PlatformController.StartRespawnPlatformCommand.Subscribe(countStartPlatform =>
         {
-            managerRocket.GetRandomIndexPlatformForSpawnRocket(countStartPlatform);
+            managerRocket.Controller.GetRandomIndexPlatformForSpawnRocket(countStartPlatform);
             managerStars.GetRandomIndexPlatformForSpawnRocket(countStartPlatform);
         });
 
