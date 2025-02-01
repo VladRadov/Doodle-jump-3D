@@ -8,6 +8,7 @@ public class RocketsController
     private RocketView _rocketPrefab;
     private SmokeEffectView _smokeEffectPrefab;
     private List<RocketView> _rockets;
+    private RocketView _currentRocket;
 
     private int _indexPlatformForSpawn;
     private bool _isFlying;
@@ -18,6 +19,12 @@ public class RocketsController
         _smokeEffectPrefab = smokeEffectPrefab;
         _rockets = new List<RocketView>();
     }
+
+    public void SetCurrentRocket(RocketView rocketView)
+        => _currentRocket = rocketView;
+
+    public void NoActiveCurrentRocket()
+        => _currentRocket?.SetActive(false);
 
     public void GetRandomIndexPlatformForSpawnRocket(int countStartPlatform)
         => _indexPlatformForSpawn = Random.Range(0, countStartPlatform);

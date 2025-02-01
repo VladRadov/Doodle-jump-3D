@@ -7,6 +7,7 @@ public class FlyRocketComponent : MonoBehaviour
     private float _currentTime;
     private bool _isFlying;
 
+    [SerializeField] private RocketView _rocketView;
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private BoxCollider _boxCollider;
     [SerializeField] private Transform _backBraceBottom;
@@ -54,7 +55,7 @@ public class FlyRocketComponent : MonoBehaviour
             var doodle = other.GetComponent<DoodleView>();
             transform.position = doodle.PointJointRocket;
             var jumpingComponent = other.GetComponent<JumpingComponent>();
-            jumpingComponent.StartFlying(_rigidbody);
+            jumpingComponent.StartFlying(_rocketView);
 
             FlyingEndCommand = new();
             FlyingEndCommand.Subscribe(_ =>
@@ -76,6 +77,9 @@ public class FlyRocketComponent : MonoBehaviour
 
         if (_boxCollider == null)
             _boxCollider = GetComponent<BoxCollider>();
+
+        if(_rocketView == null)
+            _rocketView = GetComponent<RocketView>();
     }
 
     private void OnDestroy()

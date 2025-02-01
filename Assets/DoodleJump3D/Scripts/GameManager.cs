@@ -73,16 +73,17 @@ public class GameManager : MonoBehaviour
             }
         });
 
-        jumpingComponent.DoodleStartFlyingCommand.Subscribe(doodleTransform =>
+        jumpingComponent.DoodleStartFlyingCommand.Subscribe(rocket =>
         {
             managerPlatform.PlatformController.ResetPreviousSelectedPlatfrom();
             managerAchievements.Controller.FlyRocketCommand.Execute();
             doodleAnimator.SetActiveAnimator(false);
             rotateComponent.RotateFlyingToRocket();
-            managerAudio.PlayRocket();
+            managerAudio.PlaySoundRocket();
             managerPostProcessProfile.StartRocketEffect();
+            managerRocket.Controller.SetCurrentRocket(rocket);
             managerRocket.Controller.SetFlagFlying(true);
-            managerRocket.Controller.StartSmokeEffect(doodleTransform);
+            managerRocket.Controller.StartSmokeEffect(rocket.transform);
         });
 
         jumpingComponent.FlyingCommand.Subscribe(positionDoodle =>
@@ -158,6 +159,11 @@ public class GameManager : MonoBehaviour
 
         managerDoodle.DoodleView.DoodleDieCommand.Subscribe(async _ =>
         {
+            if (jumpingComponent.IsFlying)
+            {
+                managerRocket.Controller.NoActiveCurrentRocket();
+                managerAudio.StopSoundRocket();
+            }
             managerDoodle.DoodleView.ActiveTriggerCollider();
             managerCamera.ResetFollowCamera();
             jumpingComponent.OnDieDoodle();

@@ -26,7 +26,7 @@ public class JumpingComponent : BaseComponent
     public ReactiveCommand<Vector3> JumpingOnPlaceCommnad = new();
     public ReactiveCommand JumpingOnForwardCommnad = new();
     public ReactiveCommand<Vector3> JumpingOnForwardWithRotationCommnad = new();
-    public ReactiveCommand<Transform> DoodleStartFlyingCommand = new();
+    public ReactiveCommand<RocketView> DoodleStartFlyingCommand = new();
     public ReactiveCommand<Vector3> DoodleEndFlyingCommand = new();
     public ReactiveCommand<Vector3> FlyingCommand = new();
 
@@ -34,12 +34,12 @@ public class JumpingComponent : BaseComponent
     public bool IsJumpOnPlace => _isJumpOnPlace;
     public bool IsAllowedToSide => _isAllowedToSide;
 
-    public void StartFlying(Rigidbody rocket)
+    public void StartFlying(RocketView rocket)
     {
-        DoodleStartFlyingCommand.Execute(_transform);
+        DoodleStartFlyingCommand.Execute(rocket);
 
         _fixedJoint = gameObject.AddComponent<FixedJoint>();
-        _fixedJoint.connectedBody = rocket;
+        _fixedJoint.connectedBody = rocket.Rigidbody;
 
         SetVelocity(Vector3.zero);
         _rigidbody.useGravity = false;

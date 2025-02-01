@@ -39,7 +39,9 @@ public class ManagerAudio : BaseManager
 
     public void PlayFall() => Play(_audioSource, "Fall", false);
 
-    public void PlayRocket() => Play(_audioSourceRocket, "Rocket", false);
+    public void PlaySoundRocket() => Play(_audioSourceRocket, "Rocket", false);
+
+    public void StopSoundRocket() => _audioSourceRocket.Stop();
 
     public void PlayEnemySound() => Play(_audioSourceEnemy, "EnemySound", true);
 
