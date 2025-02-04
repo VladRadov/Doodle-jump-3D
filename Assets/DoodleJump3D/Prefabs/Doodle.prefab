@@ -898,6 +898,7 @@ GameObject:
   - component: {fileID: 8385837221562799441}
   - component: {fileID: 902256797796844902}
   - component: {fileID: 6198218252667628351}
+  - component: {fileID: 2455971145977197124}
   m_Layer: 0
   m_Name: Doodle
   m_TagString: Untagged
@@ -955,6 +956,7 @@ MonoBehaviour:
   - {fileID: 6198218252667628351}
   - {fileID: 3821883146911770907}
   - {fileID: 8385837221562799441}
+  _pointJointRocket: {fileID: 0}
 --- !u!54 &2381747764778486002
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1143,6 +1145,29 @@ MonoBehaviour:
   _isOnState: 1
   _bulletViewPrefab: {fileID: 0}
   _speedShot: 0
+--- !u!114 &2455971145977197124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268115652102787550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_LoopMode: 0
+  m_Method: 0
+  m_Duration: 3.97
+  m_MaxSpeed: 37.02081
+  m_EasingMode: 0
+  m_AlignmentMode: 1
+  m_ObjectForwardAxis: 2
+  m_ObjectUpAxis: 1
+  m_StartOffset: 0
 --- !u!1 &5595710811243021937
 GameObject:
   m_ObjectHideFlags: 0

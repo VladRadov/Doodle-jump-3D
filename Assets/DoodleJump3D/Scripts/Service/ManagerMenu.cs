@@ -88,6 +88,9 @@ public class ManagerMenu : BaseManager
         });
     }
 
+    public void SetActivePlayButton(bool value)
+        => _play.gameObject.SetActive(value);
+
     private void Start()
     {
         ManagerUniRx.AddObjectDisposable(PlayingCommand);

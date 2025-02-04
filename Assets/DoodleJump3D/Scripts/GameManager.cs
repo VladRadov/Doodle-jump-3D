@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
         var managerPostProcessProfile = GetManager<ManagerPostProcessProfile>();
         var managerAchievements = GetManager<ManagerAchievements>();
         var managerStars = GetManager<ManagerStars>();
+        var managerTimeline = GetManager<ManagerTimeline>();
 
         var inputComponent = managerDoodle.DoodleController.GetDoodleComponent<InputComponent>();
         var moveComponent = managerDoodle.DoodleController.GetDoodleComponent<MoveComponent>();
@@ -105,6 +106,8 @@ public class GameManager : MonoBehaviour
 
             managerRocket.Controller.SetFlagFlying(false);
             doodleAnimator.SetActiveAnimator(true);
+
+            managerPostProcessProfile.StopRocketEffect();
         });
 
         jumpingComponent.JumpingOnPlaceCommnad.Subscribe(positionDoodle =>
@@ -121,11 +124,6 @@ public class GameManager : MonoBehaviour
             managerDoodle.DoodleAnimator.PlayRotation();
             managerFramesMap.FramesMapController.CheckAndRespawnFramesMap(positionDoodle);
             managerAudio.PlayRotateDoodle();
-        });
-
-        jumpingComponent.DoodleEndFlyingCommand.Subscribe(_ =>
-        {
-            managerPostProcessProfile.StopRocketEffect();
         });
 
         jumpingComponent.JumpingOnForwardCommnad.Subscribe(_ =>
@@ -194,6 +192,21 @@ public class GameManager : MonoBehaviour
         {
             managerAchievements.Controller.TakeTheStarCommand.Execute();
             managerAudio.PlaySoundGetStar();
+        });
+
+        managerDoodle.DoodleView.SplineAnimateStartCommand.Subscribe(transformDoodle =>
+        {
+            managerRocket.Controller.SetFlagFlying(true);
+            managerRocket.Controller.StartSmokeEffect(transformDoodle);
+        });
+
+        managerDoodle.DoodleView.SplineAnimateEndCommand.Subscribe(_ =>
+        {
+            managerDoodle.DoodleView.OnSplineAnimateEnd();
+            jumpingComponent.enabled = true;
+            managerRocket.Controller.SetFlagFlying(false);
+            managerTimeline.SetActiveTimelinePlayableDirector(true);
+            managerMenu.SetActivePlayButton(true);
         });
 
         managerMenu.SettingsView.ChangingVolume.Subscribe(volume =>
