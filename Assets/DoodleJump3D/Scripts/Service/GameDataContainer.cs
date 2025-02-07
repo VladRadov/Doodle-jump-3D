@@ -1,5 +1,7 @@
 using UnityEngine;
 
+using UniRx;
+
 public class GameDataContainer : DataContainer<GameDataContainer>
 {
     [SerializeField] private BaseGameData _gameData;
@@ -8,6 +10,8 @@ public class GameDataContainer : DataContainer<GameDataContainer>
 
     private void Awake()
     {
+        SetInstanceCommand.Subscribe(_ => { _gameData.CatSceneView(); });
+
         Initialize(this);
     }
 }

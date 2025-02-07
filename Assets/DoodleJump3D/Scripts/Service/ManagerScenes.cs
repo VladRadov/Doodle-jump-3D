@@ -34,7 +34,7 @@ public class ManagerScenes : MonoBehaviour
         var operation = SceneManager.LoadSceneAsync(nameScene, LoadSceneMode.Single);
         StartLoadingSceneEventHandler?.Invoke();
 
-        while (operation.progress < 1)
+        while (operation.progress < 0.8)
         {
             var progressInPercent = (int)(operation.progress * 100);
             LoadingSceneEventHandler?.Invoke();

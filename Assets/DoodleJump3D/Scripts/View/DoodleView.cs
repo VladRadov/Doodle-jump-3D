@@ -19,6 +19,8 @@ public class DoodleView : MonoBehaviour
     [Header("Objects")]
     [SerializeField] private BoxStretcher _boxStretcher;
     [SerializeField] private RocketView rocketCatSceneView;
+    [Header("Settings")]
+    [SerializeField] private Vector3 _startPositionAfterCatScene;
 
     public List<BaseComponent> Components => _components;
     public ReactiveCommand<int> ChangingPosition = new();
@@ -32,6 +34,9 @@ public class DoodleView : MonoBehaviour
 
     public void ActiveTriggerCollider()
         => _capsuleCollider.isTrigger = true;
+
+    public void SetPositionAfterCatScene()
+        => transform.position = _startPositionAfterCatScene;
 
     public void OnSplineAnimateEnd()
     {
@@ -47,8 +52,10 @@ public class DoodleView : MonoBehaviour
         _zPosition = (int)_transform.position.z;
         _isDie = false;
 
-        if (_splineAnimate.enabled)
+        if (GameDataContainer.Instance.GameData.IsCatSceneView)
             SplineAnimateStartCommand.Execute(transform);
+        else
+            SplineAnimateEndCommand.Execute();
 
         ManagerUniRx.AddObjectDisposable(ChangingPosition);
         ManagerUniRx.AddObjectDisposable(DoodleDieCommand);

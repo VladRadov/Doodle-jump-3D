@@ -162,6 +162,7 @@ public class GameManager : MonoBehaviour
                 managerRocket.Controller.NoActiveCurrentRocket();
                 managerAudio.StopSoundRocket();
             }
+
             managerDoodle.DoodleView.ActiveTriggerCollider();
             managerCamera.ResetFollowCamera();
             jumpingComponent.OnDieDoodle();
@@ -177,7 +178,7 @@ public class GameManager : MonoBehaviour
 
         managerMenu.PlayingCommand.Subscribe(_ =>
         {
-            if (GameDataContainer.Instance.GameData.IsEducation == false)
+            if (GameDataContainer.Instance.GameData.IsEducationEnd == false)
                 managerEducation.SetActive(true);
             else
             {
@@ -198,11 +199,14 @@ public class GameManager : MonoBehaviour
         {
             managerRocket.Controller.SetFlagFlying(true);
             managerRocket.Controller.StartSmokeEffect(transformDoodle);
+            managerAudio.PlaySoundRocket();
         });
 
         managerDoodle.DoodleView.SplineAnimateEndCommand.Subscribe(_ =>
         {
+            GameDataContainer.Instance.GameData.EndCatSceneView();
             managerDoodle.DoodleView.OnSplineAnimateEnd();
+            managerDoodle.DoodleView.SetPositionAfterCatScene();
             jumpingComponent.enabled = true;
             managerRocket.Controller.SetFlagFlying(false);
             managerTimeline.SetActiveTimelinePlayableDirector(true);
