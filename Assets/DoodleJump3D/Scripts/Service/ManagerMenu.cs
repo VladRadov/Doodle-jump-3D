@@ -88,8 +88,8 @@ public class ManagerMenu : BaseManager
         });
     }
 
-    public void SetActivePlayButton(bool value)
-        => _play.gameObject.SetActive(value);
+    public void SetActiveMenuPanel(bool value)
+        => _menuPanel.SetActive(value);
 
     private void Start()
     {

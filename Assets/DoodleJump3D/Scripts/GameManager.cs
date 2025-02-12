@@ -197,6 +197,7 @@ public class GameManager : MonoBehaviour
 
         managerDoodle.DoodleView.SplineAnimateStartCommand.Subscribe(transformDoodle =>
         {
+            managerAudio.PlayDestructionTitleNameGame();
             managerRocket.Controller.SetFlagFlying(true);
             managerRocket.Controller.StartSmokeEffect(transformDoodle);
             managerAudio.PlaySoundRocket();
@@ -210,7 +211,7 @@ public class GameManager : MonoBehaviour
             jumpingComponent.enabled = true;
             managerRocket.Controller.SetFlagFlying(false);
             managerTimeline.SetActiveTimelinePlayableDirector(true);
-            managerMenu.SetActivePlayButton(true);
+            managerMenu.SetActiveMenuPanel(true);
         });
 
         managerMenu.SettingsView.ChangingVolume.Subscribe(volume =>

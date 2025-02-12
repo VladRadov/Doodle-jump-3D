@@ -59,6 +59,8 @@ public class ManagerAudio : BaseManager
 
     public void PlaySoundStartGame() => Play(_audioSourceOther, "StartGame", false);
 
+    public void PlayDestructionTitleNameGame() => Play(_audioSourceOther, "DestructionTitleNameGame", true);
+
     private void Play(AudioSource player, string nameAudio, bool isLoop)
     {
         var sound = FindAudio(nameAudio);
