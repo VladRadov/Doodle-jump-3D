@@ -23,7 +23,7 @@ public class ManagerMenu : BaseManager
 
     public override void Initialize()
     {
-        _animationPanel = new AnimationPanel( 0.3f);
+        _animationPanel = new AnimationPanel(0.3f);
 
         _play.onClick.AddListener(() =>
         {

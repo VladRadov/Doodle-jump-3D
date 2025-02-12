@@ -41,7 +41,7 @@ public class FlyRocketComponent : MonoBehaviour
         else
         {
             FlyingEndCommand.Execute();
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
     }
 

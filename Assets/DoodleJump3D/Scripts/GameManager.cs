@@ -108,6 +108,7 @@ public class GameManager : MonoBehaviour
             doodleAnimator.SetActiveAnimator(true);
 
             managerPostProcessProfile.StopRocketEffect();
+            managerRocket.Controller.NoActiveCurrentRocket();
         });
 
         jumpingComponent.JumpingOnPlaceCommnad.Subscribe(positionDoodle =>
@@ -138,15 +139,6 @@ public class GameManager : MonoBehaviour
             managerEnemies.EnemyController.NoActiveOldEnemies(frameMap);
             managerEnemies.SpawnEnemy(frameMap.transform);
             managerRocket.Controller.ClearNoActiveRockets();
-        });
-
-        managerDoodle.DoodleView.ChangingPosition.Subscribe(zPosition =>
-        {
-            if (managerDoodle.DoodleView.IsDie == false)
-            {
-                managerDistance.IncreasingDistance(zPosition);
-                managerAchievements.Controller.DistanceCompletedCommand.Execute();
-            }
         });
 
         managerEnemies.DieEnemyCommand.Subscribe(_ =>
@@ -197,7 +189,7 @@ public class GameManager : MonoBehaviour
 
         managerDoodle.DoodleView.SplineAnimateStartCommand.Subscribe(transformDoodle =>
         {
-            managerAudio.PlayDestructionTitleNameGame();
+            managerAudio.PlaySoundChangePanelMenu();
             managerRocket.Controller.SetFlagFlying(true);
             managerRocket.Controller.StartSmokeEffect(transformDoodle);
             managerAudio.PlaySoundRocket();
@@ -212,6 +204,15 @@ public class GameManager : MonoBehaviour
             managerRocket.Controller.SetFlagFlying(false);
             managerTimeline.SetActiveTimelinePlayableDirector(true);
             managerMenu.SetActiveMenuPanel(true);
+
+            managerDoodle.DoodleView.ChangingPosition.Subscribe(zPosition =>
+            {
+                if (managerDoodle.DoodleView.IsDie == false)
+                {
+                    managerDistance.IncreasingDistance(zPosition);
+                    managerAchievements.Controller.DistanceCompletedCommand.Execute();
+                }
+            });
         });
 
         managerMenu.SettingsView.ChangingVolume.Subscribe(volume =>
