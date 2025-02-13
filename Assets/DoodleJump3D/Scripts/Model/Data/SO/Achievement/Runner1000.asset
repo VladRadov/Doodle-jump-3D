@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Runner1000
   m_EditorClassIdentifier: 
   _name: "\u041C\u0430\u0440\u0430\u0444\u043E\u043D\u0435\u0446"
+  _nameEnglish: Marathon runner
   _description: "\u041F\u0440\u043E\u0439\u0434\u0438 \u0434\u0438\u0441\u0442\u0430\u043D\u0446\u0438\u044E
     \u0432 1000 \u043C\u0435\u0442\u0440\u043E\u0432 \u0437\u0430 \u043E\u0434\u043D\u0443
     \u0438\u0433\u0440\u0443"
+  _descriptionEnglish: Complete a 1000 meter distance in one game
   _maxCountSuccess: 1000
   _currentCountSuccess: 0
   _levelAchievement: 2

@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Astronaut4
   m_EditorClassIdentifier: 
   _name: "\u041A\u043E\u0441\u043C\u043E\u043D\u0430\u0432\u0442"
+  _nameEnglish: Astronaut
   _description: "\u041F\u0440\u043E\u043B\u0435\u0442\u0438 \u043D\u0430 4 \u0440\u0430\u043D\u0446\u0430\u0445
     \u0437\u0430 \u043E\u0434\u043D\u0443 \u0438\u0433\u0440\u0443"
+  _descriptionEnglish: Fly 4 backpacks in one game
   _maxCountSuccess: 4
   _currentCountSuccess: 0
   _levelAchievement: 1

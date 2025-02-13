@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Runner2000
   m_EditorClassIdentifier: 
   _name: "\u041E\u043B\u0438\u043C\u043F\u0438\u0430\u0434\u0435\u0446"
+  _nameEnglish: Olympian
   _description: "\u041F\u0440\u043E\u0439\u0434\u0438 \u0434\u0438\u0441\u0442\u0430\u043D\u0446\u0438\u044E
     \u0432 2000 \u043C\u0435\u0442\u0440\u043E\u0432 \u0437\u0430 \u043E\u0434\u043D\u0443
     \u0438\u0433\u0440\u0443"
+  _descriptionEnglish: Complete a 2000 meter distance in one game
   _maxCountSuccess: 2000
   _currentCountSuccess: 0
   _levelAchievement: 4

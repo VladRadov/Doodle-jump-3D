@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Rotate20
   m_EditorClassIdentifier: 
   _name: "\u042F\u043C\u0430\u043A\u0430\u0441\u0438"
+  _nameEnglish: Yamakasi
   _description: "\u0421\u0434\u0435\u043B\u0430\u0439 \u0441\u0430\u043B\u044C\u0442\u043E
     20 \u0440\u0430\u0437"
+  _descriptionEnglish: Do somersaults 20 times
   _maxCountSuccess: 20
   _currentCountSuccess: 0
   _levelAchievement: 4

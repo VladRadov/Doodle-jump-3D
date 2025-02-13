@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baef2cd404d33bc44aa919f69433b5c9, type: 3}
   m_Name: Astronom1000
   m_EditorClassIdentifier: 
-  _name: "\u0410\u0441\u0442\u043E\u0440\u043E\u043D\u043E\u043C"
+  _name: "\u0410\u0441\u0442\u0440\u043E\u043D\u043E\u043C"
+  _nameEnglish: Astronomer
   _description: "\u0421\u043E\u0431\u0435\u0440\u0438 100 \u0437\u0432\u0435\u0437\u0434\u043E\u0447\u0435\u043A"
+  _descriptionEnglish: Collect 100 stars
   _maxCountSuccess: 100
   _currentCountSuccess: 0
   _levelAchievement: 3

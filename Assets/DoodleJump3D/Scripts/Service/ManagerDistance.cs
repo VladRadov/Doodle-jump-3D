@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class ManagerDistance : BaseManager
 {
     private int _currentDistace;
 
-    [SerializeField] private TextMeshProUGUI _distance;
+    [SerializeField] private Text _distance;
 
     public override void Initialize()
     {

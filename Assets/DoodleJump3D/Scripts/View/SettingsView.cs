@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+
 using UniRx;
 
 public class SettingsView : MonoBehaviour

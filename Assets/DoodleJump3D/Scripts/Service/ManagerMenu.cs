@@ -12,9 +12,11 @@ public class ManagerMenu : BaseManager
     [SerializeField] private SettingsView _settingsView;
     [SerializeField] private AchievementsOnMenuView _achievementsView;
     [SerializeField] private GameOverView _gameOverView;
+    [SerializeField] private LeaderboardsView _leaderboardsView;
     [SerializeField] private Button _play;
     [SerializeField] private Button _settings;
     [SerializeField] private Button _achievements;
+    [SerializeField] private Button _leaderboards;
 
     public ReactiveCommand PlayingCommand = new();
     public ReactiveCommand ChangePanelCommand = new();
@@ -39,6 +41,12 @@ public class ManagerMenu : BaseManager
                 await _animationPanel.MoveDOAchorPosHideObject(_achievementsView.gameObject, new Vector2(0, 882));
             }
 
+            if (_leaderboardsView.gameObject.activeSelf)
+            {
+                ChangePanelCommand.Execute();
+                await _animationPanel.MoveDOAchorPosHideObject(_leaderboardsView.gameObject, new Vector2(0, 882));
+            }
+
             if (_settingsView.gameObject.activeSelf == false)
             {
                 _animationPanel.MoveDOAchorPosActiveObject(_settingsView.gameObject, new Vector2(0, 0));
@@ -54,9 +62,36 @@ public class ManagerMenu : BaseManager
                 await _animationPanel.MoveDOAchorPosHideObject(_settingsView.gameObject, new Vector2(0, 882));
             }
 
+            if (_leaderboardsView.gameObject.activeSelf)
+            {
+                ChangePanelCommand.Execute();
+                await _animationPanel.MoveDOAchorPosHideObject(_leaderboardsView.gameObject, new Vector2(0, 882));
+            }
+
             if (_achievementsView.gameObject.activeSelf == false)
             {
                 _animationPanel.MoveDOAchorPosActiveObject(_achievementsView.gameObject, new Vector2(0, 0));
+                ChangePanelCommand.Execute();
+            }
+        });
+
+        _leaderboards.onClick.AddListener(async () =>
+        {
+            if (_achievementsView.gameObject.activeSelf)
+            {
+                ChangePanelCommand.Execute();
+                await _animationPanel.MoveDOAchorPosHideObject(_achievementsView.gameObject, new Vector2(0, 882));
+            }
+
+            if (_settingsView.gameObject.activeSelf)
+            {
+                ChangePanelCommand.Execute();
+                await _animationPanel.MoveDOAchorPosHideObject(_settingsView.gameObject, new Vector2(0, 882));
+            }
+
+            if (_leaderboardsView.gameObject.activeSelf == false)
+            {
+                _animationPanel.MoveDOAchorPosActiveObject(_leaderboardsView.gameObject, new Vector2(0, 0));
                 ChangePanelCommand.Execute();
             }
         });
@@ -77,6 +112,12 @@ public class ManagerMenu : BaseManager
         {
             ChangePanelCommand.Execute();
             _animationPanel.MoveDOAchorPosActiveObject(_gameOverView.gameObject, new Vector2(0, 0));
+        });
+
+        _leaderboardsView.ClosingEventHandler.AddListener(() =>
+        {
+            ChangePanelCommand.Execute();
+            _animationPanel.MoveDOAchorPosHideObject(_leaderboardsView.gameObject, new Vector2(0, 882));
         });
 
         _gameOverView.StartNewGameCommand.Subscribe(async _ =>

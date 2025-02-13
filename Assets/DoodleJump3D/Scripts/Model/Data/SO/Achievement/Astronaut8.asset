@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f1289d0c48df7f46ab29f22ab65ecc5, type: 3}
   m_Name: Astronaut8
   m_EditorClassIdentifier: 
-  _name: "\u041A\u043E\u043C\u0430\u043D\u0434\u0438\u0440 \u043A\u043E\u0440\u043E\u0431\u043B\u044F"
+  _name: "\u041A\u043E\u043C\u0430\u043D\u0434\u0438\u0440 \u043A\u043E\u0440\u0430\u0431\u043B\u044F"
+  _nameEnglish: Ship's commander
   _description: "\u041F\u0440\u043E\u043B\u0435\u0442\u0438 \u043D\u0430 8 \u0440\u0430\u043D\u0446\u0430\u0445
     \u0437\u0430 \u043E\u0434\u043D\u0443 \u0438\u0433\u0440\u0443"
+  _descriptionEnglish: Fly 8 jetpacks in one game
   _maxCountSuccess: 8
   _currentCountSuccess: 0
   _levelAchievement: 3
