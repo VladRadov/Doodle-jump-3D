@@ -20,4 +20,4 @@ MonoBehaviour:
   _currentCountSuccess: 0
   _levelAchievement: 3
   _isAchievementSuccess: 0
-  _icon: {fileID: 21300000, guid: c79e282dc907c0e408e0ad1976471c7b, type: 3}
+  _icon: {fileID: 21300000, guid: 98fe8f3730773ff4bbd29771eb7490be, type: 3}
