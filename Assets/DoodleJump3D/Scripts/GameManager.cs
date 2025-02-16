@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         var managerAchievements = GetManager<ManagerAchievements>();
         var managerStars = GetManager<ManagerStars>();
         var managerTimeline = GetManager<ManagerTimeline>();
+        var managerYandexSDK = GetManager<ManagerYandexSDK>();
 
         var inputComponent = managerDoodle.DoodleController.GetDoodleComponent<InputComponent>();
         var moveComponent = managerDoodle.DoodleController.GetDoodleComponent<MoveComponent>();
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
 
         managerEducation.OnEducationEnd.Subscribe(_ =>
         {
+            Cursor.visible = false;
             managerLevel.SetActivePause(false);
             managerAchievements.ShowAchivements();
         });
@@ -149,6 +151,8 @@ public class GameManager : MonoBehaviour
 
         managerDoodle.DoodleView.DoodleDieCommand.Subscribe(async _ =>
         {
+            Cursor.visible = true;
+
             if (jumpingComponent.IsFlying)
             {
                 managerRocket.Controller.NoActiveCurrentRocket();
@@ -164,6 +168,7 @@ public class GameManager : MonoBehaviour
             managerDistance.SaveResult();
             await UniTask.Run(async () => { await UniTask.Delay(DataSettingsContainer.Instance.Settings.DelayAfterDieDoodle); });
             managerMenu.GameOverView.GameOverCommand.Execute();
+            managerYandexSDK.FullscreenAdsShow();
         });
 
         managerEnemies.CreateEnemyCommand.Subscribe(_ => { managerAudio.PlayEnemySound(); });
@@ -174,6 +179,7 @@ public class GameManager : MonoBehaviour
                 managerEducation.SetActive(true);
             else
             {
+                Cursor.visible = false;
                 managerLevel.SetActivePause(false);
                 managerAchievements.ShowAchivements();
             }
@@ -257,9 +263,24 @@ public class GameManager : MonoBehaviour
             managerAudio.PlaySoundChangePanelMenu();
         });
 
+        managerEducation.ChangePanelCommand.Subscribe(_ =>
+        {
+            managerAudio.PlaySoundChangePanelMenu();
+        });
+
         managerAchievements.Controller.ChangePanelCommand.Subscribe(_ =>
         {
             managerAudio.PlaySoundChangePanelMenu();
+        });
+
+        managerDistance.ChangedBestDistance.Subscribe(distance =>
+        {
+            managerYandexSDK.SaveBestScore(distance);
+        });
+
+        managerYandexSDK.OpenningFullAdCommand.Subscribe(_ =>
+        {
+            managerAudio.StopAllPlayers();
         });
     }
 

@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class AchievementItemView : MonoBehaviour
 {
     [Header("UI")]
-    [SerializeField] private Text _name;
-    [SerializeField] private Text _description;
+    [SerializeField] private TextMeshProUGUI _name;
+    [SerializeField] private TextMeshProUGUI _description;
     [SerializeField] private Image _icon;
 
     public void Initialize(Achievement achievement)

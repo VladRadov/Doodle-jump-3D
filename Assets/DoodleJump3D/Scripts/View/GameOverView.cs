@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
+
+using TMPro;
 using UniRx;
 
 public class GameOverView : MonoBehaviour
 {
-    [SerializeField] private Text _currentResult;
-    [SerializeField] private Text _bestResult;
+    [SerializeField] private TextMeshProUGUI _currentResult;
+    [SerializeField] private TextMeshProUGUI _bestResult;
     [SerializeField] private Button _buttonMenu;
 
     public ReactiveCommand GameOverCommand = new();

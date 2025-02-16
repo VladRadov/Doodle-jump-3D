@@ -1,13 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-using UniRx;
+using TMPro;
 
 public class AchievementView : MonoBehaviour
 {
     private AnimationPanel _animationPanel;
 
-    [SerializeField] private Text _descriptionAchievement;
+    [SerializeField] private TextMeshProUGUI _descriptionAchievement;
     [SerializeField] private Slider _progressAchievement;
     [SerializeField] private Vector2 _endMovePositionAnimation;
     [SerializeField] private Vector2 _startMovePositionAnimation;

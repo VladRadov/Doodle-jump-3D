@@ -12,6 +12,7 @@ public class ManagerEducation : BaseManager
     [SerializeField] private ClueView _clue4;
 
     public ReactiveCommand OnEducationEnd = new();
+    public ReactiveCommand ChangePanelCommand = new();
 
     public override void Initialize()
     {
@@ -19,27 +20,35 @@ public class ManagerEducation : BaseManager
 
         _clue1.OnOkClick.Subscribe(async _ =>
         {
+            ChangePanelCommand.Execute();
             await _animationPanel.MoveDOAchorPosHideObject(_clue1.gameObject, new Vector2(502, 500));
             _animationPanel.MoveDOAchorPosActiveObject(_clue2.gameObject, new Vector2(502, -232));
+            ChangePanelCommand.Execute();
         });
         _clue2.OnOkClick.Subscribe(async _ =>
         {
+            ChangePanelCommand.Execute();
             await _animationPanel.MoveDOAchorPosHideObject(_clue2.gameObject, new Vector2(502, 500));
             _animationPanel.MoveDOAchorPosActiveObject(_clue3.gameObject, new Vector2(502, -232));
+            ChangePanelCommand.Execute();
         });
         _clue3.OnOkClick.Subscribe(async _ =>
         {
+            ChangePanelCommand.Execute();
             await _animationPanel.MoveDOAchorPosHideObject(_clue3.gameObject, new Vector2(502, 500));
             _animationPanel.MoveDOAchorPosActiveObject(_clue4.gameObject, new Vector2(502, -232));
+            ChangePanelCommand.Execute();
         });
         _clue4.OnOkClick.Subscribe(async _ =>
         {
+            ChangePanelCommand.Execute();
             await _animationPanel.MoveDOAchorPosHideObject(_clue4.gameObject, new Vector2(502, 500));
             GameDataContainer.Instance.GameData.EndEducation();
             OnEducationEnd.Execute();
         });
 
         ManagerUniRx.AddObjectDisposable(OnEducationEnd);
+        ManagerUniRx.AddObjectDisposable(ChangePanelCommand);
     }
 
     public void SetActive(bool value)
@@ -47,11 +56,15 @@ public class ManagerEducation : BaseManager
         _parentPanel.gameObject.SetActive(value);
 
         if (value)
+        {
             _animationPanel.MoveDOAchorPosActiveObject(_clue1.gameObject, new Vector2(502, -232));
+            ChangePanelCommand.Execute();
+        }
     }
 
     private void OnDestroy()
     {
         ManagerUniRx.Dispose(OnEducationEnd);
+        ManagerUniRx.Dispose(ChangePanelCommand);
     }
 }

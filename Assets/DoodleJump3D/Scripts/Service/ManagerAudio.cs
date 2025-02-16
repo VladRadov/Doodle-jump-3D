@@ -31,6 +31,15 @@ public class ManagerAudio : BaseManager
         DataSettingsContainer.Instance.Settings.VolumeSounds = volume;
     }
 
+    public void StopAllPlayers()
+    {
+        _audioSource.Stop();
+        _audioSourceEnemy.Stop();
+        _audioSourceRocket.Stop();
+        _audioSourceOther.Stop();
+        _audioSourcePlatform.Stop();
+    }
+
     public void PlayJump() => Play(_audioSource, "Jump", false);
 
     public void PlayShotDoodle() => Play(_audioSource, "Shot", false);

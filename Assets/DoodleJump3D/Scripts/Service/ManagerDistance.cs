@@ -1,17 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
+
+using UniRx;
 
 public class ManagerDistance : BaseManager
 {
     private int _currentDistace;
 
-    [SerializeField] private Text _distance;
+    [SerializeField] private TextMeshProUGUI _distance;
+
+    public ReactiveCommand<int> ChangedBestDistance = new();
 
     public override void Initialize()
     {
         ResetDistance();
+        ManagerUniRx.AddObjectDisposable(ChangedBestDistance);
     }
 
     public void IncreasingDistance(int valueDistance)
@@ -24,8 +27,11 @@ public class ManagerDistance : BaseManager
     {
         GameDataContainer.Instance.GameData.CurrentResult = _currentDistace;
 
-        if(GameDataContainer.Instance.GameData.BestResult < _currentDistace)
+        if (GameDataContainer.Instance.GameData.BestResult < _currentDistace)
+        {
             GameDataContainer.Instance.GameData.BestResult = _currentDistace;
+            ChangedBestDistance.Execute(_currentDistace);
+        }
     }
 
     private void ResetDistance()
@@ -36,4 +42,9 @@ public class ManagerDistance : BaseManager
 
     private void UpdateDistance()
         => _distance.text = _currentDistace.ToString();
+
+    private void OnDestroy()
+    {
+        ManagerUniRx.Dispose(ChangedBestDistance);
+    }
 }
