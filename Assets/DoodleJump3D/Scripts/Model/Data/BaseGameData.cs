@@ -11,12 +11,12 @@ public class BaseGameData : ScriptableObject
     public virtual bool IsEducationEnd => _isEducationEnd;
     public virtual bool IsCatSceneView => _isCatSceneView;
 
-    public void EndEducation()
+    public virtual void EndEducation()
         => _isEducationEnd = true;
 
-    public void EndCatSceneView()
+    public virtual void EndCatSceneView()
         => _isCatSceneView = false;
 
-    public void CatSceneView()
+    public virtual void CatSceneView()
         => _isCatSceneView = true;
 }

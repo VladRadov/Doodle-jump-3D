@@ -1,13 +1,30 @@
 {
-    "idSave": 8,
-    "isFirstSession": false,
-    "language": "en",
-    "promptDone": false,
-    "money": 1,
-    "newPlayerName": "Hello!",
-    "openLevels": [
-        false,
-        true,
-        false
-    ]
+  "idSave": 63,
+  "isFirstSession": false,
+  "language": "ru",
+  "promptDone": false,
+  "money": 1,
+  "newPlayerName": "Hello!",
+  "openLevels": [
+    false,
+    true,
+    false
+  ],
+  "CurrentResult": 0,
+  "BestResult": 965,
+  "IsEducationEnd": true,
+  "IsCatSceneView": false,
+  "VolumeSounds": 0.6487387,
+  "DelayAfterDieDoodle": 0,
+  "Astronaut4CurrentCount": 0,
+  "Astronaut8CurrentCount": 0,
+  "Astronom50CurrentCount": 0,
+  "Astronom100CurrentCount": 0,
+  "EpicFail50CurrentCount": 0,
+  "EpicFail100CurrentCount": 0,
+  "KillMonsters10CurrentCount": 0,
+  "Rotate10CurrentCount": 0,
+  "Rotate20CurrentCount": 0,
+  "Runner1000CurrentCount": 0,
+  "Runner2000CurrentCount": 0
 }

@@ -1,8 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UniRx;
-
 public class DoodleController
 {
     private DoodleView _doodleView;

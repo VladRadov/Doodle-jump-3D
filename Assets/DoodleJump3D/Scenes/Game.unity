@@ -9007,7 +9007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21d2cdd72cdc50449be88f93ed4747b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameData: {fileID: 11400000, guid: a3ea224a727e9584695b685d7716283c, type: 2}
+  _gameData: {fileID: 11400000, guid: 54d05a9a0252d5944a885996bc78e9fa, type: 2}
 --- !u!114 &584134815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9020,7 +9020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c8e8bddbedab344af18cbec7425b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _settings: {fileID: 11400000, guid: 58ad935ae47de1d44912c995cb9c0911, type: 2}
+  _settings: {fileID: 11400000, guid: 394860749a9eb48478c5b2fe592961fc, type: 2}
 --- !u!1 &584852330
 GameObject:
   m_ObjectHideFlags: 0
@@ -10921,7 +10921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3079409916952164942, guid: 7a0e0f424819ac940b2c0d1fbf7a0bea, type: 3}
       propertyPath: m_Text
-      value: Test
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3079409916952164942, guid: 7a0e0f424819ac940b2c0d1fbf7a0bea, type: 3}
       propertyPath: m_FontData.m_FontSize
@@ -10929,7 +10929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3079409917039875224, guid: 7a0e0f424819ac940b2c0d1fbf7a0bea, type: 3}
       propertyPath: m_Text
-      value: 1000
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3079409917039875224, guid: 7a0e0f424819ac940b2c0d1fbf7a0bea, type: 3}
       propertyPath: m_FontData.m_FontSize
@@ -10965,7 +10965,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3079409917578917815, guid: 7a0e0f424819ac940b2c0d1fbf7a0bea, type: 3}
       propertyPath: m_Text
-      value: 1
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3079409917578917815, guid: 7a0e0f424819ac940b2c0d1fbf7a0bea, type: 3}
       propertyPath: m_FontData.m_FontSize
@@ -30171,6 +30171,10 @@ PrefabInstance:
     - target: {fileID: 2381747764778486002, guid: c2178c3c4dcca454ab1ab4439f941924, type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2381747764778486002, guid: c2178c3c4dcca454ab1ab4439f941924, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2455971145977197124, guid: c2178c3c4dcca454ab1ab4439f941924, type: 3}
       propertyPath: m_Target

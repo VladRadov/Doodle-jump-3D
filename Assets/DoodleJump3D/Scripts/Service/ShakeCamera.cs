@@ -1,6 +1,6 @@
 using UnityEngine;
-using Cinemachine;
 
+using Cinemachine;
 using Cysharp.Threading.Tasks;
 
 public class ShakeCamera : MonoBehaviour

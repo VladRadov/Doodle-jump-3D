@@ -1,6 +1,6 @@
 using UnityEngine;
-using TMPro;
 
+using TMPro;
 using UniRx;
 
 public class ManagerDistance : BaseManager

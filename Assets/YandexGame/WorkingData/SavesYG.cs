@@ -16,6 +16,28 @@ namespace YG
         public string newPlayerName = "Hello!";
         public bool[] openLevels = new bool[3];
 
+        //BaseGameData
+        public int CurrentResult;
+        public int BestResult;
+        public bool IsEducationEnd = false;
+        public bool IsCatSceneView = true;
+
+        //Settings
+        public float VolumeSounds = 1;
+        public int DelayAfterDieDoodle = 1000;
+
+        //Achivements
+        public int Astronaut4CurrentCount;
+        public int Astronaut8CurrentCount;
+        public int Astronom50CurrentCount;
+        public int Astronom100CurrentCount;
+        public int EpicFail50CurrentCount;
+        public int EpicFail100CurrentCount;
+        public int KillMonsters10CurrentCount;
+        public int Rotate10CurrentCount;
+        public int Rotate20CurrentCount;
+        public int Runner1000CurrentCount;
+        public int Runner2000CurrentCount;
 
         // Вы можете выполнить какие то действия при загрузке сохранений
         public SavesYG()

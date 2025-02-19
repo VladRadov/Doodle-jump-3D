@@ -1,4 +1,5 @@
 using UnityEngine;
+
 using UniRx;
 
 public class JumpingComponent : BaseComponent
@@ -33,6 +34,7 @@ public class JumpingComponent : BaseComponent
     public bool IsFlying => _isFlying;
     public bool IsJumpOnPlace => _isJumpOnPlace;
     public bool IsAllowedToSide => _isAllowedToSide;
+    private Transform BaseTransform { get { if (_transform == null) _transform = transform; return _transform; } }
 
     public void StartFlying(RocketView rocket)
     {
@@ -57,8 +59,8 @@ public class JumpingComponent : BaseComponent
 
         JumpingOnPlace();
 
-        DoodleEndFlyingCommand.Execute(_transform.position);
-        JumpingOnForwardWithRotationCommnad.Execute(_transform.position);
+        DoodleEndFlyingCommand.Execute(BaseTransform.position);
+        JumpingOnForwardWithRotationCommnad.Execute(BaseTransform.position);
     }
 
     public void OnDieDoodle()
@@ -78,7 +80,7 @@ public class JumpingComponent : BaseComponent
 
     public void JumpForward()
     {
-        Vector3 fromTo = _targetPlatform - _transform.position;
+        Vector3 fromTo = _targetPlatform - BaseTransform.position;
         Vector3 fromToXZ = new Vector3(fromTo.x, 0, fromTo.z);
 
         float lengthVector = fromToXZ.magnitude;
@@ -98,14 +100,12 @@ public class JumpingComponent : BaseComponent
         JumpingOnForwardCommnad.Execute();
 
         if(lengthVector > _minLenghtToRotationDoodle)
-            JumpingOnForwardWithRotationCommnad.Execute(_transform.position);
+            JumpingOnForwardWithRotationCommnad.Execute(BaseTransform.position);
     }
 
     public override void Start()
     {
         base.Start();
-
-        _transform = transform;
 
         _isJumpOnPlace = true;
         _isJumpForward = false;
@@ -126,7 +126,7 @@ public class JumpingComponent : BaseComponent
     {
         if (_isFlying)
         {
-            FlyingCommand.Execute(_transform.position);
+            FlyingCommand.Execute(BaseTransform.position);
             return;
         }
 
@@ -153,7 +153,7 @@ public class JumpingComponent : BaseComponent
         {
             _isAllowedToSide = true;
 
-            JumpingOnPlaceCommnad.Execute(_transform.position);
+            JumpingOnPlaceCommnad.Execute(BaseTransform.position);
 
             if (_isJumpForward == false)
                 _isJumpOnPlace = true;

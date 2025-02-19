@@ -1,5 +1,6 @@
-using Cinemachine;
 using UnityEngine;
+
+using Cinemachine;
 
 public class ManagerCamera : BaseManager
 {

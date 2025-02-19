@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Splines;
+
 using UniRx;
 
 public class DoodleView : MonoBehaviour

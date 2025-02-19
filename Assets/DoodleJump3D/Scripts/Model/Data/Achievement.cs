@@ -16,8 +16,8 @@ public class Achievement : ScriptableObject
 
     public int LevelAchievement => _levelAchievement;
     public bool IsAchievementSuccess => _isAchievementSuccess;
-    public virtual string Description { get { return YandexGame.savesData.language == "ru" ? _description : _descriptionEnglish; } }
-    public virtual string Name { get { return YandexGame.savesData.language == "ru" ? _name : _nameEnglish; } }
+    public string Description { get { return YandexGame.savesData.language == "ru" ? _description : _descriptionEnglish; } }
+    public string Name { get { return YandexGame.savesData.language == "ru" ? _name : _nameEnglish; } }
     public int CurrentCountSuccess => _currentCountSuccess;
     public int MaxCountSuccess => _maxCountSuccess;
     public Sprite Icon => _icon;
