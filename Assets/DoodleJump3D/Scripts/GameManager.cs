@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
         var shotDoodleComponent = managerDoodle.DoodleController.GetDoodleComponent<ShotDoodleComponent>();
         var rotateComponent = managerDoodle.DoodleController.GetDoodleComponent<RotateComponent>();
         var doodleAnimator = managerDoodle.DoodleController.GetDoodleComponent<DoodleAnimator>();
+        var changeSideComponent = managerDoodle.DoodleController.GetDoodleComponent<ChangeSideComponent>();
 
         managerEducation.OnEducationEnd.Subscribe(_ =>
         {
@@ -288,7 +289,7 @@ public class GameManager : MonoBehaviour
             managerAudio.StopAllPlayers();
         });
 
-        moveComponent.ChangeSideCommand.Subscribe(newPosition =>
+        changeSideComponent.ChangeSideCommand.Subscribe(newPosition =>
         {
             managerRocket.Controller.SetPositionCurrentRocket(newPosition);
         });
