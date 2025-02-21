@@ -6,7 +6,7 @@ public class DataSettingsContainer : DataContainer<DataSettingsContainer>
 
     public Settings Settings => _settings;
 
-    private void Awake()
+    public override void Initialize()
     {
         Initialize(this);
     }

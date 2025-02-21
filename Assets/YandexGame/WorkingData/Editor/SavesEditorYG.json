@@ -1,5 +1,5 @@
 {
-  "idSave": 63,
+  "idSave": 142,
   "isFirstSession": false,
   "language": "ru",
   "promptDone": false,
@@ -10,8 +10,8 @@
     true,
     false
   ],
-  "CurrentResult": 0,
-  "BestResult": 965,
+  "CurrentResult": 64,
+  "BestResult": 1529,
   "IsEducationEnd": true,
   "IsCatSceneView": false,
   "VolumeSounds": 0.6487387,

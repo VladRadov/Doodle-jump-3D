@@ -946,17 +946,20 @@ MonoBehaviour:
   _rigidbody: {fileID: 2381747764778486002}
   _capsuleCollider: {fileID: 4532521973148175871}
   _components:
-  - {fileID: 0}
   - {fileID: 3328293305804017740}
   - {fileID: 6765762322697730876}
-  - {fileID: 0}
   - {fileID: 270815325591158021}
   - {fileID: 2353595814710894259}
   - {fileID: 902256797796844902}
   - {fileID: 6198218252667628351}
   - {fileID: 3821883146911770907}
   - {fileID: 8385837221562799441}
-  _pointJointRocket: {fileID: 0}
+  _pointJointRocket: {fileID: 2821366616876832435}
+  _splineAnimate: {fileID: 2455971145977197124}
+  _animator: {fileID: 787549349572406749}
+  _boxStretcher: {fileID: 0}
+  rocketCatSceneView: {fileID: 0}
+  _startPositionAfterCatScene: {x: 0, y: 22.61, z: 0}
 --- !u!54 &2381747764778486002
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1020,7 +1023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isOnState: 1
-  _rotateFlyingToRocket: {x: 0, y: 0, z: 0}
+  _rotateFlyingToRocket: {x: 28, y: 0, z: 0}
 --- !u!114 &3328293305804017740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1047,8 +1050,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isOnState: 1
-  _speedMove: 0
-  _speedMoveTransform: 0
+  _rigidbody: {fileID: 2381747764778486002}
+  _speedMove: 100
+  _speedMoveTransform: 5
 --- !u!114 &6765762322697730876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1056,7 +1060,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4268115652102787550}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb0b7c0911b1a814eaea042351025642, type: 3}
   m_Name: 
@@ -1066,6 +1070,7 @@ MonoBehaviour:
   _angle: 60
   _gravity: 60
   _minLenghtToRotationDoodle: 25
+  _rigidbody: {fileID: 2381747764778486002}
 --- !u!95 &787549349572406749
 Animator:
   serializedVersion: 5
@@ -1074,7 +1079,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4268115652102787550}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 0c02de6a86bf8ec428ac13649d79ed15, type: 2}
   m_CullingMode: 0
@@ -1113,7 +1118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81379b16378e6c54d95e7b664c01a894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isOnState: 0
+  _isOnState: 1
   _animator: {fileID: 787549349572406749}
   _timeDelayRotation: 200
 --- !u!114 &902256797796844902
@@ -1128,8 +1133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c619e66e18267449e38e0771ad083d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isOnState: 0
-  _effectShake: {fileID: 0}
+  _isOnState: 1
+  _effectShake: {fileID: 8664352506937028012}
 --- !u!114 &6198218252667628351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1143,8 +1148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isOnState: 1
-  _bulletViewPrefab: {fileID: 0}
-  _speedShot: 0
+  _bulletViewPrefab: {fileID: 6963130459335351896, guid: c17d02ad12ab8ab4aa18dd99eb097951, type: 3}
+  _speedShot: 150
 --- !u!114 &2455971145977197124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1161,7 +1166,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 0
-  m_Duration: 3.97
+  m_Duration: 3.65
   m_MaxSpeed: 37.02081
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -1516,6 +1521,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EffectShake
       objectReference: {fileID: 0}
+    - target: {fileID: 7247627169414254766, guid: c9c0fad50d420da4bb3235d7ab4f12dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1524,5 +1533,10 @@ PrefabInstance:
 --- !u!4 &5389263756924712570 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4307691807846780344, guid: c9c0fad50d420da4bb3235d7ab4f12dc, type: 3}
+  m_PrefabInstance: {fileID: 8146303868342582210}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8664352506937028012 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 662181453761353326, guid: c9c0fad50d420da4bb3235d7ab4f12dc, type: 3}
   m_PrefabInstance: {fileID: 8146303868342582210}
   m_PrefabAsset: {fileID: 0}

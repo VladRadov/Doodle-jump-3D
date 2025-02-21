@@ -4,6 +4,7 @@ using UnityEngine;
 public class ManagerAudio : BaseManager
 {
     [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioSource _audioSourceDoodleDie;
     [SerializeField] private AudioSource _audioSourceEnemy;
     [SerializeField] private AudioSource _audioSourceRocket;
     [SerializeField] private AudioSource _audioSourceOther;
@@ -13,6 +14,7 @@ public class ManagerAudio : BaseManager
     public override void Initialize()
     {
         _audioSource.volume = DataSettingsContainer.Instance.Settings.VolumeSounds;
+        _audioSourceDoodleDie.volume = DataSettingsContainer.Instance.Settings.VolumeSounds;
         _audioSourceEnemy.volume = DataSettingsContainer.Instance.Settings.VolumeSounds;
         _audioSourceRocket.volume = DataSettingsContainer.Instance.Settings.VolumeSounds;
         _audioSourceOther.volume = DataSettingsContainer.Instance.Settings.VolumeSounds;
@@ -22,6 +24,7 @@ public class ManagerAudio : BaseManager
     public void ChangeVolume(float volume)
     {
         _audioSource.volume = volume;
+        _audioSourceDoodleDie.volume = volume;
         _audioSourceEnemy.volume = volume;
         _audioSourceRocket.volume = volume;
         _audioSourceOther.volume = volume;
@@ -33,6 +36,7 @@ public class ManagerAudio : BaseManager
     public void StopAllPlayers()
     {
         _audioSource.Stop();
+        _audioSourceDoodleDie.Stop();
         _audioSourceEnemy.Stop();
         _audioSourceRocket.Stop();
         _audioSourceOther.Stop();
@@ -45,7 +49,7 @@ public class ManagerAudio : BaseManager
 
     public void PlayRotateDoodle() => Play(_audioSource, "RotateDoodle", false);
 
-    public void PlayFall() => Play(_audioSource, "Fall", false);
+    public void PlayFall() => Play(_audioSourceDoodleDie, "Fall", false);
 
     public void PlaySoundRocket() => Play(_audioSourceRocket, "Rocket", false);
 

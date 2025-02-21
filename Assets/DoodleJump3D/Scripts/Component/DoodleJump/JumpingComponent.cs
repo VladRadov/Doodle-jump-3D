@@ -4,7 +4,6 @@ using UniRx;
 
 public class JumpingComponent : BaseComponent
 {
-    private Rigidbody _rigidbody;
     private FixedJoint _fixedJoint;
     private Transform _transform;
 
@@ -23,6 +22,7 @@ public class JumpingComponent : BaseComponent
     [SerializeField] private float _angle;
     [SerializeField] private float _gravity;
     [SerializeField] private float _minLenghtToRotationDoodle;
+    [SerializeField] private Rigidbody _rigidbody;
 
     public ReactiveCommand<Vector3> JumpingOnPlaceCommnad = new();
     public ReactiveCommand JumpingOnForwardCommnad = new();
@@ -40,12 +40,12 @@ public class JumpingComponent : BaseComponent
     {
         DoodleStartFlyingCommand.Execute(rocket);
 
-        _fixedJoint = gameObject.AddComponent<FixedJoint>();
-        _fixedJoint.connectedBody = rocket.Rigidbody;
-
-        SetVelocity(Vector3.zero);
-        _rigidbody.useGravity = false;
         _isFlying = true;
+        _rigidbody.useGravity = false;
+        SetVelocity(Vector3.zero);
+
+        _fixedJoint = gameObject.AddComponent<FixedJoint>();
+        _fixedJoint.connectedBody = rocket.Rigidbody; 
     }
 
     public void EndFlying()

@@ -19,7 +19,7 @@ public class DoodleView : MonoBehaviour
     [SerializeField] private Animator _animator;
     [Header("Objects")]
     [SerializeField] private BoxStretcher _boxStretcher;
-    [SerializeField] private RocketView rocketCatSceneView;
+    [SerializeField] private RocketView _rocketCatSceneView;
     [Header("Settings")]
     [SerializeField] private Vector3 _startPositionAfterCatScene;
 
@@ -32,6 +32,8 @@ public class DoodleView : MonoBehaviour
 
     public bool IsDie => _isDie;
     public Vector3 PointJointRocket => _pointJointRocket.position;
+    public BoxStretcher BoxStretcher => _boxStretcher;
+    public Transform BaseTransform { get { if (_transform == null) _transform = transform; return _transform; } }
 
     public void ActiveTriggerCollider()
         => _capsuleCollider.isTrigger = true;
@@ -44,7 +46,7 @@ public class DoodleView : MonoBehaviour
         _splineAnimate.enabled = false;
         _animator.enabled = true;
         _boxStretcher.gameObject.SetActive(true);
-        rocketCatSceneView.gameObject.SetActive(false);
+        _rocketCatSceneView.gameObject.SetActive(false);
     }
 
     private void Start()

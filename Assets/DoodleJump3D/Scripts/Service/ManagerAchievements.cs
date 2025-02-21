@@ -18,7 +18,7 @@ public class ManagerAchievements : BaseManager
     public void ShowAchivements()
         => _achievementsController?.LoadingNoCompletedAchievements();
 
-    public void OnDisable()
+    public void OnDestroy()
     {
         _achievementsController.Dispose();
     }

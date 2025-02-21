@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BoxStretcher : MonoBehaviour
@@ -15,6 +13,9 @@ public class BoxStretcher : MonoBehaviour
 
     [SerializeField] private float _scaleKoefficient;
     [SerializeField] private float _rotationKoefficient;
+
+    public void SetPosition(Vector3 newPosition)
+        => transform.position = newPosition;
 
     private void Start()
     {

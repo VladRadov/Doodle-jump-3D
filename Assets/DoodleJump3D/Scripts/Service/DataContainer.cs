@@ -7,7 +7,12 @@ public class DataContainer<T> : MonoBehaviour
     public static T Instance;
     public ReactiveCommand SetInstanceCommand = new();
 
-    public void Initialize(T instance)
+    public virtual void Initialize()
+    {
+        
+    }
+
+    protected void Initialize(T instance)
     {
         DontDestroyOnLoad(this);
 
@@ -22,7 +27,7 @@ public class DataContainer<T> : MonoBehaviour
         ManagerUniRx.AddObjectDisposable(SetInstanceCommand);
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         ManagerUniRx.Dispose(SetInstanceCommand);
     }

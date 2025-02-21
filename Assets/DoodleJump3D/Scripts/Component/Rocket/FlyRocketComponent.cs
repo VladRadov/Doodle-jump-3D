@@ -7,16 +7,19 @@ public class FlyRocketComponent : MonoBehaviour
     private float _currentTime;
     private bool _isFlying;
 
+    [Header("Components")]
     [SerializeField] private RocketView _rocketView;
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private BoxCollider _boxCollider;
     [SerializeField] private Transform _backBraceBottom;
+    [Header("Settings")]
     [SerializeField] private Vector3 _speed;
     [SerializeField] private float _timeFlying;
     [SerializeField] private Vector3 _offsetConnectedDoodle;
     [SerializeField] private Vector3 _rotateFlyingToRocket;
 
     public ReactiveCommand FlyingEndCommand = new();
+    public bool IsFlying => _isFlying;
 
     public void FlyRocket()
     {
@@ -39,10 +42,7 @@ public class FlyRocketComponent : MonoBehaviour
         if (_currentTime < _timeFlying)
             _currentTime += Time.deltaTime;
         else
-        {
             FlyingEndCommand.Execute();
-            //gameObject.SetActive(false);
-        }
     }
 
     private void OnTriggerEnter(Collider other)

@@ -8,7 +8,7 @@ public class GameDataContainer : DataContainer<GameDataContainer>
 
     public BaseGameData GameData => _gameData;
 
-    private void Awake()
+    public override void Initialize()
     {
         SetInstanceCommand.Subscribe(_ => { _gameData.CatSceneView(); });
 

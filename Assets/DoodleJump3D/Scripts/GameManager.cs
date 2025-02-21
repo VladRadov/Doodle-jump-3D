@@ -7,9 +7,14 @@ using Cysharp.Threading.Tasks;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private List<BaseManager> _managers;
+    [SerializeField] private DataSettingsContainer _dataSettingsContainer;
+    [SerializeField] private GameDataContainer _gameDataContainer;
 
-    private void Start()
+    private void Awake()
     {
+        _dataSettingsContainer.Initialize();
+        _gameDataContainer.Initialize();
+
         foreach (var manager in _managers)
             manager.Initialize();
 
@@ -281,6 +286,11 @@ public class GameManager : MonoBehaviour
         managerYandexSDK.OpenningFullAdCommand.Subscribe(_ =>
         {
             managerAudio.StopAllPlayers();
+        });
+
+        moveComponent.ChangeSideCommand.Subscribe(newPosition =>
+        {
+            managerRocket.Controller.SetPositionCurrentRocket(newPosition);
         });
     }
 

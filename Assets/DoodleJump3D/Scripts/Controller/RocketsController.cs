@@ -20,6 +20,9 @@ public class RocketsController
         _rockets = new List<RocketView>();
     }
 
+    public void SetPositionCurrentRocket(Vector3 newPosition)
+        => _currentRocket?.SetPosition(newPosition);
+
     public void SetCurrentRocket(RocketView rocketView)
         => _currentRocket = rocketView;
 
