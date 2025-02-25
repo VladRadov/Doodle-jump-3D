@@ -158,7 +158,7 @@ public partial class @DoodleInputSystem: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Gyroscope"",
                     ""id"": ""efd41c2f-b036-4d71-8c22-c71fc2d278fc"",
-                    ""path"": ""OneModifier"",
+                    ""path"": ""TwoModifiers"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -167,9 +167,9 @@ public partial class @DoodleInputSystem: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""binding"",
+                    ""name"": ""Modifier 1"",
                     ""id"": ""0090ea0e-03cc-4ab8-a81f-8022eac6894c"",
-                    ""path"": ""<Gyroscope>/angularVelocity/x"",
+                    ""path"": ""<Gyroscope>/angularVelocity/z"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mobile"",

@@ -9,14 +9,17 @@ public class ManagerYandexSDK : BaseManager
 
     public ReactiveCommand OpenningFullAdCommand = new();
     public ReactiveCommand ClosingFullAdCommand = new();
+    public ReactiveCommand InitializeSdkSuccess = new();
 
     public override void Initialize()
     {
+        YandexGame.GetDataEvent += () => { InitializeSdkSuccess.Execute(); };
         YandexGame.OpenFullAdEvent += () => { OpenningFullAdCommand.Execute(); };
         YandexGame.CloseFullAdEvent += () => { ClosingFullAdCommand.Execute(); };
 
         ManagerUniRx.AddObjectDisposable(OpenningFullAdCommand);
         ManagerUniRx.AddObjectDisposable(ClosingFullAdCommand);
+        ManagerUniRx.AddObjectDisposable(InitializeSdkSuccess);
     }
 
     public void FullscreenAdsShow()
@@ -29,5 +32,6 @@ public class ManagerYandexSDK : BaseManager
     {
         ManagerUniRx.Dispose(OpenningFullAdCommand);
         ManagerUniRx.Dispose(ClosingFullAdCommand);
+        ManagerUniRx.Dispose(InitializeSdkSuccess);
     }
 }

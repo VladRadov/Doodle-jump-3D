@@ -45,9 +45,15 @@ public class GameManager : MonoBehaviour
         var doodleAnimator = managerDoodle.DoodleController.GetDoodleComponent<DoodleAnimator>();
         var changeSideComponent = managerDoodle.DoodleController.GetDoodleComponent<ChangeSideComponent>();
 
+        managerYandexSDK.InitializeSdkSuccess.Subscribe(_ =>
+        {
+            managerDoodle.DoodleView.RunCatScene();
+        });
+
         managerEducation.OnEducationEnd.Subscribe(_ =>
         {
-            Cursor.visible = false;
+            SetBlockCursor(true);
+
             managerLevel.SetActivePause(false);
             managerAchievements.ShowAchivements();
         });
@@ -157,7 +163,7 @@ public class GameManager : MonoBehaviour
 
         managerDoodle.DoodleView.DoodleDieCommand.Subscribe(async _ =>
         {
-            Cursor.visible = true;
+            SetBlockCursor(false);
 
             if (jumpingComponent.IsFlying)
             {
@@ -172,7 +178,9 @@ public class GameManager : MonoBehaviour
             managerPlatform.PlatformController.ClearSlectePlatforms();
             effectShakeComponent.SetActive(true);
             managerDistance.SaveResult();
-            await UniTask.Run(async () => { await UniTask.Delay(DataSettingsContainer.Instance.Settings.DelayAfterDieDoodle); });
+
+            await UniTask.Delay(DataSettingsContainer.Instance.Settings.DelayAfterDieDoodle);
+
             managerMenu.GameOverView.GameOverCommand.Execute();
             managerYandexSDK.FullscreenAdsShow();
         });
@@ -185,7 +193,8 @@ public class GameManager : MonoBehaviour
                 managerEducation.SetActive(true);
             else
             {
-                Cursor.visible = false;
+                SetBlockCursor(true);
+
                 managerLevel.SetActivePause(false);
                 managerAchievements.ShowAchivements();
             }
@@ -299,5 +308,11 @@ public class GameManager : MonoBehaviour
     {
         var managerFinded = _managers.Find(manager => manager is T);
         return (T)managerFinded;
+    }
+
+    private void SetBlockCursor(bool isBlock)
+    {
+        Cursor.visible = !isBlock;
+        Cursor.lockState = isBlock ? CursorLockMode.Confined : CursorLockMode.None;
     }
 }

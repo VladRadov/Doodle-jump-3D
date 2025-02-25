@@ -34,6 +34,7 @@ namespace YG
         public int EpicFail50CurrentCount;
         public int EpicFail100CurrentCount;
         public int KillMonsters10CurrentCount;
+        public int KillMonsters20CurrentCount;
         public int Rotate10CurrentCount;
         public int Rotate20CurrentCount;
         public int Runner1000CurrentCount;

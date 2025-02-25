@@ -28,17 +28,6 @@ public class ChangeSideComponent : BaseComponent
                 transform.position = newPosition;
                 _doodleView.BoxStretcher.SetPosition(newPosition);
             }
-            //var isChangingSideOnLeft = _doodleView.BaseTransform.position.x > _maxXSideRight;
-            //var isChangingSideOnRight = _doodleView.BaseTransform.position.x < _maxXSideLeft;
-
-            //if (isChangingSideOnLeft || isChangingSideOnRight)
-            //{
-            //    var newX = isChangingSideOnLeft ? _maxXSideLeft : _maxXSideRight;
-            //    var newPosition = new Vector3(newX, _doodleView.BaseTransform.position.y, _doodleView.BaseTransform.position.z);
-            //    ChangeSideCommand.Execute(newPosition);
-            //    transform.position = newPosition;
-            //    _doodleView.BoxStretcher.SetPosition(newPosition);
-            //}
         }
     }
 

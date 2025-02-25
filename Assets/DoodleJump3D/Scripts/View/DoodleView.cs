@@ -22,6 +22,7 @@ public class DoodleView : MonoBehaviour
     [SerializeField] private RocketView _rocketCatSceneView;
     [Header("Settings")]
     [SerializeField] private Vector3 _startPositionAfterCatScene;
+    [SerializeField] private float _yPositionDieDoodle;
 
     public List<BaseComponent> Components => _components;
     public ReactiveCommand<int> ChangingPosition = new();
@@ -49,15 +50,19 @@ public class DoodleView : MonoBehaviour
         _rocketCatSceneView.gameObject.SetActive(false);
     }
 
+    public void RunCatScene()
+    {
+        if (GameDataContainer.Instance.GameData.IsCatSceneView)
+            SplineAnimateStartCommand.Execute(transform);
+    }
+
     private void Start()
     {
         _transform = transform;
         _zPosition = (int)_transform.position.z;
         _isDie = false;
 
-        if (GameDataContainer.Instance.GameData.IsCatSceneView)
-            SplineAnimateStartCommand.Execute(transform);
-        else
+        if (GameDataContainer.Instance.GameData.IsCatSceneView == false)
             SplineAnimateEndCommand.Execute();
 
         ManagerUniRx.AddObjectDisposable(ChangingPosition);
@@ -75,7 +80,7 @@ public class DoodleView : MonoBehaviour
             ChangingPosition.Execute(_zPosition);
         }
 
-        if (_isDie == false && _transform.position.y < -4)
+        if (_isDie == false && _transform.position.y < _yPositionDieDoodle)
         {
             _isDie = true;
             DoodleDieCommand.Execute();

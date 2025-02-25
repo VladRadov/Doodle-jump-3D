@@ -955,12 +955,14 @@ MonoBehaviour:
   - {fileID: 6198218252667628351}
   - {fileID: 3821883146911770907}
   - {fileID: 8385837221562799441}
+  - {fileID: 8800087797311354983}
   _pointJointRocket: {fileID: 2821366616876832435}
   _splineAnimate: {fileID: 2455971145977197124}
   _animator: {fileID: 787549349572406749}
   _boxStretcher: {fileID: 0}
   _rocketCatSceneView: {fileID: 0}
   _startPositionAfterCatScene: {x: 0, y: 22.61, z: 0}
+  _yPositionDieDoodle: -6
 --- !u!54 &2381747764778486002
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1186,7 +1188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac80c5bcdbfcfe468a6310c95b76b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _doodleView: {fileID: 0}
+  _isOnState: 0
+  _doodleView: {fileID: 3509104780736491037}
 --- !u!1 &5595710811243021937
 GameObject:
   m_ObjectHideFlags: 0

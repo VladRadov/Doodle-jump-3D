@@ -1,5 +1,5 @@
 {
-  "idSave": 142,
+  "idSave": 246,
   "isFirstSession": false,
   "language": "ru",
   "promptDone": false,
@@ -10,7 +10,7 @@
     true,
     false
   ],
-  "CurrentResult": 64,
+  "CurrentResult": 37,
   "BestResult": 1529,
   "IsEducationEnd": true,
   "IsCatSceneView": false,
@@ -20,9 +20,10 @@
   "Astronaut8CurrentCount": 0,
   "Astronom50CurrentCount": 0,
   "Astronom100CurrentCount": 0,
-  "EpicFail50CurrentCount": 0,
+  "EpicFail50CurrentCount": 50,
   "EpicFail100CurrentCount": 0,
   "KillMonsters10CurrentCount": 0,
+  "KillMonsters20CurrentCount": 0,
   "Rotate10CurrentCount": 0,
   "Rotate20CurrentCount": 0,
   "Runner1000CurrentCount": 0,

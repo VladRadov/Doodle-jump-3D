@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c892c17485379c4591371a734fd80c6, type: 3}
   m_Name: SettingsYG
   m_EditorClassIdentifier: 
-  _volumeSounds: 0
-  _delayAfterDieDoodle: 0
+  _volumeSounds: 1
+  _delayAfterDieDoodle: 1000

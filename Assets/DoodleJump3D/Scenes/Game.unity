@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.31270584, g: 0.29332438, b: 0.5138786, a: 1}
+  m_IndirectSpecularColor: {r: 0.16420594, g: 0.18093121, b: 0.33043268, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -834,6 +834,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -4173,6 +4175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -6201,6 +6205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -6662,6 +6668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -9245,6 +9253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -9511,7 +9521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21d2cdd72cdc50449be88f93ed4747b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameData: {fileID: 11400000, guid: a3ea224a727e9584695b685d7716283c, type: 2}
+  _gameData: {fileID: 11400000, guid: 54d05a9a0252d5944a885996bc78e9fa, type: 2}
 --- !u!114 &584134815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9524,7 +9534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c8e8bddbedab344af18cbec7425b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _settings: {fileID: 11400000, guid: 58ad935ae47de1d44912c995cb9c0911, type: 2}
+  _settings: {fileID: 11400000, guid: 394860749a9eb48478c5b2fe592961fc, type: 2}
 --- !u!1 &584852330
 GameObject:
   m_ObjectHideFlags: 0
@@ -10107,6 +10117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -10799,6 +10811,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -11314,18 +11328,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _achievements:
-  - {fileID: 11400000, guid: ff2f46f23b00bb8469642c9ea1e5e047, type: 2}
-  - {fileID: 11400000, guid: aae3f4379553eb54ba0dd7290c6bd3aa, type: 2}
-  - {fileID: 11400000, guid: 7ca56b809955a6d458a069fbf03e8290, type: 2}
-  - {fileID: 11400000, guid: ceb472c944d17e3469a83a4b7ce590f2, type: 2}
-  - {fileID: 11400000, guid: bba64b7a2867e814f86cb2494b2f8dd0, type: 2}
-  - {fileID: 11400000, guid: 0e3c990a572cb3d4e83e27317ba8a743, type: 2}
-  - {fileID: 11400000, guid: 3997658f46e85f9489e276f28b9dc206, type: 2}
-  - {fileID: 11400000, guid: 66672cf18ac1ee94bbf4e7713e5ed866, type: 2}
-  - {fileID: 11400000, guid: d08d33eb08a4ddb4c8a63f1cdc711a45, type: 2}
-  - {fileID: 11400000, guid: 41e1a4703a7a46843ab120e7cc8cc42d, type: 2}
-  - {fileID: 11400000, guid: 2de1f2cc7e4b9054591d012b9e30663e, type: 2}
-  - {fileID: 11400000, guid: c70b00d1c0ed50d428219c6ef9b33a29, type: 2}
+  - {fileID: 11400000, guid: 8f26c11e7cf287c4e8cead7c03872ce6, type: 2}
+  - {fileID: 11400000, guid: 22c592b14321adf48b4643b84de7d272, type: 2}
+  - {fileID: 11400000, guid: d901fecedccc5c345afaefe8180263c3, type: 2}
+  - {fileID: 11400000, guid: 53f8bbe2692f78f489fafde080e9be20, type: 2}
+  - {fileID: 11400000, guid: 0910ff5ba21da244ead69b5ec9696151, type: 2}
+  - {fileID: 11400000, guid: c64d59b6b49bdea48a76482fd0d347a5, type: 2}
+  - {fileID: 11400000, guid: d91d68ad4a45396419c22f9f5a335f4f, type: 2}
+  - {fileID: 11400000, guid: 882ef63b75900ea4495f09f31c1e4334, type: 2}
+  - {fileID: 11400000, guid: cdc4252bd5415b74d9c6624c3c37a5c9, type: 2}
+  - {fileID: 11400000, guid: 2f976fb4cbdf7114c863733744378333, type: 2}
+  - {fileID: 11400000, guid: b6aa529fab00d7542adc3bb4992b541c, type: 2}
+  - {fileID: 11400000, guid: a2302eb3d8508f748afe141769a927c0, type: 2}
   _achievementsItem:
   - {fileID: 360555084}
   - {fileID: 81572609}
@@ -11410,6 +11424,10 @@ PrefabInstance:
     - target: {fileID: 3079409916864941664, guid: 7a0e0f424819ac940b2c0d1fbf7a0bea, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3079409916864941667, guid: 7a0e0f424819ac940b2c0d1fbf7a0bea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3079409916952164937, guid: 7a0e0f424819ac940b2c0d1fbf7a0bea, type: 3}
       propertyPath: m_SizeDelta.x
@@ -11673,7 +11691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6895850703800868392, guid: 7a0e0f424819ac940b2c0d1fbf7a0bea, type: 3}
       propertyPath: nameLB
-      value: Best players
+      value: BestPlayers
       objectReference: {fileID: 0}
     - target: {fileID: 6895850703800868392, guid: 7a0e0f424819ac940b2c0d1fbf7a0bea, type: 3}
       propertyPath: quantityTop
@@ -13174,6 +13192,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -13367,6 +13387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -13741,6 +13763,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -16319,7 +16343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 231944989351416915, guid: 2a1f29a86eff12b43b4f91a4d84b67a4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2614489088994927845, guid: 2a1f29a86eff12b43b4f91a4d84b67a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16761,6 +16785,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -17815,6 +17841,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -18221,18 +18249,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _achievements:
-  - {fileID: 11400000, guid: ff2f46f23b00bb8469642c9ea1e5e047, type: 2}
-  - {fileID: 11400000, guid: aae3f4379553eb54ba0dd7290c6bd3aa, type: 2}
-  - {fileID: 11400000, guid: 7ca56b809955a6d458a069fbf03e8290, type: 2}
-  - {fileID: 11400000, guid: ceb472c944d17e3469a83a4b7ce590f2, type: 2}
-  - {fileID: 11400000, guid: bba64b7a2867e814f86cb2494b2f8dd0, type: 2}
-  - {fileID: 11400000, guid: 0e3c990a572cb3d4e83e27317ba8a743, type: 2}
-  - {fileID: 11400000, guid: 3997658f46e85f9489e276f28b9dc206, type: 2}
-  - {fileID: 11400000, guid: 66672cf18ac1ee94bbf4e7713e5ed866, type: 2}
-  - {fileID: 11400000, guid: d08d33eb08a4ddb4c8a63f1cdc711a45, type: 2}
-  - {fileID: 11400000, guid: 41e1a4703a7a46843ab120e7cc8cc42d, type: 2}
-  - {fileID: 11400000, guid: 2de1f2cc7e4b9054591d012b9e30663e, type: 2}
-  - {fileID: 11400000, guid: c70b00d1c0ed50d428219c6ef9b33a29, type: 2}
+  - {fileID: 11400000, guid: 8f26c11e7cf287c4e8cead7c03872ce6, type: 2}
+  - {fileID: 11400000, guid: 22c592b14321adf48b4643b84de7d272, type: 2}
+  - {fileID: 11400000, guid: d901fecedccc5c345afaefe8180263c3, type: 2}
+  - {fileID: 11400000, guid: 53f8bbe2692f78f489fafde080e9be20, type: 2}
+  - {fileID: 11400000, guid: 0910ff5ba21da244ead69b5ec9696151, type: 2}
+  - {fileID: 11400000, guid: c64d59b6b49bdea48a76482fd0d347a5, type: 2}
+  - {fileID: 11400000, guid: d91d68ad4a45396419c22f9f5a335f4f, type: 2}
+  - {fileID: 11400000, guid: 882ef63b75900ea4495f09f31c1e4334, type: 2}
+  - {fileID: 11400000, guid: cdc4252bd5415b74d9c6624c3c37a5c9, type: 2}
+  - {fileID: 11400000, guid: 2f976fb4cbdf7114c863733744378333, type: 2}
+  - {fileID: 11400000, guid: b6aa529fab00d7542adc3bb4992b541c, type: 2}
+  - {fileID: 11400000, guid: a2302eb3d8508f748afe141769a927c0, type: 2}
   _close: {fileID: 737347725}
   _prefabAchievementItemView: {fileID: 8901432410312607187, guid: cc16069e51f05da47989f6224da29a64, type: 3}
   _parentListAchievementsView: {fileID: 168326526}
@@ -18588,6 +18616,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -18886,6 +18916,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -20855,6 +20887,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -21828,6 +21862,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -22301,6 +22337,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -22863,7 +22901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d655a1882fa95d42912d4b6e601b50d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameLeaderboard: 
+  _nameLeaderboard: BestPlayers
 --- !u!1 &1428265471
 GameObject:
   m_ObjectHideFlags: 0
@@ -23350,6 +23388,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 1464985962}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -23871,6 +23911,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -24503,6 +24545,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -25076,6 +25120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -25538,6 +25584,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -26158,6 +26206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -28275,6 +28325,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
@@ -29538,6 +29590,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
