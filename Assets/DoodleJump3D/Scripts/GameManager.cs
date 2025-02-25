@@ -313,6 +313,6 @@ public class GameManager : MonoBehaviour
     private void SetBlockCursor(bool isBlock)
     {
         Cursor.visible = !isBlock;
-        Cursor.lockState = isBlock ? CursorLockMode.Confined : CursorLockMode.None;
+        Cursor.lockState = isBlock ? CursorLockMode.Locked : CursorLockMode.None;
     }
 }

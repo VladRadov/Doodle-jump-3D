@@ -122,7 +122,7 @@ public class JumpingComponent : BaseComponent
     private void SetVelocity(Vector3 speed)
         => _rigidbody.velocity = speed;
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (_isFlying)
         {
