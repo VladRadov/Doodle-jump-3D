@@ -14,17 +14,17 @@ public class DataContainer<T> : MonoBehaviour
 
     protected void Initialize(T instance)
     {
-        DontDestroyOnLoad(this);
-
         if (Instance == null)
         {
             Instance = instance;
             SetInstanceCommand.Execute();
+            transform.parent = null;
+            ManagerUniRx.AddObjectDisposable(SetInstanceCommand);
+
+            DontDestroyOnLoad(this.gameObject);
         }
         else
-            Destroy(this);
-
-        ManagerUniRx.AddObjectDisposable(SetInstanceCommand);
+            Destroy(this.gameObject);
     }
 
     private void OnDestroy()

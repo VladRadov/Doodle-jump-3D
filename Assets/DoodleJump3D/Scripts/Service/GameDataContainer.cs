@@ -10,6 +10,7 @@ public class GameDataContainer : DataContainer<GameDataContainer>
 
     public override void Initialize()
     {
+        SetInstanceCommand = new();
         SetInstanceCommand.Subscribe(_ => { _gameData.CatSceneView(); });
 
         Initialize(this);

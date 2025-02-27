@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        _dataSettingsContainer.Initialize();
-        _gameDataContainer.Initialize();
+        _dataSettingsContainer?.Initialize();
+        _gameDataContainer?.Initialize();
 
         foreach (var manager in _managers)
             manager.Initialize();

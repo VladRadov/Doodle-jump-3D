@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 using YG;
 using UniRx;
+using System.Collections.Generic;
 
 public class ManagerYandexSDK : BaseManager
 {
@@ -13,9 +15,14 @@ public class ManagerYandexSDK : BaseManager
 
     public override void Initialize()
     {
-        YandexGame.GetDataEvent += () => { InitializeSdkSuccess.Execute(); };
-        YandexGame.OpenFullAdEvent += () => { OpenningFullAdCommand.Execute(); };
-        YandexGame.CloseFullAdEvent += () => { ClosingFullAdCommand.Execute(); };
+        YandexGame.GetDataEvent -= OnGetDataEvent;
+        YandexGame.GetDataEvent += OnGetDataEvent;
+
+        YandexGame.OpenFullAdEvent -= OnOpenFullAd;
+        YandexGame.OpenFullAdEvent += OnOpenFullAd;
+
+        YandexGame.CloseFullAdEvent -= OnCloseFullAd;
+        YandexGame.CloseFullAdEvent += OnCloseFullAd;
 
         ManagerUniRx.AddObjectDisposable(OpenningFullAdCommand);
         ManagerUniRx.AddObjectDisposable(ClosingFullAdCommand);
@@ -27,6 +34,24 @@ public class ManagerYandexSDK : BaseManager
 
     public void SaveBestScore(long score)
         => YandexGame.NewLeaderboardScores(_nameLeaderboard, score);
+
+    private void OnGetDataEvent()
+    {
+        if (InitializeSdkSuccess.IsDisposed == false)
+            InitializeSdkSuccess.Execute();
+    }
+
+    private void OnOpenFullAd()
+    {
+        if(OpenningFullAdCommand.IsDisposed == false)
+            OpenningFullAdCommand.Execute();
+    }
+
+    private void OnCloseFullAd()
+    {
+        if (ClosingFullAdCommand.IsDisposed == false)
+            ClosingFullAdCommand.Execute();
+    }
 
     private void OnDestroy()
     {
