@@ -1,5 +1,5 @@
 {
-  "idSave": 1863,
+  "idSave": 2622,
   "isFirstSession": false,
   "language": "ru",
   "promptDone": false,
@@ -10,7 +10,7 @@
     true,
     false
   ],
-  "CurrentResult": 35,
+  "CurrentResult": 1887,
   "BestResult": 2103,
   "IsEducationEnd": true,
   "IsCatSceneView": false,
@@ -18,7 +18,7 @@
   "DelayAfterDieDoodle": 0,
   "Astronaut4CurrentCount": 4,
   "Astronaut8CurrentCount": 0,
-  "Astronom50CurrentCount": 6,
+  "Astronom50CurrentCount": 11,
   "Astronom100CurrentCount": 0,
   "EpicFail50CurrentCount": 50,
   "EpicFail100CurrentCount": 0,

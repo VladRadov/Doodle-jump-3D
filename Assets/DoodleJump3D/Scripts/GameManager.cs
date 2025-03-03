@@ -80,7 +80,8 @@ public class GameManager : MonoBehaviour
             if (managerPlatform.PlatformController.PreviousSelectedPlatfrom == null || managerPlatform.PlatformController.PreviousSelectedPlatfrom.IsDoodleOnPlatform)
             {
                 managerPlatform.PlatformController.ShiftRankPlatforams();
-                jumpingComponent.SetTargetPlatform(managerPlatform.PlatformController.NextSelectPlatfrom.transform.position);
+                managerPlatform.PlatformController.PreviousSelectedPlatfrom.ResetFlagIsDoodleOnPlatform();
+                jumpingComponent.SetTargetPlatform(managerPlatform.PlatformController.CurrentSelectPlatfrom.transform.position);
 
                 managerPlatform.OutlineNextPlatform();
                 managerPlatform.PlatformController.FormationSelectionAllowedPlatform();

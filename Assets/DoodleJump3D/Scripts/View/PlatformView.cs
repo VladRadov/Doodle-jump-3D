@@ -21,6 +21,9 @@ public class PlatformView : MonoBehaviour
     public void SetLocalPosition(Vector3 position)
         => transform.localPosition = position;
 
+    public void ResetFlagIsDoodleOnPlatform()
+        => _isDoodleOnPlatform = false;
+
     public void SetActiveOutline(bool value)
     {
         if(_outline != null)

@@ -28,9 +28,7 @@ public class ManagerPlatform : BaseManager
     }
 
     public void OutlineNextPlatform()
-    {
-        _platformController.NextSelectPlatfrom.ActiveOutlineColor(_colorEntryPlatfrom);
-    }
+        => _platformController.NextSelectPlatfrom.ActiveOutlineColor(_colorEntryPlatfrom);
 
     private void OnDestroy()
     {

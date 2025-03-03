@@ -1,9 +1,7 @@
-using System;
 using UnityEngine;
 
 using YG;
 using UniRx;
-using System.Collections.Generic;
 
 public class ManagerYandexSDK : BaseManager
 {

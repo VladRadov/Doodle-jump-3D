@@ -79,17 +79,6 @@ public partial class @DoodleInputSystem: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Right"",
-                    ""id"": ""e82a120f-4282-42cd-aec8-a4c477106979"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""AD"",
                     ""id"": ""ea6c9083-8a56-42b7-be6d-494fe2ae3bff"",
                     ""path"": ""2DVector"",
@@ -157,8 +146,8 @@ public partial class @DoodleInputSystem: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Gyroscope"",
-                    ""id"": ""efd41c2f-b036-4d71-8c22-c71fc2d278fc"",
-                    ""path"": ""TwoModifiers"",
+                    ""id"": ""94459e6a-2259-40d7-9f85-3b9e7a5b77b8"",
+                    ""path"": ""OneModifier"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -167,9 +156,9 @@ public partial class @DoodleInputSystem: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""Modifier 1"",
-                    ""id"": ""0090ea0e-03cc-4ab8-a81f-8022eac6894c"",
-                    ""path"": ""<Gyroscope>/angularVelocity/z"",
+                    ""name"": ""binding"",
+                    ""id"": ""19192732-4af8-492c-a5bc-0de3c1489b26"",
+                    ""path"": ""<Gyroscope>/angularVelocity/y"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mobile"",
