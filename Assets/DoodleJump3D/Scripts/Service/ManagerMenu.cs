@@ -13,6 +13,7 @@ public class ManagerMenu : BaseManager
     [SerializeField] private AchievementsOnMenuView _achievementsView;
     [SerializeField] private GameOverView _gameOverView;
     [SerializeField] private LeaderboardsView _leaderboardsView;
+    [SerializeField] private GamePanelView _gamePanelView;
     [SerializeField] private Button _play;
     [SerializeField] private Button _settings;
     [SerializeField] private Button _achievements;
@@ -22,6 +23,7 @@ public class ManagerMenu : BaseManager
     public ReactiveCommand ChangePanelCommand = new();
     public SettingsView SettingsView => _settingsView;
     public GameOverView GameOverView => _gameOverView;
+    public GamePanelView GamePanelView => _gamePanelView;
 
     public override void Initialize()
     {
@@ -31,6 +33,7 @@ public class ManagerMenu : BaseManager
         {
             PlayingCommand.Execute();
             _menuPanel.SetActive(false);
+            _gamePanelView.SetActive(true);
         });
 
         _settings.onClick.AddListener(async () =>

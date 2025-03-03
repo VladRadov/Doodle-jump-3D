@@ -45,6 +45,14 @@ public class GameManager : MonoBehaviour
         var doodleAnimator = managerDoodle.DoodleController.GetDoodleComponent<DoodleAnimator>();
         var changeSideComponent = managerDoodle.DoodleController.GetDoodleComponent<ChangeSideComponent>();
 
+        managerMenu.GamePanelView.ShootingCommand.Subscribe(_ =>
+        {
+            if (jumpingComponent.IsFlying || managerLevel.IsPause)
+                return;
+
+            shotDoodleComponent.Shot();
+        });
+
         managerYandexSDK.InitializeSdkSuccess.Subscribe(_ =>
         {
             managerDoodle.DoodleView.RunCatScene();
