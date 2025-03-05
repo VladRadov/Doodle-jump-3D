@@ -3,6 +3,7 @@ using UnityEngine;
 
 using UniRx;
 using Cysharp.Threading.Tasks;
+using RimuruDev;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,8 +35,8 @@ public class GameManager : MonoBehaviour
         var managerStars = GetManager<ManagerStars>();
         var managerTimeline = GetManager<ManagerTimeline>();
         var managerYandexSDK = GetManager<ManagerYandexSDK>();
+        var inputManager = GetManager<InputManager>();
 
-        var inputComponent = managerDoodle.DoodleController.GetDoodleComponent<InputComponent>();
         var moveComponent = managerDoodle.DoodleController.GetDoodleComponent<MoveComponent>();
         var effectJumpComponent = managerDoodle.DoodleController.GetDoodleComponent<EffectJumpComponent>();
         var jumpingComponent = managerDoodle.DoodleController.GetDoodleComponent<JumpingComponent>();
@@ -66,13 +67,13 @@ public class GameManager : MonoBehaviour
             managerAchievements.ShowAchivements();
         });
 
-        inputComponent.InputCommand.Subscribe(value =>
+        inputManager.BaseInput.InputCommand.Subscribe(value =>
         {
             if (jumpingComponent.IsAllowedToSide && managerLevel.IsPause == false)
                 moveComponent.Move(value);
         });
 
-        inputComponent.ShootingCommand.Subscribe(_ =>
+        inputManager.BaseInput.ShootingCommand.Subscribe(_ =>
         {
             if (jumpingComponent.IsFlying || managerLevel.IsPause)
                 return;
@@ -80,7 +81,7 @@ public class GameManager : MonoBehaviour
             shotDoodleComponent.Shot();
         });
 
-        inputComponent.JumpCommand.Subscribe(_ =>
+        inputManager.BaseInput.JumpCommand.Subscribe(_ =>
         {
             if (jumpingComponent.IsFlying || managerLevel.IsPause)
                 return;

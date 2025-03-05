@@ -890,7 +890,6 @@ GameObject:
   - component: {fileID: 2381747764778486002}
   - component: {fileID: 4532521973148175871}
   - component: {fileID: 3821883146911770907}
-  - component: {fileID: 3328293305804017740}
   - component: {fileID: 2353595814710894259}
   - component: {fileID: 6765762322697730876}
   - component: {fileID: 787549349572406749}
@@ -947,7 +946,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 2381747764778486002}
   _capsuleCollider: {fileID: 4532521973148175871}
   _components:
-  - {fileID: 3328293305804017740}
+  - {fileID: 0}
   - {fileID: 6765762322697730876}
   - {fileID: 270815325591158021}
   - {fileID: 2353595814710894259}
@@ -1027,19 +1026,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isOnState: 1
   _rotateFlyingToRocket: {x: 28, y: 0, z: 0}
---- !u!114 &3328293305804017740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4268115652102787550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6cd147e38821754f846b8779996c356, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isOnState: 1
 --- !u!114 &2353595814710894259
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -145,8 +145,8 @@ public partial class @DoodleInputSystem: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Gyroscope"",
-                    ""id"": ""94459e6a-2259-40d7-9f85-3b9e7a5b77b8"",
+                    ""name"": ""Acceleration"",
+                    ""id"": ""e4534351-231e-492a-bbcc-acb99b4cf386"",
                     ""path"": ""OneModifier"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -157,8 +157,8 @@ public partial class @DoodleInputSystem: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""binding"",
-                    ""id"": ""19192732-4af8-492c-a5bc-0de3c1489b26"",
-                    ""path"": ""<Gyroscope>/angularVelocity/y"",
+                    ""id"": ""8adda3cb-de02-4e69-ba58-cc4105decaac"",
+                    ""path"": ""<Accelerometer>/acceleration/x"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mobile"",
@@ -195,17 +195,6 @@ public partial class @DoodleInputSystem: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse and keybord"",
-                    ""action"": ""Shot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""88a24f50-fe63-4c8d-af53-d8abc972a4e2"",
-                    ""path"": ""<Touchscreen>/touch*/Press"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mobile"",
                     ""action"": ""Shot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false

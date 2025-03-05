@@ -12,14 +12,15 @@ public class GamePanelView : MonoBehaviour
     public void SetActive(bool value)
         => gameObject.SetActive(value);
 
-    private void Start()
+    public void Initialize(bool isPlatformPC)
     {
-        if (Application.isMobilePlatform)
+        if (isPlatformPC)
+            _shot.gameObject.SetActive(false);
+        else
         {
             _shot.gameObject.SetActive(true);
             _shot.onClick.AddListener(() => { ShootingCommand.Execute(); });
         }
-        else
-            _shot.gameObject.SetActive(false);
+
     }
 }
