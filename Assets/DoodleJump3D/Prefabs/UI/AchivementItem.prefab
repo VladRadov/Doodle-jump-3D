@@ -169,6 +169,7 @@ MonoBehaviour:
   _name: {fileID: 3128802497560557606}
   _description: {fileID: 4897369448159887272}
   _icon: {fileID: 4765116229998060064}
+  _achievement: {fileID: 0}
 --- !u!1 &6143904873731110485
 GameObject:
   m_ObjectHideFlags: 0

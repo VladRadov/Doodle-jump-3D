@@ -32,7 +32,7 @@ public class InputMobile : BaseInput
         if (Accelerometer.current != null)
         {
             var acceleration = Accelerometer.current.acceleration.ReadValue();
-            InputCommand.Execute(acceleration);
+            InputCommand.Execute(new Vector2(acceleration.x, 0) * Time.deltaTime * 100f);
         }
     }
 

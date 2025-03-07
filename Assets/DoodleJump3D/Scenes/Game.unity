@@ -11732,8 +11732,16 @@ PrefabInstance:
       value: BestPlayers
       objectReference: {fileID: 0}
     - target: {fileID: 6895850703800868392, guid: 7a0e0f424819ac940b2c0d1fbf7a0bea, type: 3}
+      propertyPath: decimalSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6895850703800868392, guid: 7a0e0f424819ac940b2c0d1fbf7a0bea, type: 3}
       propertyPath: quantityTop
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6895850703800868392, guid: 7a0e0f424819ac940b2c0d1fbf7a0bea, type: 3}
+      propertyPath: timeTypeConvert
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6895850703800868392, guid: 7a0e0f424819ac940b2c0d1fbf7a0bea, type: 3}
       propertyPath: playerDataPrefab
@@ -26887,6 +26895,10 @@ PrefabInstance:
     - target: {fileID: 874423922203305411, guid: 9bbf9c00135d13e4b9402fd2772396b3, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1772996259994989464, guid: 9bbf9c00135d13e4b9402fd2772396b3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5378993700005165934, guid: 9bbf9c00135d13e4b9402fd2772396b3, type: 3}
       propertyPath: m_LocalPosition.x
