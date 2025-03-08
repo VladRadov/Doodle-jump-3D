@@ -12886,6 +12886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _doodle: {fileID: 404526228}
   _bodyDoodle: {fileID: 1342242849}
+  _configurableJoint: {fileID: 759872056}
   _scaleDown: {x: 1.2, y: 0.8, z: 1.2}
   _scaleUp: {x: 0.8, y: 1.2, z: 0.8}
   _scaleKoefficient: 0.4
@@ -13082,7 +13083,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &761556830
 GameObject:
@@ -16566,7 +16567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 231944989351416915, guid: 2a1f29a86eff12b43b4f91a4d84b67a4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2614489088994927845, guid: 2a1f29a86eff12b43b4f91a4d84b67a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25377,13 +25378,16 @@ MonoBehaviour:
     \u0435\u0441\u043B\u0438 \u043F\u043B\u0430\u0442\u0444\u043E\u0440\u043C\u0430
     \u0434\u0432\u0438\u0436\u0435\u0442\u0441\u044F, \u0442\u043E \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E
     \u0441\u043A\u043E\u0440\u0440\u0435\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C
-    \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0435:\n- \u043A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0430:
-    \u2190\u2192\n- \u043C\u044B\u0448\u044C: \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0435\u043C
-    \u0432 \u0441\u0442\u043E\u0440\u043E\u043D\u044B\n- \u043C\u043E\u0431\u0438\u043B\u044C\u043D\u044B\u0439:
-    \u0430\u043A\u0441\u0435\u043B\u0435\u0440\u043E\u043C\u0435\u0442\u0440."
-  en: "If the platform is stationary, the jump will be performed exactly on the platform.
-    But if the platform is moving, then it is necessary to correct the movement:\r\n-
-    keyboard: \u2190\u2192\r\n- mouse: movement to the sides\r\n- mobile: accelerometer."
+    \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0435:\n- \u043C\u044B\u0448\u044C:
+    \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0435\u043C \u0432 \u0441\u0442\u043E\u0440\u043E\u043D\u044B\n-
+    \u043C\u043E\u0431\u0438\u043B\u044C\u043D\u044B\u0439: \u0430\u043A\u0441\u0435\u043B\u0435\u0440\u043E\u043C\u0435\u0442\u0440."
+  en: 'If the platform is stationary, the jump will be performed exactly on the platform.
+    But if the platform is moving, then it is necessary to correct the movement:
+
+    -
+    mouse: movement to the sides
+
+    - mobile: accelerometer.'
   tr: 
   az: 
   be: 
@@ -25444,10 +25448,9 @@ MonoBehaviour:
     \u0435\u0441\u043B\u0438 \u043F\u043B\u0430\u0442\u0444\u043E\u0440\u043C\u0430
     \u0434\u0432\u0438\u0436\u0435\u0442\u0441\u044F, \u0442\u043E \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E
     \u0441\u043A\u043E\u0440\u0440\u0435\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C
-    \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0435:\n- \u043A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0430:
-    \u2190\u2192\n- \u043C\u044B\u0448\u044C: \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0435\u043C
-    \u0432 \u0441\u0442\u043E\u0440\u043E\u043D\u044B\n- \u043C\u043E\u0431\u0438\u043B\u044C\u043D\u044B\u0439:
-    \u0430\u043A\u0441\u0435\u043B\u0435\u0440\u043E\u043C\u0435\u0442\u0440."
+    \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0435:\n- \u043C\u044B\u0448\u044C:
+    \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0435\u043C \u0432 \u0441\u0442\u043E\u0440\u043E\u043D\u044B\n-
+    \u043C\u043E\u0431\u0438\u043B\u044C\u043D\u044B\u0439: \u0430\u043A\u0441\u0435\u043B\u0435\u0440\u043E\u043C\u0435\u0442\u0440."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

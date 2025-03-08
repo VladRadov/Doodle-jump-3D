@@ -7,6 +7,7 @@ public class BoxStretcher : MonoBehaviour
 
     [SerializeField] private DoodleView _doodle;
     [SerializeField] private Transform _bodyDoodle;
+    [SerializeField] private ConfigurableJoint _configurableJoint;
 
     [SerializeField] private Vector3 _scaleDown = new Vector3(1.2f, 0.8f, 1.2f);
     [SerializeField] private Vector3 _scaleUp = new Vector3(0.8f, 1.2f, 0.8f);
@@ -33,4 +34,10 @@ public class BoxStretcher : MonoBehaviour
 
     private Vector3 Lerp3(Vector3 a, Vector3 b, Vector3 c, float t)
         => t > 0 ? Vector3.Lerp(a, b, t + 1f) : Vector3.LerpUnclamped(b, c, t);
+
+    private void OnValidate()
+    {
+        if (_configurableJoint == null)
+            _configurableJoint = GetComponent<ConfigurableJoint>();
+    }
 }

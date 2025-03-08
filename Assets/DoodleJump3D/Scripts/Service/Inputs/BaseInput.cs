@@ -21,11 +21,7 @@ public class BaseInput : MonoBehaviour
 
     public virtual void FixedUpdate()
     {
-        if (_playerInput != null)
-        {
-            var value = _playerInput.Doodle.Move.ReadValue<Vector2>();
-            InputCommand.Execute(value);
-        }
+
     }
 
     public virtual void OnEnable()

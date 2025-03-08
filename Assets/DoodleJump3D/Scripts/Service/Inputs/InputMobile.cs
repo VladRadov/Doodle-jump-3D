@@ -27,12 +27,12 @@ public class InputMobile : BaseInput
             InputSystem.EnableDevice(Accelerometer.current);
     }
 
-    public override void FixedUpdate()
+    public void Update()
     {
         if (Accelerometer.current != null)
         {
             var acceleration = Accelerometer.current.acceleration.ReadValue();
-            InputCommand.Execute(new Vector2(acceleration.x, 0) * Time.deltaTime * 100f);
+            InputCommand.Execute(new Vector2(acceleration.x, 0) * Time.deltaTime * 200f);
         }
     }
 

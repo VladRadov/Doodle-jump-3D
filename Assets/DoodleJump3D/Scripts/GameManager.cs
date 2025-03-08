@@ -100,6 +100,7 @@ public class GameManager : MonoBehaviour
 
         jumpingComponent.DoodleStartFlyingCommand.Subscribe(rocket =>
         {
+            managerDoodle.DoodleView.BoxStretcher.gameObject.SetActive(false);
             managerPlatform.PlatformController.ResetPreviousSelectedPlatfrom();
             managerAchievements.Controller.FlyRocketCommand.Execute();
             doodleAnimator.SetActiveAnimator(false);
@@ -113,11 +114,14 @@ public class GameManager : MonoBehaviour
 
         jumpingComponent.FlyingCommand.Subscribe(positionDoodle =>
         {
+            managerDoodle.DoodleView.BoxStretcher.SetPosition(positionDoodle);
+            managerDoodle.DoodleView.BoxStretcher.transform.position = positionDoodle;
             managerFramesMap.FramesMapController.CheckAndRespawnFramesMap(positionDoodle);
         });
 
         jumpingComponent.DoodleEndFlyingCommand.Subscribe(doodlePosition =>
         {
+            managerDoodle.DoodleView.BoxStretcher.gameObject.SetActive(true);
             rotateComponent.ResetRotate();
 
             var findedNearPlatformFromDoodle = managerPlatform.PlatformController.FindNearPlatformFromDoodle(doodlePosition);
