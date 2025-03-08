@@ -63,7 +63,7 @@ public class RocketsController
     {
         for (int i = 0; i < _rockets.Count; i++)
         {
-            if(_rockets[i].transform.parent.gameObject.activeSelf == false)
+            if(_rockets[i].transform.parent.gameObject.activeSelf == false && _rockets[i] != _currentRocket)
                 _rockets[i].SetActive(false);
         }
     }
