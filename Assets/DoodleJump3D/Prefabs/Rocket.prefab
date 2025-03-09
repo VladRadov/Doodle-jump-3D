@@ -139,6 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10f13fe6ea3e44c49af201fcf7246196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 2267326372196980186}
+  _rocketComponent: {fileID: 2917848479918560285}
 --- !u!114 &2917848479918560285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 304eb4e0a72f3634487765254e748ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rocketView: {fileID: 2996007479238288896}
   _rigidbody: {fileID: 2267326372196980186}
   _boxCollider: {fileID: 5094937234845789148}
   _backBraceBottom: {fileID: 8182840562505868741}
@@ -182,7 +185,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &5094937234845789148

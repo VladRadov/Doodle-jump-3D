@@ -100,6 +100,7 @@ public class GameManager : MonoBehaviour
 
         jumpingComponent.DoodleStartFlyingCommand.Subscribe(rocket =>
         {
+            moveComponent.EndMoveToPosition();
             managerDoodle.DoodleView.BoxStretcher.gameObject.SetActive(false);
             managerPlatform.PlatformController.ResetPreviousSelectedPlatfrom();
             managerAchievements.Controller.FlyRocketCommand.Execute();

@@ -19,11 +19,14 @@ public class ManagerDistance : BaseManager
 
     public void IncreasingDistance(int valueDistance)
     {
-        _currentDistace = valueDistance;
-        UpdateDistance();
+        if (valueDistance > 0)
+        {
+            _currentDistace = valueDistance;
+            UpdateDistance();
+        }
     }
 
-    public void SaveResult()
+        public void SaveResult()
     {
         GameDataContainer.Instance.GameData.CurrentResult = _currentDistace;
 

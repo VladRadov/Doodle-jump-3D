@@ -40,6 +40,7 @@ public class JumpingComponent : BaseComponent
     {
         DoodleStartFlyingCommand.Execute(rocket);
 
+        _isAllowedToSide = true;
         _isFlying = true;
         _rigidbody.useGravity = false;
         SetVelocity(Vector3.zero);
