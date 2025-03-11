@@ -1,5 +1,5 @@
 {
-  "idSave": 4666,
+  "idSave": 6988,
   "isFirstSession": false,
   "language": "ru",
   "promptDone": false,
@@ -10,7 +10,7 @@
     true,
     false
   ],
-  "CurrentResult": 2082,
+  "CurrentResult": 1153,
   "BestResult": 5694,
   "IsEducationEnd": true,
   "IsCatSceneView": false,
@@ -18,14 +18,14 @@
   "DelayAfterDieDoodle": 0,
   "Astronaut4CurrentCount": 4,
   "Astronaut8CurrentCount": 0,
-  "Astronom50CurrentCount": 40,
+  "Astronom50CurrentCount": 50,
   "Astronom100CurrentCount": 0,
   "EpicFail50CurrentCount": 50,
   "EpicFail100CurrentCount": 0,
-  "KillMonsters10CurrentCount": 0,
+  "KillMonsters10CurrentCount": 4,
   "KillMonsters20CurrentCount": 0,
-  "Rotate10CurrentCount": 0,
+  "Rotate10CurrentCount": 10,
   "Rotate20CurrentCount": 0,
-  "Runner1000CurrentCount": 0,
+  "Runner1000CurrentCount": 1000,
   "Runner2000CurrentCount": 0
 }

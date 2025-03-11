@@ -56,6 +56,7 @@ public class FlyRocketComponent : MonoBehaviour
             transform.position = doodle.PointJointRocket;
             var jumpingComponent = other.GetComponent<JumpingComponent>();
             jumpingComponent.StartFlying(_rocketView);
+            transform.parent = doodle.BaseTransform;
 
             FlyingEndCommand = new();
             FlyingEndCommand.Subscribe(_ =>
